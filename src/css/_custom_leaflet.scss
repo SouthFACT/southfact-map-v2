@@ -1,0 +1,20 @@
+@import './_customVarriables.scss';
+
+#map {
+  height: inherit;
+  width: inherit;
+  // min-height: 205px;
+}
+
+// .leaflet-pane {
+//   height: inherit;
+//   width: inherit;
+// }
+
+.mapboxgl-map{
+  // height: inherit;
+  // width: inherit;
+}
+.mapboxgl-missing-css{
+  // display: none;
+}

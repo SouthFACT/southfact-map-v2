@@ -1,0 +1,613 @@
+@import "~bootstrap/scss/bootstrap";
+@import './_customVarriables.scss';
+
+
+$body-bg:    $gray-800;
+$body-color: $gray-200;
+$body-bg-semiTransparent:    rgba(53, 59, 65, .9); // $gray-800
+$dark-bg: #2A2E33;
+
+$box-shadow-default: 0 2.5px 5px rgba(0,0,0,0.19), 0 1.5px 1.5px rgba(0,0,0,0.23);
+$box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
+
+$layer_list_width: 275px;
+$layer_list_width_closed: 200px;
+$layer_list_padding: 10px;
+$map_top_margin: 5px;
+$map_right_margin: 10px;
+
+
+
+.tooltip.layerlist {
+
+  .tooltip-inner {
+    float: left !important;
+    padding-right: 30px;
+  }
+
+  .close-layerlist {
+    cursor: pointer;
+    position: relative;
+    left: -25px !important;
+    top: 5px;
+    padding: 5px;
+    color: $body-bg !important;
+    float: right !important;
+    background-color: $body-color !important;
+    border: 1px solid  $gray-400 !important;
+    border-radius: 4px;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+  }
+}
+
+.h-70 {
+  @media screen and (min-height: 1024px) {
+    height: auto !important;
+  }
+}
+
+.h-0 {
+  height: 0% !important;
+}
+
+.layer-legend {
+    margin: 10px;
+}
+
+.map-information-popup a.leaflet-popup-close-button {
+  top: 15px !important;
+  z-index: 1021;
+}
+
+#map_info_list {
+  h5 {
+    margin-bottom: 5px !important;
+  }
+}
+
+#maplayers_list_opened, #map_info_list_collapse {
+  color: $body-color;
+  font-size: 14px;
+  padding: $layer_list_padding;
+}
+
+#maplayers_list_opened {
+  > .sticky-top.stickcustom {
+    h5 {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 5px;
+      margin-bottom: 0px !important;
+      background-color: $body-bg-semiTransparent;
+    }
+  }
+}
+
+.sticky-top.stickcustom {
+  > #map_info_list_collapse {
+    h5 {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 5px;
+      margin-bottom: 0px !important;
+      background-color: $body-bg-semiTransparent;
+    }
+  }
+}
+
+.icon-left {
+  float: left;
+  font-size: 50px;
+  color: $body-color;
+}
+
+.btn-action, .btn-label {
+  color: $body-color;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.btn-text-left {
+  text-align: left !important;
+  float: left;
+}
+
+.btn-action {
+  font-size: 14px;
+  width: 100% !important;
+}
+
+.btn-label {
+  font-size: 12px;
+  width: 100% !important;
+}
+
+.btn-action:after {
+    content:"\000A";
+    white-space: pre;
+}
+
+.list-basemap.closed  {
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: all 0.75s ease;
+  will-change: transform;
+}
+
+.list-basemap {
+  width: 90% !important;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: all 0.75s ease;
+  will-change: transform;
+}
+
+.choose-base-map {
+  float: left;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.btn-basemap {
+  cursor: pointer;
+  background-color: $body-bg !important;
+  border-width: 1px !important;;
+  border-radius: 0.25rem !important;
+  -webkit-border-radius: 0.25rem !important;
+  -moz-border-radius: 0.25rem !important;
+  width: 100% !important;
+  box-shadow: $box-shadow-default !important;
+  -moz-box-shadow: $box-shadow-default !important;
+
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
+  background-clip:         padding-box;
+  border-color: #6c757d !important;
+  border-style: solid;
+
+  .icon-right {
+    float: right;
+  }
+
+  .inputs-layer-list {
+    padding: 10px;
+  }
+
+  [aria-expanded="true"] {
+    svg.fa-caret-down {
+      display: none !important;
+    }
+    svg.fa-caret-up {
+      display: inherit !important;
+    }
+  }
+
+  .inputs-collapser-header {
+    // background-color: $dark-bg !important;
+    padding: 5px;
+    border-width: 1px !important;;
+    border-radius: 0.25rem !important;
+    -webkit-border-radius: 0.25rem !important;
+    -moz-border-radius: 0.25rem !important;
+  }
+}
+
+.inputs-collapser {
+  cursor: pointer;
+  background-color: $body-bg !important;
+  border-width: 1px !important;;
+  border-radius: 0.25rem !important;
+  -webkit-border-radius: 0.25rem !important;
+  -moz-border-radius: 0.25rem !important;
+  width: 100% !important;
+  box-shadow: $box-shadow-default !important;
+  -moz-box-shadow: $box-shadow-default !important;
+
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
+  background-clip:         padding-box;
+  border-color: #6c757d; //#777777;
+  border-style: solid;
+
+  .icon-right {
+    float: right;
+  }
+
+  .inputs-layer-list {
+    padding: 10px;
+  }
+
+  [aria-expanded="true"] {
+    svg.fa-caret-down {
+      display: none !important;
+    }
+    svg.fa-caret-up {
+      display: inherit !important;
+    }
+  }
+
+  .inputs-collapser-header {
+    // background-color: $dark-bg !important;
+    padding: 5px;
+    border-width: 1px !important;;
+    border-radius: 0.25rem !important;
+    -webkit-border-radius: 0.25rem !important;
+    -moz-border-radius: 0.25rem !important;
+  }
+
+  .inputs-collapser-header:focus {
+    outline: $gray-600  !important;
+  }
+
+  .inputs-collapser-header:hover {
+    background-color: $gray-600 !important;
+    color: $body-color !important;
+  }
+
+}
+
+.btn-basemap:focus {
+  outline: $gray-600  !important;
+}
+
+.btn-basemap:hover {
+  background-color: $gray-600 !important;
+  color: $body-color !important;
+}
+
+.basemap-img {
+  width: 61px;
+  height: 41px;
+  // border: $gray-700 solid 1px;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  margin-right: 10px;
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
+  background-clip:         padding-box;
+}
+
+.list-group-item:hover {
+  background-color: $gray-600 !important;
+  color: $body-color !important;
+  cursor: pointer;
+}
+
+.list-group-item:focus {
+  border-color: $gray-600  !important;
+  outline: $gray-600  !important;
+}
+
+.list-group-dark, .list-group-item {
+    background-color: $body-bg !important;
+    background:  $body-bg-semiTransparent !important;
+    color: $body-color !important;
+    border-color: $gray-700 !important;
+    width: 100%;
+}
+
+.basemap_list_close:hover {
+    cursor: pointer;
+}
+
+.basemap_list_close {
+    font-size: 10px;
+    margin: 5px;
+}
+
+.list-group-dark {
+  margin-top: 5px;
+}
+
+.mapinfodata-header, .LayerInput-header {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.LayerList-spacer {
+  padding-top: 10px;
+}
+
+
+.maplayers_list {
+  background-color: $body-bg;
+  background:  $body-bg-semiTransparent;
+  color: $body-color;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  overflow: scroll;
+}
+
+@media screen and (max-width: 992px) {
+  #maplayers_list-holder {
+    position: inherit;
+    margin-right: 0px;
+    height: 100% !important;
+    width: 100% !important;
+    left: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top:0px !important;
+  }
+
+  #maplayers_list_close, #map_info_list_collapse {
+    display: none;
+  }
+}
+
+.layerList-sub-group {
+  padding-top: 5px;
+}
+
+.custom-control {
+    padding-bottom: 2px;
+    margin-top: 1.5px;
+}
+
+.maplayers_list hr {
+  border-top: 1px solid rgba(233, 236, 241, 0.75);
+}
+
+.maplayers_list label {
+    font-size: 12px;
+    padding: 2px;
+}
+
+.maplayers_list {
+    .zonal-long-table-row {
+        margin-top: 0;
+    }
+
+    div.zonal-long-table-header-simple {
+        top: 0;
+    }
+
+    .zonal-long-table-row-header-simple {
+        height: 18px;
+    }
+
+    .zonal-long-table-item, .zonal-long-table-row-header-simple {
+        transition-property: all;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+
+    .driver-chart-backgroundColor-asset, .driver-chart-backgroundColor-threat {
+        &-zero, &-one, &-two {
+            color: #000;
+        }
+    }
+}
+
+.layer-legend-wrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ffffff40;
+    margin-bottom: 5px;
+    margin-left: -1.5rem; /* Negative of the left padding on the .custom-control which is declared.... somewhere.... */
+    overflow: hidden;
+    max-height: 500px;
+    // animation: scale-display .3s;
+    transition: all 0.75s ease;
+    will-change: transform;
+
+    &.closed {
+        animation: scale-display--reversed .3s;
+        // animation-fill-mode:forwards;
+        overflow: hidden;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+        margin-bottom: 0;
+        transition: all 0.4s ease;
+        will-change: transform;
+    }
+}
+
+.layer-description-text {
+    width: 20px;
+    font-size: .95em;
+    color: #999595;
+
+    &:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.layer-legend-toggler {
+    width: 20px;
+    color: #999595;
+    cursor: pointer;
+
+    &.closed {
+        color: #fff;
+    }
+
+    &:hover {
+        color: #999595;
+    }
+}
+
+.layer-legend .zonal-long-table-cell {
+  &-hub, &-ns-hub{
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-asset, &-ns-asset {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-threat, &-ns-threat {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-exposure-box, &-ns-exposure-box {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-fish {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-wildlife, &-ns-fishandwildlife {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-popdensity {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-socvuln {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-critfac {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-critinfra {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-drainage {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-erosion {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-floodprone {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-slr {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-stormsurge {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-geostress {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+  &-slope {
+    &-none {
+     display: none;
+   }
+
+   &-zero {
+     display: none;
+   }
+  }
+
+}
