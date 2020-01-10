@@ -1,6 +1,6 @@
 # Southern Forest Area Change Tool (SouthFACT)
 
-https://southfact.github.io/southfact-map-v2/dist/#Home
+https://southfact.github.io/southfact-map-v2/dist/
 
 ## First iteration of basic viewer
 
