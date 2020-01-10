@@ -56,8 +56,8 @@ store.removeStateItem('shareurl');
 
 let homeloc = window.location.origin;
 // handle gh pages dist folder.
-if (homeloc === 'https://nemac.github.io') {
-  homeloc += '/NFWF_tool/dist';
+if (homeloc === 'https://southfact.github.io') {
+  homeloc += '/southfact-map-v2/dist';
 }
 
 // Creates a new Leaflet Map in the target DOM element
