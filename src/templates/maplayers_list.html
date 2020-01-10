@@ -45,12 +45,12 @@
             <div class="LayerList-spacer" id="ExposureLayers-Header"></div>
 
             <div class="LayerList-Group" id="LayerList-Group-Header">
-              <div class="LayerInput-header" id="HubsLayers-Header">Resilience Hubs</div>
+              <div class="LayerInput-header" id="HubsLayers-Header">Latest Change</div>
 
-              <div ref="LayerInput" id="HubsTMS-layerToggle" class="custom-control custom-checkbox">
+              <div ref="LayerInput" id="southeast-swir-threshold-layerToggle" class="custom-control custom-checkbox">
                 <div class="layer-toggle-wrapper">
-                  <input title="Toggle HubsTMS" aria-label="Toggle HubsTMS" ref="HubsTMS-toggle" type="checkbox" class="custom-control-input" id="HubsTMS-toggle">
-                  <label title="Toggle HubsTMS" aria-label="Toggle HubsTMS" ref="HubsTMS-label" class="custom-control-label" for="HubsTMS-toggle" id="HubsTMS-label">Resilience Hubs</label>
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-swir-threshold-toggle" type="checkbox" class="custom-control-input" id="southeast-swir-threshold-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-swir-threshold-label" class="custom-control-label" for="southeast-swir-threshold-toggle" id="southeast-swir-threshold-label">SWIR Differencing (Threshold Change)</label>
                   <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
                   <i title="" aria-label="Show layer description" class="fas fa-info"></i>
                   </span>
@@ -64,111 +64,64 @@
                   <div class="layer-legend"></div>
                 </div>
               </div>
-            </div>
 
-            <div class="LayerList-spacer" id="ExposureLayers-Header"></div>
-
-            <div class="LayerList-Group" id="LayerList-Group-Header">
-
-              <div class="LayerInput-header" id="ExposureLayers-Header">Community Exposure Index</div>
-              <div ref="LayerInput" id="ExposureTMS-layerToggle" class="custom-control custom-checkbox">
+              <div ref="LayerInput" id="southeast-swir-threshold-all-layerToggle" class="custom-control custom-checkbox">
                 <div class="layer-toggle-wrapper">
-                  <input title="Community Exposure Index Layer" aria-label="Toggle Community Exposure Index Layer" ref="ExposureTMS-toggle" type="checkbox" class="custom-control-input" id="ExposureTMS-toggle">
-                  <label title="Community Exposure Index Layer" aria-label="Toggle Community Explore Index Layer" ref="ExposureTMS-label" class="custom-control-label" for="ExposureTMS-toggle" id="ExposureTMS-label">Community Exposure Index</label>
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-swir-threshold-all-toggle" type="checkbox" class="custom-control-input" id="southeast-swir-threshold-all-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-swir-threshold-all-label" class="custom-control-label" for="southeast-swir-threshold-all-toggle" id="southeast-swir-threshold-all-label">SWIR Differencing (All Change)</label>
                   <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                    <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                  <i title="" aria-label="Show layer description" class="fas fa-info"></i>
                   </span>
-                  <span title="View Legend" aria-label="View Legend" id="legend-exposure" class="float-right text-center layer-legend-toggler closed">
-                    <i title="View Legend" aria-label="View Legend" id="legend-exposure" class="fas fa-angle-down d-none"></i>
-                    <i title="View Legend" aria-label="View Legend" id="legend-exposure" class="fas fa-angle-up d-none"></i>
+                  <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
                   </span>
+
                 </div>
                 <div class="layer-legend-wrapper closed">
                   <div class="layer-legend"></div>
                 </div>
               </div>
-            </div>
 
-            <div class="LayerList-spacer" id="ExposureLayers-Header"></div>
-
-            <div class="LayerList-Group" id="LayerList-Group-Header">
-
-              <div class="LayerInput-header" id="ExposureLayers-Header">Community Asset and Threat Indices</div>
-              <div ref="LayerInput" id="AssetsTMS-layerToggle" class="custom-control custom-checkbox">
+              <div ref="LayerInput" id="southeast-ndvi-current-layerToggle" class="custom-control custom-checkbox">
                 <div class="layer-toggle-wrapper">
-                  <input title="Toggle Asset Layer" aria-label="Toggle Asset Layer" ref="AssetsTMS-toggle" type="checkbox" class="custom-control-input" id="AssetsTMS-toggle">
-                  <label title="Toggle Asset Layer" aria-label="Toggle Asset Layer" ref="AssetsTMS-label" class="custom-control-label" for="AssetsTMS-toggle" id="AssetsTMS-label">Community Asset Index</label>
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-ndvi-current-toggle" type="checkbox" class="custom-control-input" id="southeast-ndvi-current-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-ndvi-current-label" class="custom-control-label" for="southeast-ndvi-current-toggle" id="southeast-ndvi-current-label">NDVI</label>
                   <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                    <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                  <i title="" aria-label="Show layer description" class="fas fa-info"></i>
                   </span>
-                  <span title="View Legend" aria-label="View Legend" id="legend-assets" class="float-right text-center layer-legend-toggler closed">
-                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
-                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                  <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
                   </span>
+
                 </div>
                 <div class="layer-legend-wrapper closed">
                   <div class="layer-legend"></div>
                 </div>
               </div>
-              <div ref="LayerInput" id="ThreatsTMS-layerToggle" class="custom-control custom-checkbox">
+
+              <div ref="LayerInput" id="southeast-ndmi-current-layerToggle" class="custom-control custom-checkbox">
                 <div class="layer-toggle-wrapper">
-                  <input title="Toggle Threat Layer" aria-label="Toggle Threat Layer" ref="ThreatsTMS-toggle" type="checkbox" class="custom-control-input" id="ThreatsTMS-toggle">
-                  <label title="Toggle Threat Layer" aria-label="Toggle Threat Layer" ref="ThreatsTMS-label" class="custom-control-label" for="ThreatsTMS-toggle" id="ThreatsTMS-label">Threat Index</label>
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-ndmi-current-toggle" type="checkbox" class="custom-control-input" id="southeast-ndmi-current-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast-ndmi-current-label" class="custom-control-label" for="southeast-ndmi-current-toggle" id="southeast-ndmi-current-label">NDMI</label>
                   <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                    <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                  <i title="" aria-label="Show layer description" class="fas fa-info"></i>
                   </span>
-                  <span title="View Legend" aria-label="View Legend" id="legend-threats" class="float-right text-center layer-legend-toggler closed">
-                    <i title="View Legend" aria-label="View Legend" id="legend-threats" class="fas fa-angle-down d-none"></i>
-                    <i title="View Legend" aria-label="View Legend" id="legend-threats" class="fas fa-angle-up d-none"></i>
+                  <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
                   </span>
+
                 </div>
                 <div class="layer-legend-wrapper closed">
                   <div class="layer-legend"></div>
                 </div>
               </div>
-            </div>
 
-            <div class="LayerList-spacer" id="ExposureLayers-Header"></div>
-
-            <div class="LayerList-Group" id="LayerList-Group-Header">
-
-                <div class="LayerInput-header" id="FishnWildlife-Header">Aquatic and Terrestrial Indices</div>
-
-                <div ref="LayerInput" id="AquaticTMS-layerToggle" class="custom-control custom-checkbox">
-                  <div class="layer-toggle-wrapper">
-                    <input title="Aquatic Index Layer" aria-label="Toggle Aquatic Index Layer" ref="AquaticTMS-toggle" type="checkbox" class="custom-control-input" id="AquaticTMS-toggle">
-                    <label title="Aquatic Index Layer" aria-label="Toggle Aquatic Index Layer" ref="AquaticTMS-label" class="custom-control-label" for="AquaticTMS-toggle" id="AquaticTMS-label">Aquatic Index</label>
-                    <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                      <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-                    </span>
-                    <span title="View Legend" aria-label="View Legend" id="legend-aquatic" class="float-right text-center layer-legend-toggler closed">
-                      <i title="View Legend" aria-label="View Legend" id="legend-aquatic" class="fas fa-angle-down d-none"></i>
-                      <i title="View Legend" aria-label="View Legend" id="legend-aquatic" class="fas fa-angle-up d-none"></i>
-                    </span>
-                  </div>
-                  <div class="layer-legend-wrapper closed">
-                    <div class="layer-legend"></div>
-                  </div>
-                </div>
-
-                <div ref="LayerInput" id="TerrestrialTMS-layerToggle" class="custom-control custom-checkbox">
-                  <div class="layer-toggle-wrapper">
-                    <input title="Terrestrial Index Layer" aria-label="Toggle Terrestrial Index Layer" ref="TerrestrialTMS-toggle" type="checkbox" class="custom-control-input" id="TerrestrialTMS-toggle">
-                    <label title="Terrestrial Index Layer" aria-label="Toggle Terrestrial Index Layer" ref="TerrestrialTMS-label" class="custom-control-label" for="TerrestrialTMS-toggle" id="TerrestrialTMS-label">Terrestrial Index</label>
-                    <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                      <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-                    </span>
-                    <span title="View Legend" aria-label="View Legend" id="legend-terrestrial" class="float-right text-center layer-legend-toggler closed">
-                      <i title="View Legend" aria-label="View Legend" id="legend-terrestrial" class="fas fa-angle-down"></i>
-                      <i title="View Legend" aria-label="View Legend" id="legend-terrestrial" class="fas fa-angle-up d-none"></i>
-                    </span>
-                  </div>
-                  <div class="layer-legend-wrapper closed">
-                    <div class="layer-legend"></div>
-                  </div>
-                </div>
 
             </div>
+
 
           <div class="LayerList-spacer" id="AssetInputs-Header"></div>
 

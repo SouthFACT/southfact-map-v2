@@ -317,6 +317,58 @@ export var mapConfig = {
 
   //tile layers (WMS)
   WMSLayers:[
+    {
+      id: "southeast-swir-threshold",
+      layer: "southeast-swir-currentMaskForForestCloudGap",
+      label: "SWIR Differencing (Threshold)",
+      url: "http://landsatfact-data.nemac.org/lsf-swir-threshold?",
+      attribution: "NFWF 2018",
+      format: "image/png",
+      tileSize: 256,
+      transparent: true,
+      opacity: 0.75,
+      zIndex: 9000,
+      crs: L.CRS.EPSG900913
+    },
+    {
+      id: "southeast-swir-threshold-all",
+      layer: "southeast-swir-currentMaskForForestCloudGap",
+      label: "SWIR Differencing (All Change)",
+      url: "http://landsatfact-data.nemac.org/lsf-swir-allchange?",
+      attribution: "NFWF 2018",
+      format: "image/png",
+      tileSize: 256,
+      transparent: true,
+      opacity: 0.75,
+      zIndex: 9000,
+      crs: L.CRS.EPSG900913
+    },
+    {
+      id: "southeast-ndvi-current",
+      layer: "southeast-ndvi-currentMaskForForestCloudGap",
+      label: "NDVI",
+      url: "http://landsatfact-data.nemac.org/lsf-NDVI?",
+      attribution: "NFWF 2018",
+      format: "image/png",
+      tileSize: 256,
+      transparent: true,
+      opacity: 0.75,
+      zIndex: 9000,
+      crs: L.CRS.EPSG900913
+    },
+    {
+      id: "southeast-ndmi-current",
+      layer: "southeast-ndmi-currentMaskForForestCloudGap",
+      label: "NDMI",
+      url: "http://landsatfact-data.nemac.org/lsf-NDMI?",
+      attribution: "NFWF 2018",
+      format: "image/png",
+      tileSize: 256,
+      transparent: true,
+      opacity: 0.75,
+      zIndex: 9000,
+      crs: L.CRS.EPSG900913
+    },
  ],
 
  mapDefaults: {
