@@ -318,7 +318,7 @@ export var mapConfig = {
   //tile layers (WMS)
   WMSLayers:[
     {
-      id: "southeast-swir-threshold",
+      id: "southeast_swir_threshold",
       layer: "southeast-swir-currentMaskForForestCloudGap",
       label: "SWIR Differencing (Threshold)",
       url: "http://landsatfact-data.nemac.org/lsf-swir-threshold?",
@@ -331,7 +331,7 @@ export var mapConfig = {
       crs: L.CRS.EPSG900913
     },
     {
-      id: "southeast-swir-threshold-all",
+      id: "southeast_swir_threshold_all",
       layer: "southeast-swir-currentMaskForForestCloudGap",
       label: "SWIR Differencing (All Change)",
       url: "http://landsatfact-data.nemac.org/lsf-swir-allchange?",
@@ -344,7 +344,7 @@ export var mapConfig = {
       crs: L.CRS.EPSG900913
     },
     {
-      id: "southeast-ndvi-current",
+      id: "southeast_ndvi_current",
       layer: "southeast-ndvi-currentMaskForForestCloudGap",
       label: "NDVI",
       url: "http://landsatfact-data.nemac.org/lsf-NDVI?",
@@ -357,7 +357,7 @@ export var mapConfig = {
       crs: L.CRS.EPSG900913
     },
     {
-      id: "southeast-ndmi-current",
+      id: "southeast_ndmi_current",
       layer: "southeast-ndmi-currentMaskForForestCloudGap",
       label: "NDMI",
       url: "http://landsatfact-data.nemac.org/lsf-NDMI?",
@@ -372,10 +372,8 @@ export var mapConfig = {
  ],
 
  mapDefaults: {
-    // center: [ 32.7765, -79.9311 ],
-    // zoom: 12
-    center: [ 36.27970720524017, -95.05371093750001],
-    zoom: 4
+    center: [ 36.914764288955936, -82.33154296875001],
+    zoom: 5,
  },
 
   //leaflet optoins expand as needed

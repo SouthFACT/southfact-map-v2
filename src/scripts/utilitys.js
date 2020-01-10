@@ -400,20 +400,17 @@ export function addMissingStateItems() {
 
   // check for mapCenter default is {lat: 32.7765, lng: -79.9311} (charleston for now)
   if (!checkValidObject(store.getStateItem('mapCenter'))) {
-    store.setStoreItem('mapCenter', { lat: 36.27970720524017, lng: -95.05371093750001 });
+    store.setStoreItem('mapCenter', { lat: 36.914764288955936, lng: -82.33154296875001 });
   }
 
   // check for mapLayerDisplayStatus default is listed below
   // to long to list again
   if (!checkValidObject(store.getStateItem('mapLayerDisplayStatus'))) {
     store.setStoreItem('mapLayerDisplayStatus', {
-      HubsTMS: true,
-      NSHubsTMS: true,
-      ExposureTMS: false,
-      AssetsTMS: false,
-      ThreatsTMS: false,
-      AquaticTMS: false,
-      TerrestrialTMS: false,
+      southeast_swir_threshold: true,
+      southeast_swir_threshold_all: false,
+      southeast_ndvi_current: false,
+      southeast_ndmi_current: false,
       PopDensityTMS: false,
       SocVulnTMS: false,
       CriticalFacilitiesTMS: false,
@@ -444,7 +441,7 @@ export function addMissingStateItems() {
 
   // check for mapCenter default is {lat: 32.7765, lng: -79.9311} (charleston for now)
   if (!checkValidObject(store.getStateItem('mapZoom'))) {
-    store.setStoreItem('mapZoom', 4);
+    store.setStoreItem('mapZoom', 5);
   }
 
   // check for activeNav default is main-nav-map
