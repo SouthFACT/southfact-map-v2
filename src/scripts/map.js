@@ -320,12 +320,20 @@ export class Map extends Component {
       store.setStoreItem('working_basemap', false);
       spinnerOff('handleWMSLoad');
     });
+    tileLayer.on('tileload', () => {
+      store.setStoreItem('working_basemap', false);
+      spinnerOff('handleWMSLoad');
+    });
   }
 
   // tile unload handler
   // @param { Object } - tileLayer the leaflet tile layer to we adding a handler for
   static handleWMSUnload(tileLayer) {
     tileLayer.on('unload', () => {
+      store.setStoreItem('working_basemap', false);
+      spinnerOff('handleWMSUnload');
+    });
+    tileLayer.on('tileunload', () => {
       store.setStoreItem('working_basemap', false);
       spinnerOff('handleWMSUnload');
     });
@@ -336,6 +344,10 @@ export class Map extends Component {
   static handleWMSError(tileLayer) {
     tileLayer.on('error', () => {
       store.setStoreItem('working_basemap', false);
+      spinnerOff('handleWMSError');
+    });
+    tileLayer.on('tileerror', () => {
+      store.setStoreItem('working_basemap tileerror', false);
       spinnerOff('handleWMSError');
     });
   }
@@ -455,7 +467,7 @@ export class Map extends Component {
   toggleVisLayerOff(layerName) {
     store.saveAction('maplayertoggle');
     store.setStoreItem('working_basemap', true);
-    spinnerOn();
+    spinnerOn('toggleVisLayerOff');
     const layer = this.overlayMaps[layerName];
     if (this.map.hasLayer(layer)) {
       this.map.removeLayer(layer);
@@ -467,10 +479,10 @@ export class Map extends Component {
   toggleVisLayerOn(layerName) {
     store.saveAction('maplayertoggle');
     store.setStoreItem('working_basemap', true);
-    spinnerOn();
+    spinnerOn('toggleVisLayerOn');
     const layer = this.overlayMaps[layerName];
     store.setStoreItem('working_basemap', false);
-    spinnerOn();
+    spinnerOn('toggleVisLayerOn');
     this.map.addLayer(layer);
   }
 
@@ -480,7 +492,7 @@ export class Map extends Component {
   toggleLayer(layerName) {
     store.saveAction('maplayertoggle');
     store.setStoreItem('working_basemap', true);
-    spinnerOn();
+    spinnerOn('toggleLayer');
     let mapDisplayLayersObj = {};
     const layer = this.overlayMaps[layerName];
     if (this.map.hasLayer(layer)) {
@@ -490,7 +502,7 @@ export class Map extends Component {
       mapDisplayLayersObj = { [layerName]: false };
     } else {
       store.setStoreItem('working_basemap', true);
-      spinnerOn();
+      spinnerOn('toggleLayer2');
       this.map.addLayer(layer);
       mapDisplayLayersObj = { [layerName]: true };
       // ga event action, category, label

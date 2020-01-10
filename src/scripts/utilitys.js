@@ -235,7 +235,7 @@ export function checkValidObject(obj) {
 }
 
 // toggle spinner visibility on
-export function spinnerOn() {
+export function spinnerOn(test) {
   const el = document.getElementById('map-working');
   const elHolder = document.querySelector('.leaflet-working');
 
@@ -265,32 +265,15 @@ export function spinnerOn() {
 export function checkworking() {
   const workingDrawlayers = store.getStateItem('working_drawlayers');
   if (workingDrawlayers) { return true; }
-  // console.log('working_drawlayers');
 
   const workingBasemap = store.getStateItem('working_basemap');
   if (workingBasemap) { return true; }
-  // console.log('working_basemap');
 
   const workingMapinfo = store.getStateItem('working_mapinfo');
   if (workingMapinfo) { return true; }
-  // console.log('working_mapinfo');
-
-  const workingZonalstats = store.getStateItem('working_zonalstats');
-  if (workingZonalstats) { return true; }
-  // console.log('working_zonalstats');
 
   const workingSearch = store.getStateItem('working_search');
   if (workingSearch) { return true; }
-  // console.log('working_search');
-
-  const workingS3Retreive = store.getStateItem('working_s3retreive');
-  if (workingS3Retreive) { return true; }
-  // console.log('working_s3retreive');
-
-  const workingS3Save = store.getStateItem('working_s3save');
-  if (workingS3Save) { return true; }
-  // console.log('working_s3save');
-
   return false;
 }
 
