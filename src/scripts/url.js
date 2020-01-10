@@ -88,8 +88,8 @@ export class URL {
     let baseurl = `${window.location.origin}`;
 
     // handle gh pages dist folder.
-    if (baseurl === 'https://nemac.github.io') {
-      baseurl += '/NFWF_tool/dist';
+    if (baseurl === 'https://southfact.github.io') {
+      baseurl += '/southfact-map-v2/dist';
     }
 
     return `${baseurl}/?state=${state}&shareurl=true&fornav=${statesobj.activeNav}`;
