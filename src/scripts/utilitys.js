@@ -9,6 +9,7 @@ import { mapConfig } from '../config/mapConfig';
 
 // Legend Templates
 import ColorRampFifteen from '../templates/colorramp_breaks_fifteen.html';
+import ColorRampFourteen from '../templates/colorramp_breaks_fourteen.html';
 import ColorRampTenBreaks from '../templates/colorramp_breaks_ten.html';
 import ColorRampNineBreaks from '../templates/colorramp_breaks_nine.html';
 import ColorRampEightBreaks from '../templates/colorramp_breaks_eight.html';
@@ -143,6 +144,8 @@ export function getLegendHtml(maxValue) {
   switch (maxValue) {
     case 15:
       return ColorRampFifteen;
+    case 14:
+      return ColorRampFourteen;
     case 10:
       return ColorRampTenBreaks;
     case 9:

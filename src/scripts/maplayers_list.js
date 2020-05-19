@@ -38,7 +38,7 @@ export class MapLayersList extends Component {
 
     // Add a toggle button for each layer
     WMSLayers.forEach((layerProps) => { this.updateMapLayer(layerProps); });
-    WMSLayers.forEach((layerProps) => { this.updateMapLayer(layerProps); });
+    TMSLayers.forEach((layerProps) => { this.updateMapLayer(layerProps); });
     WMSLayers.forEach((layerProps) => { MapLayersList.addLegendHTML(layerProps); });
 
     MapLayersList.ListHolderToggle();
