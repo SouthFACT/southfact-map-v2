@@ -173,19 +173,20 @@ export class MapLayersList extends Component {
       btnzoomregionList.addEventListener('click', (e) => { MapLayersList.zoomRegionListToggle(e); });
     }
 
-    document.getElementById('zoomregion-seus').addEventListener('click', (e) => {
-      const region = zoomRegions.filter(regions => regions.region === 'southeast');
-      MapLayersList.zoomToRegion(mapComponent, region[0]);
-      MapLayersList.updateZoomRegionLabel('Southeast U.S.');
-
-      // set region to conus
-      store.setStoreItem('region', 'southeast');
-      const navChangeEvent = new CustomEvent('regionChanged');
-      window.dispatchEvent(navChangeEvent);
-
-      // ga event action, category, label
-      googleAnalyticsEvent('click', 'zoomregion', 'southeast');
-    });
+    // uncomment of using region zooming
+    // document.getElementById('zoomregion-seus').addEventListener('click', (e) => {
+    //   const region = zoomRegions.filter(regions => regions.region === 'southeast');
+    //   MapLayersList.zoomToRegion(mapComponent, region[0]);
+    //   MapLayersList.updateZoomRegionLabel('Southeast U.S.');
+    //
+    //   // set region to conus
+    //   store.setStoreItem('region', 'southeast');
+    //   const navChangeEvent = new CustomEvent('regionChanged');
+    //   window.dispatchEvent(navChangeEvent);
+    //
+    //   // ga event action, category, label
+    //   googleAnalyticsEvent('click', 'zoomregion', 'southeast');
+    // });
   }
 
   // zppm to region
