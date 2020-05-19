@@ -19,9 +19,9 @@ $padding: 10px;
 $margin15: 15px;
 $padding15: 15px;
 
-$body-bg-semiTransparent:    rgba(53, 59, 65, .8); // $gray-800
-$body-bg-semiTransparent9:    rgba(53, 59, 65, .9); // $gray-800
-$body-bg-FullTransparent:    rgba(53, 59, 65, 0.0); // $gray-800
+$body-bg-semiTransparent: rgba(53, 59, 65, .8); // $gray-800
+$body-bg-semiTransparent9: rgba(53, 59, 65, .9); // $gray-800
+$body-bg-FullTransparent: rgba(53, 59, 65, 0.0); // $gray-800
 $newbg: #151417;
 
 @mixin hovcol($color) {
@@ -202,7 +202,6 @@ a.nav-link {
 
 .slider {
   $h: 1rem;
-  -webkit-appearance: none;
   max-width: 200px;
   min-width: 200px;
   height: 5px;
@@ -211,6 +210,7 @@ a.nav-link {
   outline: none;
   padding: 0px;
   -webkit-transition: .2s;
+  -webkit-appearance: none;
 
   &:after {
     content: "";
@@ -1884,228 +1884,6 @@ p.not-found {
     }
     font-weight: 500;
     display: inherit !important;
-  }
-}
-
-.case-studies-row-container  {
-  padding-left: 5px !important;
-  padding-right: 5px !important;
-
-  .figure {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-    padding-bottom: 15px !important;
-
-    @include size768 {
-      padding-left: 0px !important;
-      padding-right: 0px !important;
-      padding-bottom: 10px !important;
-    }
-  }
-
-  #positions {
-    height: 35px;
-    margin-left: 0px;
-    margin-bottom: 15px;
-
-    @include size768 {
-      margin-bottom: 5px;
-    }
-    .position {
-      border: .5px solid $gray-700 !important;
-      height: 30px;
-      width: 20px;
-      margin: 5px;
-
-      @include size768 {
-        height: 24px;
-        width: 12px;
-      }
-
-      &.active {
-        background-color: $gray-700;
-      }
-    }
-
-  }
-
-  .figure-caption { //case studies descript
-    background-color: $newbg; //new
-    // $body-bg;
-    color: #e9ecef; //default white
-    padding: 15px;
-    border: 1px solid #e9ecef;
-    z-index: 1000;
-
-    @include size768 {
-      padding: 5px;
-    }
-
-    &.title-caption { //case studies
-      font-size: 18px !important;
-      background-color:$newbg;
-      // $gray-600;// default bootstrap gray
-      border-top-left-radius: 4px !important;
-      border-top-right-radius: 4px !important;
-      -webkit-border-top-left-radius: 4px !important;
-      -webkit-border-top-right-radius: 4px !important;
-      -moz-border-radius-topleft: 4px !important;
-      -moz-border-radius-topright: 4px !important;
-    }
-
-    &.narrative-caption {
-      border-bottom-left-radius: 4px !important;
-      border-bottom-right-radius: 4px !important;
-      -webkit-border-bottom-left-radius: 4px !important;
-      -webkit-border-bottom-right-radius: 4px !important;
-      -moz-border-radius-bottomleft: 4px !important;
-      -moz-border-radius-bottomright: 4px !important;
-    }
-
-    &.title-caption:hover {
-      @include hovcol($newbg);
-      // background: $gray-700 radial-gradient(circle, transparent 1%, $gray-700 1%) center/15000% !important;
-    }
-
-    .icon-right {
-      color: #e9ecef;
-      float: right;
-      font-size: 2rem;
-      vertical-align: middle;
-    }
-
-    #name {
-      font-size: 18px;
-      font-weight: 800;
-      @include size768 {
-        font-size: 1rem;
-      }
-    }
-
-    #narrative {
-      font-size: .9rem;
-      padding: 15px;
-      width: 100% !important;
-    }
-
-    @include size768 {
-      .narrative-main.steps-active {
-        display: none;
-      }
-    }
-
-    .case-study-steps {
-      // padding: 15px;
-      width: 100%;
-      overflow: hidden !important;
-      border-top: 1px solid #e9ecef;
-      border-bottom: 1px solid $gray-700;
-      border-right: 1px solid $gray-700;
-      border-left: 1px solid $gray-700;
-      padding: 15px;
-
-      @include size768 {
-        padding: 10px;
-      }
-
-      .row {
-        margin-left: -10px;
-        margin-right: -10px;
-      }
-
-      .case-study-step {
-        .col {
-          @include size768 {
-            padding-right: 5px;
-            padding-left: 5px;
-          }
-        }
-
-        &.last-step {
-          #narrative {
-            min-height: 80px !important;
-            @include size768 {
-              font-size: .8rem !important;
-              min-height: 30px !important;
-            }
-          }
-        }
-
-        #narrative {
-          padding-left: 0px !important;
-          padding-right: 0px !important;
-          min-height: 130px !important;
-
-          @include size768 {
-            font-size: .7rem !important;
-            min-height: 80px !important;
-            padding: 0px !important;
-          }
-        }
-      }
-
-      // .btn-casestudies-action:hover {
-      //   background:$gray-700 radial-gradient(circle, transparent 1%, $gray-700 1%) center/15000% !important;
-      // }
-      //
-      // .btn-casestudies-action {
-      //   background-color: #32fcea  !important;
-      //   border: 1px solid $body-color !important;
-      //   color: $body-color !important;
-      //   white-space: normal !important;
-      //
-
-      // @include size768 {
-      //     border: 1px solid $gray-700 !important;
-      //   }
-      // }
-
-      .btn-casestudies-action-arrow {
-        background-color: $body-bg  !important;
-        color: $body-color !important;
-        white-space: normal !important;
-        font-size: 2rem;
-        border: 1px solid #6c757d !important;
-        margin-left: 5px !important;
-        margin-right: 5px !important;
-
-        &.col-6 {
-          flex: 0 0 45%;
-          max-width: 45%;
-        }
-
-        @include size768 {
-          font-size: 2rem;
-        }
-      }
-
-      .case-study-spacer {
-        min-height: 15px !important;
-      }
-
-      .btn-casestudies-action-arrow:hover {
-        background: $gray-700 radial-gradient(circle, transparent 1%, $gray-700 1%) center/15000% !important;
-      }
-
-      #name {
-        font-size: 1.1rem;
-        font-weight: 800;
-        @include size768{
-          font-size: 1rem;
-        }
-      }
-
-      #narrative {
-        font-size: .9rem;
-        padding: 15px;
-        width: 100% !important;
-
-        @include size768 {
-          padding: 10px;
-        }
-
-      }
-    }
   }
 }
 
