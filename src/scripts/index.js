@@ -9,7 +9,7 @@ import { Store } from './store';
 import { URL } from './url';
 import {
   checkValidObject,
-  addMissingStateItems,
+  addMissingStateItems
 } from './utilitys';
 
 // import extended components

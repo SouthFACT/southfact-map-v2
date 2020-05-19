@@ -4,10 +4,19 @@ $body-bg: lighten(#101012,5) ;
 $body-list-border:    $gray-600;
 $body-color: $gray-200;
 $aboutbackground: #0f1110;
+
 $btn-color-prinary: $gray-100;
 $btn-color-secondary: $gray-300;
+
 $box-shadow-default: 0 2.5px 5px #000, 0 1.5px 1.5px #333;
 $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
+@mixin box-shadow-mixin($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+
 $body-color-visited: $gray-400;
 $body-color-medium: $gray-600;
 
@@ -19,41 +28,46 @@ $padding: 10px;
 $margin15: 15px;
 $padding15: 15px;
 
-$body-bg-semiTransparent: rgba(53, 59, 65, .8); // $gray-800
-$body-bg-semiTransparent9: rgba(53, 59, 65, .9); // $gray-800
-$body-bg-FullTransparent: rgba(53, 59, 65, 0.0); // $gray-800
+$body-bg-semiTransparent:    rgba(53, 59, 65, .8); // $gray-800
+$body-bg-semiTransparent9:    rgba(53, 59, 65, .9); // $gray-800
+$body-bg-FullTransparent:    rgba(53, 59, 65, 0.0); // $gray-800
 $newbg: #151417;
 
-@mixin hovcol($color) {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600,700);
+$roboto:  Roboto, Helvetica, 'Helvetica Neue', Arial, sans-serif; // default should be everywhere
+
+@mixin hovcol($color){
   // @content;
-  @if(lightness($color) > 50){
-    background-color: mix($color,gray,25) !important;
-  } @else {
-    background-color: mix(white,$color,25) !important;
-  }
+@if(lightness($color) > 50){
+  background-color: mix($color,gray,25) !important;
+}@else {
+background-color: mix(white,$color,25) !important;
+ }
+
 }
 
 @mixin size1000{
-  @media screen and (max-width: 1000px) {
-    @content;
+@media screen and (max-width: 1000px) {
+@content;
   }
 }
 
 @mixin size992{
-  @media screen and (max-width: 992px) {
-    @content;
+@media screen and (max-width: 992px) {
+  @content;
   }
 }
 
 @mixin size768{
   @media screen and (max-width: 768px) {
-    @content;
+      @content;
   }
 }
 
 // general page styles
 html, body {
-  height: 100%;
+    height: 100%;
+    font-family: $roboto;
 }
 
 a:hover {
@@ -75,7 +89,7 @@ hr {
 
 // nav bar styles
 .main-navbar-toggle {
-  z-index: 5000 !important;
+    z-index: 5000 !important;
 }
 
 a.nav-link.active {
@@ -95,7 +109,7 @@ a.nav-link {
   margin-right: $margin;
   padding-bottom: 5px;
   &:hover{
-    color: #ecedef !important; //new
+  color: #ecedef !important; //new
   }
 }
 
@@ -106,8 +120,13 @@ a.nav-link {
   }
 }
 
+#tab-main-nav-download, #tab-main-nav-about {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
 .nfwf-header {
-  box-shadow: $box-shadow-default;
+  @include box-shadow-mixin($box-shadow-default);
   padding-left: $padding15;
   padding-right: $padding15;
   background-color: $body-main-bar-bg-color !important;
@@ -154,11 +173,11 @@ a.nav-link {
   outline: inherit;
 }
 
-#glossary-holder, #exposure-holder, #assets-holder, #threats-holder ,#aboutgen-holder {
+#reports-holder, #glossary-holder, #exposure-holder, #assets-holder, #threats-holder ,#aboutgen-holder {
   margin-bottom: $margin*2;
 }
 
-#tab-about-nav-glossary {
+#tab-about-nav-reports, #tab-about-nav-glossary {
   margin-left: -15px;
 }
 
@@ -187,10 +206,10 @@ a.nav-link {
 }
 
 .buffer-label, .buffer-distance {
-  padding: 5px;
-  @media screen and (max-width: 400px) {
-    padding: 4px;
-  }
+    padding: 5px;
+    @media screen and (max-width: 400px) {
+      padding: 4px;
+    }
 }
 
 #buffer-layer-toggle {
@@ -202,15 +221,15 @@ a.nav-link {
 
 .slider {
   $h: 1rem;
+  -webkit-appearance: none;
   max-width: 200px;
   min-width: 200px;
   height: 5px;
-  border-radius: 5px;
+  @include border-radius(5px, 5px);
   background: $body-color-medium;
   outline: none;
   padding: 0px;
   -webkit-transition: .2s;
-  -webkit-appearance: none;
 
   &:after {
     content: "";
@@ -219,24 +238,26 @@ a.nav-link {
     width: 10px;
     height: 10px;
     left: 7px;
-    border-radius: 50%;
+    @include border-radius(50%, 50%)
     top: -2px;
     z-index: 1;
-    box-shadow: 0px 0 0 $body-color-medium
+    @include box-shadow-mixin(0px 0 0 $body-color-medium);
   }
 
   &:after {
     content: "";
     position: absolute;
     box-shadow: 22.5px 0 0 $body-color-medium,
-    45px 0 0 $body-color-medium,
-    67.5px 0 0 $body-color-medium,
-    89px 0 0 $body-color-medium,
-    110.5px 0 0 $body-color-medium,
-    133px 0 0 $body-color-medium,
-    154.5px 0 0 $body-color-medium,
-    176px 0 0 $body-color-medium;
+                45px 0 0 $body-color-medium,
+                67.5px 0 0 $body-color-medium,
+                89px 0 0 $body-color-medium,
+                110.5px 0 0 $body-color-medium,
+                133px 0 0 $body-color-medium,
+                154.5px 0 0 $body-color-medium,
+                176px 0 0 $body-color-medium;
   }
+
+
 }
 
 .slider::-webkit-slider-thumb {
@@ -246,7 +267,7 @@ a.nav-link {
   margin: 0px;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  @include border-radius(50%, 50%);
   background: $body-color;
   cursor: pointer;
 }
@@ -254,7 +275,7 @@ a.nav-link {
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  @include border-radius(50%, 50%);
   background: $body-color;
   cursor: pointer;
 }
@@ -266,28 +287,8 @@ a.nav-link {
   margin-right: 2px;
   height: 25px !important;
   border: 1px solid $body-list-border !important;
-  border-radius: 4px;
-  -webkit-border-radius: 4px !important;
-  -moz-border-radius: 4px !important;
-  box-shadow: $box-shadow-small;
-
-  &:hover {
-    background-color: $gray-600;
-  }
-}
-
-.layer-description-text {
-  height: 25px !important;
-  border: 1px solid $body-list-border !important;
-  color: $body-color !important;
-  padding: 1px;
-  padding-left: 3px;
-  margin-right: 5px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px !important;
-  -moz-border-radius: 4px !important;
-  cursor: pointer;
-  box-shadow: $box-shadow-small;
+  @include border-radius(4px, 4px);
+  @include box-shadow-mixin($box-shadow-small);
 
   &:hover {
     background-color: $gray-600;
@@ -325,10 +326,15 @@ a.nav-link {
 
 .mapinfo-header {
   width: 100%;
+  padding-top: 8px;
 }
 
 #user-shape {
   margin-left: 0px !important;
+}
+
+#upload-shapefile-btn, #draw-area-btn, .whatcando-btn {
+  width: 100% !important;
 }
 
 .leaflet-editing-icon {
@@ -375,7 +381,7 @@ a.nav-link {
   width: min-content;
   background-color: $leaflet-draw-tooltip-top-bg;
   color: $body-bg-semiTransparent;
-  box-shadow: $box-shadow-default;
+  @include box-shadow-mixin($box-shadow-default);
   z-index: 500;
   font-size: 2em !important;
   position: absolute !important;
@@ -391,9 +397,7 @@ a.nav-link {
 .geocoder-control-input.leaflet-bar {
   border-width: 0px;
   height: 30px;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
+  @include border-radius(2px, 2px);
 }
 
 .geocoder-control-input {
@@ -428,7 +432,6 @@ a.nav-link {
   @media screen and (max-width: 420px) {
     background-color:  $yellow !important;
   }
-  // height: 30px !important;
 }
 
 .leaflet-draw-actions a:hover {
@@ -475,25 +478,15 @@ a.nav-link {
   height: 30px !important;
 }
 
-.mapinfodata::-webkit-scrollbar-corner{
-  display: none;
-}
-
-
 // about styles
 
 // $aboutbackground: #3c4044; //#3B3E42; //2F3235
 
 .about-content  {
   background-color: $aboutbackground;
-  // max-width: 1140px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  -webkit-border-top-left-radius: 4px !important;
-  -webkit-border-top-right-radius: 4px !important;
-  -moz-border-radius-topleft: 4px !important;
-  -moz-border-radius-topright: 4px !important;
-  box-shadow: $box-shadow-small;
+  @include border-top-left-radius(4px);
+  @include border-top-right-radius(4px);
+  @include box-shadow-mixin($box-shadow-small);
 }
 
 .about-nav {
@@ -502,14 +495,9 @@ a.nav-link {
     background-color: grayscale(#0f1110);
     color: #FFF !important; //new
   }
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  -webkit-border-top-left-radius: 4px !important;
-  -webkit-border-top-right-radius: 4px !important;
-  -moz-border-radius-topleft: 4px !important;
-  -moz-border-radius-topright: 4px !important;
-  box-shadow: $box-shadow-small;
-
+  @include border-top-left-radius(4px);
+  @include border-top-right-radius(4px);
+  @include box-shadow-mixin($box-shadow-small);
 }
 
 .about-nav {
@@ -517,22 +505,20 @@ a.nav-link {
     max-width: 250px !important;
   }
   @media screen and (max-width: 1600px) {
-    max-width: 200px !important;
+    max-width: 250px !important;
   }
   @media screen and (max-width: 1500px) {
+    max-width: 225px !important;
+  }
+  @media screen and (max-width: 1000px) {
     max-width: 150px !important;
   }
-  @media screen and (max-width: 1200px) {
-    max-width: 125px !important;
-  }
-  @media screen and (max-width: 1100px) {
-    max-width: 100px !important;
-  }
   @media screen and (max-width: 900px) {
-    max-width: 80px !important;
+    max-width: 150px !important;
     font-size: .8em !important;
   }
-  @include size768 {
+@include size768 {
+
     max-width: 100% !important;
     font-size: .9em !important;
   }
@@ -568,17 +554,17 @@ a.about-nav.active::before {
 }
 
 .about-main-text, .about-tool-text {
-  margin: $margin;
-  padding: $padding15;
-  a {
-    color: #17a2b8 !important;
-    text-decoration: underline;
-  }
+    margin: $margin;
+    padding: $padding15;
+    a {
+      color: #17a2b8 !important;
+      text-decoration: underline;
+    }
 }
 
 .whatcando-container .final-report-link{
-  color: #17a2b8 !important;
-  text-decoration: underline;
+    color: #17a2b8 !important;
+    text-decoration: underline;
 }
 
 .final-report-row {
@@ -588,8 +574,8 @@ a.about-nav.active::before {
 }
 
 .landingpage-text{
-  margin: $margin;
-  padding: $padding15;
+    margin: $margin;
+    padding: $padding15;
 }
 
 
@@ -601,6 +587,7 @@ a.about-nav.active::before {
 //end of about styles
 
 // making of styles
+
 .making-of-examples {
   .making-of-math {
     font-size: 1.2rem;
@@ -610,18 +597,29 @@ a.about-nav.active::before {
       margin-left: 0px;
     }
   }
-
+  .figure-img {
+    margin-left: 10px;
+  }
   .figure-caption {
     color: $body-color !important;
     font-size: .9em;
     font-weight: 300;
     max-width: 1024px !important;
     @include size768 {
-      padding-left: 5px;
-      padding-right: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    .region-header {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .region-header-middle {
+    margin-top: 16px;
     }
     p {
       max-width: 1024px !important;
+      margin-left: 10px;
     }
     li {
       max-width: 1024px !important;
@@ -635,10 +633,12 @@ a.about-nav.active::before {
     font-weight: 800;
     border: 1px solid $gray-100;
     background: $newbg;
-    box-shadow: $box-shadow-default;
+    @include box-shadow-mixin($box-shadow-default);
     padding: 10px;
     margin: 0px 5px 10px 0px;
-    border-radius: 4px;
+
+    @include border-radius(4px, 4px);
+
     font-size: 1em;
     @media screen and (max-width: 400px) {
       font-size: .8rem !important;
@@ -697,7 +697,7 @@ a.about-nav.active::before {
   background-color: #417da0;
 }
 
-.making-of-community-exposure-box {
+.making-of-community-exposure {
   background-color: #45818e;
   .making-of-main-text {
     display: inline-block;
@@ -708,14 +708,198 @@ a.about-nav.active::before {
 }
 //end of making of styles
 
-
-.mapinfo-header {
-  width: 100%;
+.dropdown.show {
+  .dropdown-menu.show {
+    width: 330px;
+    @media screen and (max-width: 400px) {
+      width: 250px !important;
+    }
+    top: 1px !important;
+    background-color: $newbg !important;
+    border: 1px solid #e9ecef !important;
+    color: #e9ecef !important;
+    font-size: 14px !important;
+    @include box-shadow-mixin($box-shadow-default);
+    .dropdown-item {
+      color: #e9ecef !important;
+      &:focus, &:hover {
+      background-color: #565d64 !important;
+      }
+    }
+  }
 }
 
+.download-group {
+  padding: 15px;
+
+  .fa-download {
+    margin-right: 6px;
+  }
+}
+
+.download-group.dg-no-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.targetedwatershed-download .download-group, .targetedwatershed-vista-download .download-group {
+  padding: 0px;
+}
+
+.btn-download { //download page buttons
+  width: 100%;
+  height: 30px;
+  text-decoration: underline;
+}
+
+.data-download-description, .data-download-size {
+  margin-bottom: 10px;
+  padding-top: 10px;
+  margin-left: 15px;
+  font-weight: 300;
+}
+
+.download-source-break {
+  width: 90%;
+}
+
+.download-datagroup-break {
+  border-color: $body-list-border;
+  width: 60%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  margin-left: 0;
+  text-align: left;
+}
+
+.exploreInfo-description-content {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px $gray-600;
+  font-size: 14px;
+  margin-left: 30px;
+  .btn-explore-info {
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+  }
+  .user-shape {
+    font-size: 12px;
+    .btn-icon {
+      position: relative;
+      top: -5px;
+    }
+    .btn-label {
+      font-size: 12px;
+      color: $body-bg;
+      position: relative;
+      top: -5px;
+    }
+    width: 130px;
+    height: 35px;
+  }
+}
+
+.download-description-name {
+  font-weight: 700;
+}
+
+.zoomLinks-collapser {
+  cursor: pointer;
+  background-color: $newbg !important;
+  // $body-bg !important;
+  border-width: 1px !important;
+  @include border-radius(0.25rem, 0.25rem);
+  width: 100% !important;
+  box-shadow: $box-shadow-default !important;
+  -moz-box-shadow: $box-shadow-default !important;
+
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
+  background-clip:         padding-box;
+  border-color: #6c757d; //#777777;
+  border-style: solid;
+  font-size: 1.25em;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  .icon-right {
+    float: right;
+  }
+
+  // .zoomLinks-list {
+  //   padding: 10px;
+  // }
+
+  [aria-expanded="true"] {
+    svg.fa-caret-down {
+      display: none !important;
+    }
+    svg.fa-caret-up {
+      display: inherit !important;
+    }
+  }
+
+  .zoomLinks-collapser-header {
+    padding: 5px;
+    border-width: 1px !important;
+    padding-left: 20px !important;
+    font-size: .9em;
+  }
+
+  .zoomLinks-collapser-header:focus {
+    background-color: $gray-600 !important;
+    outline: $gray-600  !important;
+  }
+
+  .zoomLinks-collapser-header:hover {
+  @include hovcol(#060b18);
+    color: $body-color !important;
+  }
+
+  .list-group-item:last-child {
+    margin-bottom: 0 !important;
+    @include border-bottom-left-radius(0.25rem !important);
+    @include border-bottom-right-radius(0.25rem !important);
+  }
+
+  .zoomLinks-group-item:hover {
+    background-color: $gray-600 !important;
+    color: $body-color !important;
+    cursor: pointer;
+  }
+
+  .zoomLinks-group-item:focus {
+    border-color: $gray-600  !important;
+    outline: $gray-600  !important;
+  }
+
+  .list-group-item {
+    border-width: 0px !important;
+    font-size: .9em;
+    padding-left: 10px !important;
+  }
+
+  .zoomLinks-list-label-name {
+    font-size: .9em;
+  }
+
+  .list-group-dark {
+    border-top: 1px solid $gray-600 !important;
+    margin-top: 0px !important;
+  }
+}
+// #main-content,{
+//   // padding: $padding15;
+// }
 
 .nfwf-header {
-  box-shadow: $box-shadow-default;
+  @include box-shadow-mixin($box-shadow-default);
   padding-left: $padding15;
   padding-right: $padding15;
   background-color: $body-main-bar-bg-color !important;
@@ -736,12 +920,66 @@ a.about-nav.active::before {
   margin-bottom: $margin15;
 }
 
+// #main-content {
+//   // margin-top: 10px !important;
+// }
 
-.bg-dark,.zonal-long-wrapper,.zonal-stats-button-holder, #zonal-stats-button-holder, .zonal-long-name, .zonal-long-button-wrapper {
-  //new removes boxes around certain user areas (descriptions of area)
-  background-color: $body-bg !important;
+#about-main {
+  margin-left: 15px;
 }
 
+.about-main-text, .about-tool-text {
+    margin: $margin;
+    padding: $padding15;
+}
+
+.about-tool-text {
+  ol {
+    margin-top: $margin15;
+  }
+}
+
+#primary-shape-holder {
+  margin-left: 0px !important;
+  background:$body-bg; //fix 32fcea
+@include size768 {
+    margin-left: 25px !important;
+  }
+
+
+}
+.bg-dark,.zonal-long-wrapper,.zonal-stats-button-holder, #zonal-stats-button-holder, .zonal-long-name, .zonal-long-button-wrapper{
+  //new removes boxes around certain user areas (descriptions of area)
+background-color: $body-bg !important;
+}
+#user-shape {
+  margin-left: 0px !important;
+}
+
+#has-shape-holder {
+  margin-left: 5px !important;
+  padding-left: 15px !important;
+}
+
+#upload-shapefile-btn, #draw-area-btn, .whatcando-btn {
+  width: 100% !important;
+&:hover{
+  background: #adaeaf !important;
+  }
+}
+
+// button styles
+
+#btn-clear-area, #btn-reset, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+  margin-top: $margin;
+  width: 100% !important;
+}
+
+// .btn-download {
+//   width: 100%;
+//   height: 30px;
+//   background-color: $gray-300 !important;
+// }
 
 .btn-secondary {
   width: 50px !important;
@@ -792,8 +1030,15 @@ a.about-nav.active::before {
 }
 
 .btn-icon:after {
-  content:"\000A";
-  white-space: pre;
+    content:"\000A";
+    white-space: pre;
+}
+
+.btn-clear-area, .btn-download-all-zonal-stats {
+  .btn-icon:after {
+      content:" ";
+      white-space: pre;
+  }
 }
 
 #mainNavToggle {
@@ -815,15 +1060,15 @@ a.about-nav.active::before {
 }
 
 .btn-file {
-  width: 0.001px;
-  height: 0.001px;
-  opacity: 0;
-  padding: 0px !important;
-  border-width: 0px !important;
-  margin: 0px !important;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+    width: 0.001px;
+    height: 0.001px;
+    opacity: 0;
+    padding: 0px !important;
+    border-width: 0px !important;
+    margin: 0px !important;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
 .btn-file-label {
@@ -836,9 +1081,7 @@ a.about-nav.active::before {
   position: relative;
   left: 275px;
   bottom: 0px;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
+  @include border-radius(2px, 2px);
   margin-left: 2px;
   vertical-align: middle !important;
   align-items: center !important;
@@ -856,9 +1099,7 @@ a.about-nav.active::before {
   background-size: 30px;
   color: $gray-700;
   color: $body-bg;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
+  @include border-radius(2px, 2px);
   cursor: pointer;
 }
 
@@ -902,8 +1143,8 @@ a.about-nav.active::before {
   background-color: $body-color;
   color: $body-bg;
   border: 0px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  @include border-bottom-left-radius(2px);
+  @include border-bottom-right-radius(2px);
   span {
     font-size: 10px;
   }
@@ -926,8 +1167,8 @@ a.about-nav.active::before {
   background-color: $body-color;
   color: $body-bg;
   border: 0px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  @include border-bottom-left-radius(2px);
+  @include border-bottom-right-radius(2px);
 }
 
 .i-btn {
@@ -936,14 +1177,22 @@ a.about-nav.active::before {
   width: 30px;
   height: 30px;
   font-size: 15px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
+  @include border-radius(4px, 4px);
+  align-items: center !important;
+}
+
+.e-btn {
+  background-color: $body-color;
+  color: $body-bg;
+  width: 75px;
+  height: 30px;
+  font-size: 15px;
+  @include border-radius(4px, 4px);
   vertical-align: middle !important;
   align-items: center !important;
 }
 
-.btn-search-locations-collapse-holder.leaflet-bar {
+.btn-search-locations-collapse-holder.leaflet-bar{
   border-width: 0px;
   height: 30px;
 }
@@ -957,8 +1206,45 @@ a.about-nav.active::before {
   color: $body-bg;
   padding: 4px 4px;
   border-width: 0px;
-  box-shadow: $box-shadow-default;
+  @include box-shadow-mixin($box-shadow-default);
 }
+
+// explore styles
+
+#explore-holder::-webkit-scrollbar {
+   -webkit-appearance: none;
+   width: 7px;
+ }
+
+#explore-holder::-webkit-scrollbar-thumb {
+   @include border-radius(4px, 4px);
+   background-color: $body-color;
+ }
+
+#explore-holder::-webkit-scrollbar-corner{
+   display: none;
+ }
+
+ #explore-holder {
+   overflow-x: hidden;
+   overflow-y: scroll;
+   background-color:  $body-bg;
+   -webkit-print-color-adjust: exact;
+ }
+
+ .explore-row {
+   padding-left: 0px !important;
+   padding-right: 5px !important;
+   margin-left: 0px !important;
+   margin-right: 0px !important;
+ }
+
+ .exlpore-directions {
+   padding-top: $padding15;
+   padding-bottom: $padding15;
+   display: flex;
+ }
+
 
 // not found styles
 
@@ -973,18 +1259,16 @@ a.list-group-item.list-group-item-action.not-found{
   background-color: $body-bg;
   border-color: $gray-400;
   border-width: 0px;
-  border-radius: 0;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
+  @include border-radius(0px, 0px);
   text-decoration: underline;
 }
 
 h1.not-found {
-  font-size: 6.5rem;
+    font-size: 6.5rem;
 }
 
 p.not-found {
-  font-size: 1.5rem;
+   font-size: 1.5rem;
 }
 
 
@@ -1004,9 +1288,7 @@ p.not-found {
   &::-webkit-scrollbar-thumb {
     max-height: 15px;
     background-color: $gray-500;
-    border-radius: 4px;
-    -webkit-border-radius: 4px !important;
-    -moz-border-radius: 4px !important;
+    @include border-radius(4px, 4px);
     &:vertical {
       height: 10px;
     }
@@ -1052,7 +1334,40 @@ p.not-found {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  #btn-clear-area, #btn-reset, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+    margin-top: $margin;
+    width: 100% !important;
+    background-color: #434548 !important; //newbg
+    &:hover{
+      @include hovcol(#434548);
+    }
+  }
+}
 @media screen and (min-width: 993px) {
+  #btn-clear-area, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+    margin-top: $margin;
+    width: 100% !important;
+    height: 35px !important;
+    background-color: $btn-color-secondary !important;
+
+    &:hover {
+      @include hovcol($btn-color-secondary);
+      // background-color: #adaeaf !important; //new
+    }
+
+    &:focus {
+      outline: none !important;
+      box-shadow: none;
+    }
+  }
+
+  #btn-clear-area, #btn-reset, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+    margin-top: $margin;
+    width: 100% !important;
+    background-color: $btn-color-secondary !important;
+  } //unnecessary????
+
   .brand-maplist-holder {
     position: fixed !important;
     top: 140px !important;
@@ -1060,12 +1375,10 @@ p.not-found {
     min-width: 290px;
     max-width: 375px !important;
     background-color: $body-bg !important;
-    border-top-left-radius:  4px !important;
-    border-top-right-radius: 4px !important;
-    -webkit-border-top-left-radius: 4px !important;
-    -webkit-border-top-right-radius: 4px !important;
-    -webkit-border-bottom-left-radius: 0px !important;
-    -webkit-border-bottom-right-radius: 0px !important;
+    @include border-top-left-radius(4px);
+    @include border-top-right-radius(4px);
+    @include border-bottom-left-radius(0px);
+    @include border-bottom-right-radius(0px);
     border-color:  $body-list-border !important;
     border-width:  1px 1px 1px 1px !important;
     border-style: solid !important;
@@ -1087,9 +1400,7 @@ p.not-found {
 
   .maplayers_list {
     height: 100% !important;
-    border-radius: 4px !important;
-    -webkit-border-radius: 4px !important;
-    -moz-border-radius: 4px !important;
+    @include border-radius(4px, 4px);
 
     .navbar {
       padding-right: 0px !important;
@@ -1120,11 +1431,8 @@ p.not-found {
       width: 35px;
       height: 35px;
       border: 1px solid  $gray-600 !important;
-      border-radius: 4px;
-      -webkit-border-radius: 4px !important;
-      -moz-border-radius: 4px !important;
-      box-shadow: $box-shadow-small;
-      // margin-top: 5px;
+      @include border-radius(4px, 4px);
+      @include box-shadow-mixin($box-shadow-small);
       background: $newbg !important;
       &:hover {
         background-color: $gray-600;
@@ -1149,23 +1457,17 @@ p.not-found {
 
     #mapListToggle {
       background-color: $newbg !important;
-      // $body-bg !important;
       border-color:  $body-list-border !important;
       border-width:  0px 1px 1px 1px !important;
       border-style: solid !important;
-      border-top-left-radius:  0px !important;
-      border-top-right-radius: 0px !important;
-      -webkit-border-top-left-radius: 0px !important;
-      -webkit-border-top-right-radius: 0px !important;
-      border-bottom-left-radius:  4px !important;
-      border-bottom-right-radius: 4px !important;
-      -webkit-border-bottom-left-radius: 4px !important;
-      -webkit-border-bottom-right-radius: 4px !important;
+      @include border-top-left-radius(0px);
+      @include border-top-right-radius(0px);
+      @include border-bottom-left-radius(4px);
+      @include border-bottom-right-radius(4px);
     }
 
     #ToggleLayerList {
       background-color: $newbg  !important;
-      // $body-bg !important;
       margin: 15px;
       height: 100%;
       width: 100% !important;
@@ -1185,10 +1487,8 @@ p.not-found {
 
   .h-0 {
     .brand-maplist-holder {
-      border-bottom-left-radius:  4px !important;
-      border-bottom-right-radius: 4px !important;
-      -webkit-border-bottom-left-radius: 4px !important;
-      -webkit-border-bottom-right-radius: 4px !important;
+      @include border-bottom-left-radius(4px);
+      @include border-bottom-right-radius(4px);
     }
   }
 
@@ -1227,7 +1527,7 @@ p.not-found {
     height: 100% !important;
   }
 
-  .navbar-brand-exlore-title, #NFWF-Logo-Title-brand {
+  .navbar-brand-exlore-title, #SouthFACT-Logo-Title-brand {
     display: none;
   }
 
@@ -1246,10 +1546,22 @@ p.not-found {
 
 ///
 @media screen and (max-width: 992px) {
+
   $margin: 5px;
   $padding: 5px;
   $btn-color-secondary: $gray-800;
   $btn-color-prinary: $gray-700;
+
+
+//mobile size
+  #upload-shapefile-btn, #draw-area-btn, .whatcando-btn {
+    width: 100% !important;
+    background-color: #54575b !important; //newbg
+    &:hover{
+    @include hovcol(black);
+      // background: #323436 !important;
+    }
+  }
 
 
   .btn-secondary:active {
@@ -1272,6 +1584,14 @@ p.not-found {
     transition: background 0s !important;
   }
 
+
+  #btn-clear-area, #btn-reset, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+    margin-top: $margin;
+    width: 100% !important;
+    border: 1px solid $body-color !important;
+    color: $body-color !important;
+  }
+
   #main-content {
     padding: 0px !important;
   }
@@ -1288,7 +1608,7 @@ p.not-found {
 
   .btn-secondary {
     background-color: $gray-700  !important;
-  }
+   }
 
   .btn-mapinfo {
     background-color:  $body-color !important;
@@ -1300,13 +1620,13 @@ p.not-found {
   }
 
   .btn-details { //get details
-    background-color: $body-bg  !important;
-    color: $body-color !important;
-    border: 1px solid $body-color !important;
+      background-color: $body-bg  !important;
+      color: $body-color !important;
+      border: 1px solid $body-color !important;
   }
 
   .btn-toggle-shapes {
-    box-shadow: $box-shadow-default;
+    @include box-shadow-mixin($box-shadow-default);
     margin-bottom: $margin !important;
     border: 1px solid $body-color !important;
     color: $body-color !important;
@@ -1315,7 +1635,15 @@ p.not-found {
     background-color: $newbg !important;
   }
 
-  #NFWF-Logo-Title-brand {
+  .navbar-explore-shapes {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .navbar-brand-exlore-title, .navbar-brand-secondary-directions  {
+    font-size: 1.5rem !important;
+  }
+
+  #SouthFACT-Logo-Title-brand {
     width: 50px !important;
     height: 50px !important;
     margin-right: 5px !important;
@@ -1326,10 +1654,10 @@ p.not-found {
   }
 
   .brand-maplist-holder{
-    width: 100% !important;
-    position: sticky;
-    top: 45px;
-    z-index: 4500 !important;
+      width: 100% !important;
+      position: sticky;
+      top: 45px;
+      z-index: 4500 !important;
   }
 
   .maplayers_list {
@@ -1369,9 +1697,7 @@ p.not-found {
     #mapListToggle {
       background-color: $body-bg !important;
       border: 1px solid $body-list-border !important;
-      border-radius: 4px !important;
-      -webkit-border-radius: 4px !important;
-      -moz-border-radius: 4px !important;
+      @include border-radius(4px, 4px);
       z-index: 4000 !important;
     }
 
@@ -1389,7 +1715,7 @@ p.not-found {
     .navbar-toggler {
       background-color: $body-bg !important;
       float: right !important;
-      box-shadow: $box-shadow-default;
+      @include box-shadow-mixin($box-shadow-default);
     }
 
     .bg_dark {
@@ -1410,8 +1736,8 @@ p.not-found {
   }
 
   .map-list-column {
-    position: relative;
-    top: -5000px;
+   position: relative;
+   top: -5000px;
   }
 
   .icon-label {
@@ -1443,7 +1769,7 @@ p.not-found {
     height: 100% !important;
   }
 
-  #maintitle, #NFWF-Logo-Title {
+  #maintitle, #SouthFACT-Logo-Title {
     display: none;
   }
 
@@ -1527,7 +1853,7 @@ p.not-found {
 }
 
 @media screen and (max-width: 768px) {
-  #NFWF-Logo-Title {
+  #SouthFACT-Logo-Title {
     width: 54px;
     height: 78px;
   }
@@ -1572,7 +1898,7 @@ p.not-found {
   }
 
   .leaflet-draw-tooltip-top {
-    font-size: 1.5em !important;
+      font-size: 1.5em !important;
   }
 
   .leaflet-draw-actions a {
@@ -1592,9 +1918,6 @@ p.not-found {
     }
   }
 
-  .mapinfodata {
-    overflow: scroll;
-  }
 
   .map_info_list .toggle-list .zonal-long-graph-label-terrestrial .zonal-long-graph-label-text {
     left: -10px !important;
@@ -1615,91 +1938,119 @@ p.not-found {
 
   }
 
+  .mapinfodata {
+    overflow: scroll;
+  }
+
   .mapinfodata::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-  }
+     -webkit-appearance: none;
+     width: 7px;
+   }
 
-  .mapinfodata::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    background-color: $body-color;
-  }
+   .mapinfodata::-webkit-scrollbar-thumb {
+     @include border-radius(4px, 4px);
+     background-color: $body-color;
+   }
 
-  #btn-clear-area, #btn-update-zonal-stats {
-    height: 35px;
-  }
+   .mapinfodata::-webkit-scrollbar-corner {
+     display: none;
+   }
 
-  .btn-mapreset-holder {
-    width: 55px !important;
-    height: 40px !important;
-    left: -5px !important;
-    top: -1px !important;
-  }
-
-  .btn-mapreset {
-    .btn-med-mapreset-label {
-      top: -33px !important;
+    #btn-clear-area, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+      height: 35px;
     }
-  }
 
-  .icon-reset {
-    margin-bottom: 19px !important;
-    margin-left: -1px !important;
-  }
+    .btn-mapreset-holder {
+      width: 55px !important;
+      height: 40px !important;
+      left: -5px !important;
+      top: -1px !important;
+    }
+
+    .btn-mapreset {
+      .btn-med-mapreset-label {
+        top: -33px !important;
+      }
+    }
+
+    .icon-reset {
+      margin-bottom: 19px !important;
+      margin-left: -1px !important;
+    }
 
 } //end media screen 768
 
 // responive explore buttons
 @media screen and (max-width: 640px) {
-  .user-shape {
-    font-size: .8rem !important;
-  }
-  .search-locations-popup .leaflet-popup-content-wrapper .leaflet-popup-content {
-    width: 150px !important;
-  }
+      .user-shape {
+        font-size: .8rem !important;
+      }
 
-  .search-locations-popup .leaflet-popup-content-wrapper {
-    width: 150px !important;
-  }
+      #btn-clear-area, #btn-reset, #btn-update-zonal-stats, #btn-download-all-zonal-stats{
+        margin-top: 5px;
+        width: 100% !important;
+        max-height: 30px;
+      }
 
-  .search-locations-popup {
-    min-width: 150px !important;
-  }
+     .search-locations-popup .leaflet-popup-content-wrapper .leaflet-popup-content {
+       width: 150px !important;
+     }
 
-  .maplayers_list {
-    top: 80px !important;
-  }
+     .search-locations-popup .leaflet-popup-content-wrapper {
+       width: 150px !important;
+     }
 
-  .navbar-brand {
-    display: inline-block;
-    font-size: 1.25rem !important;
-  }
+     .search-locations-popup {
+       min-width: 150px !important;
+     }
 
-  .navbar-brand-exlore-title, .navbar-brand-secondary-directions  {
-    font-size: 1.25rem !important;
-    display: inline-block  !important;
-    color: $body-color !important;
-  }
+     .maplayers_list {
+       top: 80px !important;
+     }
 
-  .icon-label {
-    margin-top: 8px !important;
-  }
+     #btn-clear-area, #btn-reset, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+       margin-top: $margin;
+       width: 100% !important;
+     }
 
-  .leaflet-draw-tooltip-top {
-    font-size: 1.1em !important;
-  }
+     .navbar-brand {
+       display: inline-block;
+       font-size: 1.25rem !important;
+     }
 
-  .data-row, .map-list-column, .map-row {
-    padding-top: 2.5px;
-  }
+     #explore-title {
+       display: none;
+     }
 
-  .bnt-primary {
-    height: 50px !important;
-  }
+     .navbar-brand-exlore-title, .navbar-brand-secondary-directions  {
+       font-size: 1.25rem !important;
+       display: inline-block  !important;
+       color: $body-color !important;
+     }
+
+     .icon-label {
+       margin-top: 8px !important;
+     }
+
+     .leaflet-draw-tooltip-top {
+       font-size: 1.1em !important;
+     }
+
+     .data-row, .map-list-column, .map-row {
+       padding-top: 2.5px;
+     }
+
+     .bnt-primary {
+       height: 50px !important;
+     }
 } //end media screen 640
 
+@media screen and (max-width: 640px) {
+  #btn-clear-area, #btn-reset, #btn-update-zonal-stats, #btn-download-all-zonal-stats {
+    margin-top: $margin;
+    width: 100% !important;
+  }
+} //end media 640
 @media screen and (max-width: 500px) {
   .leaflet-draw.active {
     position: fixed;
@@ -1751,7 +2102,7 @@ p.not-found {
     }
   }
 
-  #NFWF-Logo-Title-brand {
+  #SouthFACT-Logo-Title-brand {
     width: 30px !important;
     height: 30px !important;
     margin-right: 5px !important;
@@ -1795,7 +2146,7 @@ p.not-found {
 } //end media screen 375
 @media screen and (max-width: 375px) {
   .leaflet-draw-tooltip-top {
-    font-size: 1.1em !important;
+      font-size: 1.1em !important;
   }
 } //end media screen 375
 @media screen and (max-width: 320px) {
@@ -1887,14 +2238,226 @@ p.not-found {
   }
 }
 
+.case-studies-row-container  {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+
+  .figure {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-bottom: 15px !important;
+
+  @include size768 {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      padding-bottom: 10px !important;
+    }
+  }
+
+  #positions {
+    height: 35px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+
+  @include size768 {
+      margin-bottom: 5px;
+    }
+    .position {
+      border: .5px solid $gray-700 !important;
+      height: 30px;
+      width: 20px;
+      margin: 5px;
+
+    @include size768 {
+        height: 24px;
+        width: 12px;
+      }
+
+      &.active {
+        background-color: $gray-700;
+      }
+    }
+
+  }
+
+  .figure-caption { //case studies descript
+    background-color: $newbg; //new
+    // $body-bg;
+    color: #e9ecef; //default white
+    padding: 15px;
+    border: 1px solid #e9ecef;
+    z-index: 1000;
+
+  @include size768 {
+      padding: 5px;
+    }
+
+    &.title-caption { //case studies
+      font-size: 18px !important;
+      background-color:$newbg;
+      @include border-top-left-radius(4px);
+      @include border-top-right-radius(4px);
+    }
+
+    &.narrative-caption {
+      @include border-bottom-left-radius(4px);
+      @include border-bottom-right-radius(4px);
+    }
+
+    &.title-caption:hover {
+      @include hovcol($newbg);
+    }
+
+    .icon-right {
+      color: #e9ecef;
+      float: right;
+      font-size: 2rem;
+      vertical-align: middle;
+    }
+
+    #name {
+      font-size: 18px;
+      font-weight: 800;
+    @include size768 {
+        font-size: 1rem;
+      }
+    }
+
+    #narrative {
+      font-size: .9rem;
+      padding: 15px;
+      width: 100% !important;
+    }
+
+  @include size768 {
+      .narrative-main.steps-active {
+        display: none;
+      }
+    }
+
+    .case-study-steps {
+      // padding: 15px;
+      width: 100%;
+      overflow: hidden !important;
+      border-top: 1px solid #e9ecef;
+      border-bottom: 1px solid $gray-700;
+      border-right: 1px solid $gray-700;
+      border-left: 1px solid $gray-700;
+      padding: 15px;
+
+    @include size768 {
+        padding: 10px;
+      }
+
+      .row {
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+
+      .case-study-step {
+        .col {
+        @include size768 {
+            padding-right: 5px;
+            padding-left: 5px;
+          }
+        }
+
+        &.last-step {
+          #narrative {
+            min-height: 80px !important;
+          @include size768 {
+              font-size: .8rem !important;
+              min-height: 30px !important;
+            }
+          }
+        }
+
+        #narrative {
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+          min-height: 130px !important;
+
+        @include size768 {
+            font-size: .7rem !important;
+            min-height: 80px !important;
+            padding: 0px !important;
+          }
+        }
+      }
+
+      // .btn-casestudies-action:hover {
+      //   background:$gray-700 radial-gradient(circle, transparent 1%, $gray-700 1%) center/15000% !important;
+      // }
+      //
+      // .btn-casestudies-action {
+      //   background-color: #32fcea  !important;
+      //   border: 1px solid $body-color !important;
+      //   color: $body-color !important;
+      //   white-space: normal !important;
+      //
+
+      // @include size768 {
+      //     border: 1px solid $gray-700 !important;
+      //   }
+      // }
+
+      .btn-casestudies-action-arrow {
+        background-color: $body-bg  !important;
+        color: $body-color !important;
+        white-space: normal !important;
+        font-size: 2rem;
+        border: 1px solid #6c757d !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+
+        &.col-6 {
+          flex: 0 0 45%;
+          max-width: 45%;
+        }
+
+      @include size768 {
+          font-size: 2rem;
+        }
+      }
+
+      .case-study-spacer {
+        min-height: 15px !important;
+      }
+
+      .btn-casestudies-action-arrow:hover {
+        background: $gray-700 radial-gradient(circle, transparent 1%, $gray-700 1%) center/15000% !important;
+      }
+
+      #name {
+        font-size: 1.1rem;
+        font-weight: 800;
+        @include size768{
+          font-size: 1rem;
+        }
+      }
+
+      #narrative {
+        font-size: .9rem;
+        padding: 15px;
+        width: 100% !important;
+
+      @include size768 {
+          padding: 10px;
+        }
+
+      }
+    }
+  }
+}
+
 .flex-fill {
   flex:1 1 auto;
 }
 
 .map-row {
-  padding-bottom: $padding;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
+    padding-bottom: $padding;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 
 .alert-light{
@@ -1916,71 +2479,67 @@ p.not-found {
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
   background-color:  $body-bg;
-  border-radius: 0.25rem;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
+  @include border-radius(0.25rem, 0.25rem);
   border: 1px solid $gray-700;
-  transform: scale(1.75);
+  transform: scale(1.4);
 }
 
 .custom-control-input:active ~ .custom-control-label::before {
   background-color: $body-color;
   background:  $body-bg-semiTransparent;
   border: 0px solid $body-color;
-  border-radius: 0.25rem;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
+  @include border-radius(0.25rem, 0.25rem);
 }
 
 
 
 .tooltip {
-  z-index: 10000;
-  overflow: hidden;
+    z-index: 10000;
+    overflow: hidden;
 
-  .tooltip-inner {
-    @media screen and (min-width: 993px) {
-      max-width: 700px !important;
+    .tooltip-inner {
+        @media screen and (min-width: 993px) {
+          max-width: 700px !important;
+        }
+        @media screen and (max-width: 992px) {
+          max-width: 600px !important;
+        }
+
+      @include size768 {
+          max-width: 320px !important;
+          font-size: .68rem;
+        }
+
+        @media screen and (max-width: 400px) {
+          max-width: 300px !important;
+          font-size: .68rem;
+        }
+
+        @media screen and (max-width: 325px) {
+          max-width: 265px !important;
+          font-size: .58rem;
+        }
+
+        background-color: $body-color;
+        color: $body-bg;
+        text-align: left!important;
     }
-    @media screen and (max-width: 992px) {
-      max-width: 600px !important;
+
+    .arrow:before {
+        border-top-color: $body-color;
     }
 
-    @include size768 {
-      max-width: 320px !important;
-      font-size: .68rem;
+
+    &.bs-tooltip-right .arrow::before, &.bs-tooltip-auto[x-placement^="right"] .arrow::before {
+      right: 0 !important;
+      border-width: 0.4rem 0.4rem 0.4rem 0 !important;
+      border-right-color: $body-color !important;
+      border-top-color: rgba(0,0,0,0) !important;
     }
 
-    @media screen and (max-width: 400px) {
-      max-width: 300px !important;
-      font-size: .68rem;
+    &.bs-tooltip-bottom .arrow::before, &.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+        border-bottom-color: $body-color;
     }
-
-    @media screen and (max-width: 325px) {
-      max-width: 265px !important;
-      font-size: .58rem;
-    }
-
-    background-color: $body-color;
-    color: $body-bg;
-    text-align: left!important;
-  }
-
-  .arrow:before {
-    border-top-color: $body-color;
-  }
-
-
-  &.bs-tooltip-right .arrow::before, &.bs-tooltip-auto[x-placement^="right"] .arrow::before {
-    right: 0 !important;
-    border-width: 0.4rem 0.4rem 0.4rem 0 !important;
-    border-right-color: $body-color !important;
-    border-top-color: rgba(0,0,0,0) !important;
-  }
-
-  &.bs-tooltip-bottom .arrow::before, &.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-    border-bottom-color: $body-color;
-  }
 }
 
 .tooltip.upload-shapefile, .tooltip.draw-shapefile {
@@ -2005,9 +2564,7 @@ p.not-found {
     float: right !important;
     background-color: $body-color !important;
     border: 1px solid  $gray-400 !important;
-    border-radius: 4px;
-    -webkit-border-radius: 4px !important;
-    -moz-border-radius: 4px !important;
+    @include border-radius(4px, 4px);
   }
 }
 
@@ -2052,14 +2609,100 @@ p.not-found {
     float: right !important;
     background-color: $body-color !important;
     border: 1px solid  $gray-400 !important;
-    border-radius: 4px;
-    -webkit-border-radius: 4px !important;
-    -moz-border-radius: 4px !important;
+    @include border-radius(4px, 4px);
   }
 
   .close-exlpore-directions:hover {
     background-color: $gray-400 !important; //$body-color
   }
+}
+
+.popover {
+  z-index: 4500;
+  max-width: 500px !important;
+  &:focus {
+    outline: none;
+  }
+  .popover-header {
+    background-color: $body-color !important;
+    color: $body-bg !important;
+  }
+  .popover-body {
+
+  }
+  @media screen and (max-width: 992px) {
+    max-width: 400px !important;
+  }
+
+  @media screen and (max-width: 400px) {
+    max-width: 300px !important;
+  }
+}
+
+
+.explore-helper, .download-data-source-helper  {
+  background-color: $body-bg !important;
+  height: 25px !important;
+  width: 25px !important;
+  font-size: .7em;
+  border: 1px solid $body-list-border !important;
+  color: $body-color !important;
+  padding: 1px;
+  padding-left: 3px;
+  margin-right: 5px;
+  @include border-radius(4px, 4px);
+  cursor: pointer;
+  @include box-shadow-mixin($box-shadow-small);
+  float: right !important;
+}
+
+.explore-helper {
+  @media screen and (max-width: 992px) {
+    display: none !important;
+  }
+}
+
+.download-data-group-notes { //targetwatershed help btn
+  background-color: $body-bg !important;
+  height: 25px !important;
+  width: 25px !important;
+  font-size: 12px;
+  line-height: 30px;
+  border: 1px solid $body-list-border !important;
+  color: $body-color !important;
+  padding: 1px;
+  padding-left: 3px;
+  margin-right: 5px;
+  @include border-radius(4px, 4px);
+  cursor: pointer;
+  @include box-shadow-mixin($box-shadow-small);
+  margin-left: 40px;
+  svg {
+    margin-bottom: 5px;
+  }
+  @media screen and (max-width: 992px) {
+    margin-top: -5px !important;
+    height: 25px !important;
+    width: 25px !important;
+  }
+  @media screen and (max-width: 640px) {
+    margin-top: -3px !important;
+  }
+  @media screen and (max-width: 360px) {
+    margin-top: -7px !important;
+  }
+}
+
+
+.explore-helper:hover, .download-data-group-notes:hover ,.download-data-source-helper:hover{
+  background-color: $gray-600 !important;
+  outline: $body-list-border  !important;
+}
+
+.explore-helper:focus, .download-data-group-notes:focus ,.download-data-source-helper:focus{
+  background-color: $gray-600 !important;
+  border: solid 1px $body-list-border  !important;
+  outline: $body-list-border  !important;
 }
 
 .openclosetext {
@@ -2078,11 +2721,125 @@ p.not-found {
   padding-top: 7px;
 }
 
+.definition-text {
+  font-size: .9em;
+  font-weight: 300;
+  margin-left: 25px;
+  width: inherit !important;
+}
+
+.reports-container, .glossary-container, .about-container {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  padding-bottom: 15px !important;
+}
+
+.reports-container {
+  min-height: 200px;
+  padding: 12px;
+}
+
+.term {
+  margin-top: 15px;
+  &-1st {
+      margin-top: 0px;
+      padding-top: 30px;
+  }
+  margin-left: 15px;
+  font-size: 1em;
+  font-weight: 900;
+  width: inherit !important;
+}
+
+.userarealabel {
+  color: $gray-200;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color:  rgba(0,0,0,0);
+  border-width: 0px;
+  box-shadow:  0 0px 0px rgba(0,0,0,0);
+}
+
+.path-highlight {
+  fill: $yellow;
+  stroke: $yellow;
+  stroke-width: 5;
+}
+
+.path-nohighlight {
+  fill: #99c3ff;
+  stroke: #99c3ff;
+  stroke-width: 3;
+}
+
+.path-highlight-perm {
+  fill: $yellow;
+  stroke: $yellow;
+  stroke-width: 5;
+}
+
+.path-nohighlight-perm {
+  fill: #99c3ff;
+  stroke: #99c3ff;
+  stroke-width: 3;
+}
+
+.label-name-highlight {
+  font-weight: 900;
+}
+
+.label-name-nohighlight {
+  // color: $body-color;
+  font-weight: normal;
+}
+
 #tab-main-nav-map {
   min-height: 0px;
   padding: 15px;
 }
+#tab-main-nav-about {
+  padding: 15px;
+}
+.user-shape {
+  white-space: pre-wrap;      /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap;     /* Opera <7 */
+  white-space: -o-pre-wrap;   /* Opera 7 */
+  word-wrap: break-word;      /* IE */
+  width: 90px;
+  height: 50px;
+  margin: 5px;
+  font-size: .9rem;
 
+    &:hover{//get details
+
+      @include hovcol(#54575b);
+      //background:  #adaeaf;
+    }
+    @include size1000 { //new
+
+      &:hover{
+      background: #333 !important;
+      }
+    }
+}
+
+.upload-all {
+  position: relative;
+  top: -10px;
+}
+
+.exposure-equals {
+  font-size: 22px;
+  padding-right: 5px;
+
+}
+
+.mapinfo-math-hr {
+  border-bottom: .75px solid $gray-700;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
 
 .i-mapinfo {
   margin-bottom: 7px;
@@ -2095,14 +2852,14 @@ p.not-found {
   margin-left: -1px;
 }
 
-.btn-mapshareurl-holder {
+.btn-mapshareurl-holder, .btn-mapreset-holder {
   width: 60px;
   height: 50px;
   line-height: 10px;
   color: $body-bg !important;
 }
 
-.btn-mapshareurl {
+.btn-mapshareurl, .btn-mapreset {
   .btn-med-share-label, .btn-med-mapreset-label {
     font-size: 10px;
     line-height: 10px !important;
@@ -2157,8 +2914,8 @@ p.not-found {
   background-color: $body-color;
   color: $body-bg;
   border: 0px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  @include border-bottom-left-radius(2px);
+  @include border-bottom-right-radius(2px);
   span {
     font-size: 10px;
   }
@@ -2181,8 +2938,8 @@ p.not-found {
   background-color: $body-color;
   color: $body-bg;
   border: 0px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  @include border-bottom-left-radius(2px);
+  @include border-bottom-right-radius(2px);
 }
 
 .i-btn {
@@ -2191,9 +2948,7 @@ p.not-found {
   width: 30px;
   height: 30px;
   font-size: 15px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
+  @include border-radius(4px, 4px);
   vertical-align: middle !important;
   align-items: center !important;
 }
@@ -2233,30 +2988,28 @@ p.not-found {
 }
 
 .i-exposure{
-  font-size: 5px;
-  vertical-align: inherit;
+    font-size: 5px;
+    vertical-align: inherit;
+}
+
+.searchlocations-point {
+  background-color: $body-bg;
+  @include border-radius(10px, 10px);
+
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
+  background-clip:         padding-box;
+
 }
 
 .mapinfodata-header {
   font-size: 1.250em;
 }
 
-.map-info-point {
+.map-info-point{
   background-color: $body-bg;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
-}
-
-.searchlocations-point {
-  background-color: $body-bg;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-
+  @include border-radius(10px, 10px);
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
   -moz-background-clip:    padding;
@@ -2279,40 +3032,7 @@ p.not-found {
   width: 250px;
   font-size: .85rem;
 }
-
-.mapinfodata .default-mapinfo{
-  font-size: .85rem;
-  .zonal-long-graph-label{
-    &-exposure {
-      .zonal-long-graph-label-text {
-        left: -65% !important;
-        top: 25px;
-        white-space: nowrap;
-      }
-    }
-  }
-}
-
-.mapinfodata .ns-mapinfo{
-  font-size: .85rem;
-  .zonal-long-graph-label{
-    &-exposure {
-      .zonal-long-graph-label-text {
-        left: 0px !important;
-        top: 0px;
-        white-space: nowrap;
-      }
-    }
-    &-hubs {
-      .zonal-long-graph-label-text {
-        left: 5px !important;
-        top: 0px;
-        white-space: nowrap;
-      }
-    }
-  }
-}
-
+å
 .searchlocationsdata {
   font-size: .85rem;
 }
@@ -2361,15 +3081,15 @@ p.not-found {
 }
 
 .leaflet-popup {
-  bottom: 0;
-  min-width: 205px;
-}
+   bottom: 0;
+   min-width: 205px;
+ }
 
-.leaflet-popup-content {
-  user-select: none;
-  cursor: default;
-  min-width: 315px;
-}
+ .leaflet-popup-content {
+   user-select: none;
+   cursor: default;
+   min-width: 315px;
+ }
 
 .leaflet-popup-content {
   margin-left: 0px;
@@ -2382,9 +3102,7 @@ p.not-found {
   background: $body-bg;
   background:  $body-bg-semiTransparent9;
   color: $body-color;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
+  @include border-radius(0px, 0px);
   min-width: 300px;
 }
 
@@ -2443,4 +3161,38 @@ p.not-found {
   margin-bottom: 0px;
 }
 
-// test
+// chartjs
+#chartjs-tooltip {
+  background-color: $leaflet-draw-tooltip-top-bg;
+  border-color: $gray-800;
+  @include border-radius(4px, 4px);
+  @include box-shadow-mixin($box-shadow-small);
+  min-width: 50px;
+  min-height: 50px;
+  font-family: $roboto;
+  font-size: 12px;
+  th {
+    font-weight: normal;
+  }
+  td {
+    text-align: center;
+  }
+  tbody {
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+#chartjs-tooltip.above:before {
+  border: solid;
+  border-color: $leaflet-draw-tooltip-top-bg transparent;
+  border-width: 8px 8px 0 8px;
+  content:"";
+  display: block;
+  left: 50%;
+  top: 100%;
+  position: absolute;
+  z-index: 99;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}

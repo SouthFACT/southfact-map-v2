@@ -1,5 +1,5 @@
 {
-  "name": "NFWF_tool",
+  "name": "SouthFACT_map_viewer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,9 @@
     "build-css": "node-sass --include-path scss scss/main.scss   public/css/main.css",
     "build": "webpack",
     "lint": "eslint ./src/scripts"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
   },
   "repository": {
     "type": "git",
@@ -29,17 +32,24 @@
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
     "@fortawesome/free-regular-svg-icons": "^5.3.1",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@turf/bbox-polygon": "^6.0.1",
+    "@turf/boolean-contains": "^6.0.1",
+    "@turf/boolean-overlap": "^6.0.1",
+    "@turf/boolean-point-in-polygon": "^6.0.1",
+    "@turf/boolean-within": "^6.0.1",
     "@turf/buffer": "^5.1.5",
+    "@turf/helpers": "^6.1.4",
     "@turf/simplify": "^5.1.5",
     "axios": "^0.19.0",
     "bootstrap": "^4.1.1",
+    "chart.js": "^2.9.3",
     "esri-leaflet": "^2.1.4",
     "esri-leaflet-geocoder": "^2.2.13",
     "file-saver": "^2.0.0",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2",
     "i": "^0.3.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "js-yaml": "^3.13.1",
     "js-yaml-loader": "^1.0.1",
     "jszip": "^3.1.5",
@@ -48,7 +58,7 @@
     "mapbox-gl": "^0.45.0",
     "mapbox-gl-leaflet": "0.0.3",
     "navigo": "^7.1.2",
-    "npm": "^6.10.0",
+    "npm": "^6.14.5",
     "octicons": "^7.3.0",
     "popper.js": "^1.14.3",
     "proj4": "^2.4.4",
@@ -76,7 +86,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
     "mocha": "^5.2.0",
-    "node-sass": "^4.9.2",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^2.1.5",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
@@ -84,6 +94,6 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.11.0"
   }
 }

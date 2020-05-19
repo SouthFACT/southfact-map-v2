@@ -198,6 +198,8 @@ export class ShareUrl extends Component {
     const collapse = document.querySelector('.btn-close-share');
     collapse.addEventListener('click', ShareUrl.disableShareUrl.bind(this));
     ShareUrl.enableShareUrl();
+
+    // createShareURLCopyButton.classList.remove('disabled');
   }
 
   // save shapes to s3 so we can share user added shapes from a URL
