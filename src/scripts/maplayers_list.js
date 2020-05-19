@@ -532,8 +532,10 @@ export class MapLayersList extends Component {
         }
 
         // set attributes for popups
-        MapLayersList.getDescriptionWrapper(layerElem).setAttribute('data-content', layerProps.description);
-        MapLayersList.getDescriptionWrapper(layerElem).setAttribute('title', layerProps.label);
+        if (layerProps.description.length > 0) {
+          MapLayersList.getDescriptionWrapper(layerElem).setAttribute('data-content', layerProps.description);
+          MapLayersList.getDescriptionWrapper(layerElem).setAttribute('title', layerProps.label);
+        }
         MapLayersList.setInitialLegendStatus(layerElem.getElementsByClassName('layer-legend-toggler')[0]);
       });
     }
