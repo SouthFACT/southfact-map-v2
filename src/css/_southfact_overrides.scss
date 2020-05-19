@@ -1,0 +1,131 @@
+.map-list {
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+}
+
+.map-list-column {
+  height: 100% !important;
+  background: $newbg !important;
+  border: 1px solid $gray-600;
+  @include border-radius(0.25rem, 0.25rem);
+}
+
+#maplayers_list {
+  background: $newbg !important;
+  padding-left: 5px !important;
+}
+
+@media screen and (max-width: 640px) {
+   .navbar-brand {
+    display: inline-block;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  #maplayers_list-holder {
+    width: unset !important;
+    position: unset;
+  }
+
+  .maplayers_list {
+    .navbar-brand {
+      width: 100% !important;
+      float: inherit !important;
+      display: flex !important;
+      display: flex !important;
+    }
+
+    .brand-maplist-holder {
+      display: flex !important;
+      position: unset !important;
+      top: unset !important;
+      width: 100% !important;
+      min-width: unset;
+      max-width: unset !important;
+      background-color: unset !important;
+      border-top-left-radius: unset;
+      border-top-right-radius: unset;
+      border-bottom-left-radius: unset;
+      border-bottom-right-radius: unset;
+      border-color: unset !important;
+      border-width: unset !important;
+      border-style: unset !important;
+      z-index: unset !important;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .map-holder {
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+
+  .map-list-column {
+    position: unset;
+    height: 50% !important;
+    top: 0px;
+    padding-top: $padding;
+    margin-bottom: $margin;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+
+  .maplayers_list {
+    height: 100% !important;
+    width: 100% !important;
+    position: unset;
+    top: 0px !important;
+    left: 0px !important;
+    z-index: 4000 !important;
+    background-color: rgba(53, 59, 65, 0) !important;
+  }
+
+  .brand-maplist-holder {
+    position: unset;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #maplayers_list-holder {
+    margin-left: 0px !important;
+    top: 0px !important;
+  }
+}
+
+.maplayers_list {
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    border: 1px solid $newbg;
+    background-color: $newbg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    max-height: 15px;
+    background-color: $gray-500;
+    @include border-radius(4px, 4px);
+    &:vertical {
+      height: 10px;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid $newbg;
+    background-color: $newbg;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    height: 15px;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    display: none;
+  }
+}

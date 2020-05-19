@@ -356,7 +356,8 @@ $map_right_margin: 10px;
   background:  $body-bg-semiTransparent;
   color: $body-color;
   @include border-radius(0.25rem, 0.25rem);
-  overflow: scroll;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
 }
 
 @media screen and (max-width: 992px) {
@@ -367,7 +368,7 @@ $map_right_margin: 10px;
     width: 100% !important;
     left: 0px !important;
     padding-bottom: 0px !important;
-    padding-top:0px !important;
+    padding-top: 0px !important;
   }
 
   #maplayers_list_close, #map_info_list_collapse {
