@@ -5,8 +5,9 @@ $body-list-border:    $gray-600;
 $body-color: $gray-200;
 $aboutbackground: #0f1110;
 
-$btn-color-prinary: $gray-100;
-$btn-color-secondary: $gray-300;
+$btn-color-prinary: #9F5222; // $gray-100;
+$btn-color-secondary: #242409; // $gray-300;
+$map-botton-font-color: #7F411B;
 
 $box-shadow-default: 0 2.5px 5px #000, 0 1.5px 1.5px #333;
 $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
@@ -94,7 +95,7 @@ hr {
 
 a.nav-link.active {
   color: $body-color !important;
-  border-bottom: 3px solid $gray-200;
+  border-bottom: 3px solid $btn-color-prinary;
   margin-bottom: $margin;
   margin-left: $margin;
   margin-right: $margin;
@@ -103,7 +104,7 @@ a.nav-link.active {
 
 a.nav-link {
   color: #babcbf !important; //new
-  border-bottom: 1px solid $gray-200;
+  border-bottom: 1px solid $btn-color-prinary;
   margin-bottom: $margin;
   margin-left: $margin;
   margin-right: $margin;
@@ -287,11 +288,12 @@ a.nav-link {
   margin-right: 2px;
   height: 25px !important;
   border: 1px solid $body-list-border !important;
+  background-color: $btn-color-secondary;
   @include border-radius(4px, 4px);
   @include box-shadow-mixin($box-shadow-small);
 
   &:hover {
-    background-color: $gray-600;
+    @include hovcol($btn-color-secondary);
   }
 }
 
@@ -403,10 +405,22 @@ a.nav-link {
 .geocoder-control-input {
   padding-bottom: 0px;
   padding-left: 0px;
-  color: $body-bg;
+  color: $map-botton-font-color;
   vertical-align: middle !important;
   align-items: center !important;
   height: 30px;
+  background-image: url(../images/search-glass.png) !important;
+  background-size: 14px;
+  background-position: center;
+}
+
+.geocoder-control-expanded {
+  .geocoder-control-input {
+      background-position: right !important;
+      background-origin: content-box, padding-box;
+      padding-right: 5px;
+      padding-bottom: 5px;
+  }
 }
 
 .geocoder-control {
@@ -414,8 +428,13 @@ a.nav-link {
   height: 30px;
 }
 
+.leaflet-control-container {
+  color: $btn-color-prinary !important;
+}
+
 .geocoder-control.leaflet-control.geocoder-control-expanded {
   width: 275px !important;
+  background-position: right !important;
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {
@@ -476,6 +495,7 @@ a.nav-link {
 .leaflet-bar a, .leaflet-bar a:hover {
   width: 30px !important;
   height: 30px !important;
+  color: $map-botton-font-color;
 }
 
 // about styles
@@ -858,7 +878,7 @@ a.about-nav.active::before {
   }
 
   .zoomLinks-collapser-header:hover {
-  @include hovcol(#060b18);
+    @include hovcol(#060b18);
     color: $body-color !important;
   }
 
@@ -1085,6 +1105,7 @@ background-color: $body-bg !important;
   margin-left: 2px;
   vertical-align: middle !important;
   align-items: center !important;
+  color: $map-botton-font-color;
 }
 
 .btn-search-locations-collapse {
@@ -1097,8 +1118,7 @@ background-color: $body-bg !important;
   font-size: .5em;
   line-height: 30px;
   background-size: 30px;
-  color: $gray-700;
-  color: $body-bg;
+  color: $map-botton-font-color;
   @include border-radius(2px, 2px);
   cursor: pointer;
 }
@@ -1107,7 +1127,7 @@ background-color: $body-bg !important;
   width: 60px;
   height: 50px;
   line-height: 10px;
-  color: $body-bg !important;
+  color: $map-botton-font-color !important;
 }
 
 .btn-mapshareurl, .btn-mapreset {
@@ -1125,12 +1145,12 @@ background-color: $body-bg !important;
   width: 100% !important;
   height: 100% !important;
   line-height: 50px !important;
-  color: $body-bg !important;
+  color: $map-botton-font-color !important;
   background-color: $body-color !important;
 }
 
 #btn-mapinfo-holder a{
-  color: $body-bg !important;
+  color: $map-botton-font-color !important;
 }
 
 .btn-copy-share {
@@ -1141,7 +1161,7 @@ background-color: $body-bg !important;
   width: 100px;
   font-size: 15px;
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color;
   border: 0px;
   @include border-bottom-left-radius(2px);
   @include border-bottom-right-radius(2px);
@@ -1165,7 +1185,7 @@ background-color: $body-bg !important;
   width: 40px;
   font-size: 15px;
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color;
   border: 0px;
   @include border-bottom-left-radius(2px);
   @include border-bottom-right-radius(2px);
@@ -1173,7 +1193,7 @@ background-color: $body-bg !important;
 
 .i-btn {
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color;
   width: 30px;
   height: 30px;
   font-size: 15px;
@@ -1183,7 +1203,7 @@ background-color: $body-bg !important;
 
 .e-btn {
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color;
   width: 75px;
   height: 30px;
   font-size: 15px;
@@ -1202,7 +1222,7 @@ background-color: $body-bg !important;
 }
 
 .btn-light {
-  background-color:  $body-color;
+  background-color: $btn-color-prinary;
   color: $body-bg;
   padding: 4px 4px;
   border-width: 0px;
@@ -2856,7 +2876,7 @@ p.not-found {
   width: 60px;
   height: 50px;
   line-height: 10px;
-  color: $body-bg !important;
+  color: $map-botton-font-color !important;
 }
 
 .btn-mapshareurl, .btn-mapreset {
@@ -2874,7 +2894,7 @@ p.not-found {
   width: 100% !important;
   height: 100% !important;
   line-height: 50px !important;
-  color: $body-bg !important;
+  color: $map-botton-font-color !important;
   background-color: $body-color !important;
 }
 
@@ -2887,7 +2907,7 @@ p.not-found {
   width: 1px;
   font-size: 10px;
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color !important;
   border-width: 0px;
   padding: 0px;
   vertical-align: middle !important;
@@ -2912,7 +2932,7 @@ p.not-found {
   width: 100px;
   font-size: 15px;
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color !important;
   border: 0px;
   @include border-bottom-left-radius(2px);
   @include border-bottom-right-radius(2px);
@@ -2936,7 +2956,7 @@ p.not-found {
   width: 40px;
   font-size: 15px;
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color !important;
   border: 0px;
   @include border-bottom-left-radius(2px);
   @include border-bottom-right-radius(2px);
@@ -2944,7 +2964,7 @@ p.not-found {
 
 .i-btn {
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color !important;
   width: 30px;
   height: 30px;
   font-size: 15px;
@@ -2962,7 +2982,7 @@ p.not-found {
   width: 1px;
   font-size: 10px;
   background-color: $body-color;
-  color: $body-bg;
+  color: $map-botton-font-color !important;
   border-width: 0px;
   padding: 0px;
   vertical-align: middle !important;
@@ -2984,7 +3004,7 @@ p.not-found {
   font-size: 10px;
   margin-top: 7px;
   margin-left: -15px;
-  color: $gray-700;
+  color: $map-botton-font-color !important;
 }
 
 .i-exposure{
@@ -3025,14 +3045,14 @@ p.not-found {
   height: 250px;
 }
 
-.search-locations-popup .leaflet-popup-content-wrapper{
+.search-locations-popup .leaflet-popup-content-wrapper {
   background-color: $body-bg-semiTransparent;
-  color: $body-color;
+  color: $body-color !important;
   padding: $padding;
   width: 250px;
   font-size: .85rem;
 }
-å
+
 .searchlocationsdata {
   font-size: .85rem;
 }

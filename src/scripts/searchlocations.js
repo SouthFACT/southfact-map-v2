@@ -110,13 +110,24 @@ export class SearchLocations extends Component {
     elem.classList.add('collapse-focus');
     if (window.screen.availWidth < 769) {
       const dnoneElem = document.querySelector('.leaflet-bottom.leaflet-left');
-      dnoneElem.classList.add('d-none');
+      if (dnoneElem) {
+        dnoneElem.classList.add('d-none');
+      }
+
       const dnoneRightElem = document.querySelector('.leaflet-top.leaflet-right');
-      dnoneRightElem.classList.add('d-none');
+      if (dnoneRightElem) {
+        dnoneRightElem.classList.add('d-none');
+      }
+
       const dnoneBntElem = document.querySelector('.maplayerslisttoggle-collapse');
-      dnoneBntElem.classList.add('d-none');
+      if (dnoneBntElem) {
+        dnoneBntElem.classList.add('d-none');
+      }
+
       const attElem = document.querySelector('.leaflet-control-attribution');
-      attElem.classList.add('d-none');
+      if (attElem) {
+        attElem.classList.add('d-none');
+      }
     }
   }
 
@@ -124,13 +135,24 @@ export class SearchLocations extends Component {
     const elem = document.querySelector('.geocoder-control');
     elem.classList.remove('collapse-focus');
     const dnoneElem = document.querySelector('.leaflet-bottom.leaflet-left');
-    dnoneElem.classList.remove('d-none');
+    if (dnoneElem) {
+      dnoneElem.classList.remove('d-none');
+    }
+
     const dnoneRightElem = document.querySelector('.leaflet-top.leaflet-right');
-    dnoneRightElem.classList.remove('d-none');
+    if (dnoneRightElem) {
+      dnoneRightElem.classList.remove('d-none');
+    }
+
     const dnoneBntElem = document.querySelector('.maplayerslisttoggle-collapse');
-    dnoneBntElem.classList.remove('d-none');
+    if (dnoneBntElem) {
+      dnoneBntElem.classList.remove('d-none');
+    }
+
     const attElem = document.querySelector('.leaflet-control-attribution');
-    attElem.classList.remove('d-none');
+    if (attElem) {
+      attElem.classList.remove('d-none');
+    }
   }
 
   // handle collapse of search box.  removed from displays the collapse button
