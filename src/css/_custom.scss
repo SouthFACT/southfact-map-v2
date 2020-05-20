@@ -2618,9 +2618,9 @@ p.not-found {
 }
 
 .popover {
-  z-index: 4500;
+  z-index: 5000;
   max-width: 400px !important;
-  // pointer-events: none;
+  pointer-events: none;
 
   &:focus {
     outline: none;
