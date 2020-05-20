@@ -1,69 +1,67 @@
 <div ref="maplayers_list" id="maplayers_list" class="h-100 maplayers_list py-2">
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark maplayerslisttoggle-collapse"> -->
-    <span class="brand-maplist-holder">
-      <span class="navbar-brand nav-brand-maplayerlist w-100" >Map Layers</span>
-      <!-- <button class="navbar-toggler bnt-MapLayersListToggle" type="button" data-toggle="collapse" data-target="#mapListTogglea" aria-controls="mapListTogglea" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fas fa-layer-group"></i></span>
-      </button> -->
-    </span>
-    <div class="collapse navbar-collapse" id="mapListToggle">
-      <!-- <nav class="navbar-nav mt-2 mt-lg-0 w-100"  id="main-nav" > -->
-        <div ref="ToggleLayers" id="ToggleLayerList" class="layer-toggles h-100 w-100">
-          <button id="btn-basemap" title="Change Base Map" aria-label="Clear Map" type="button" class="btn-light btn-basemap">
-            <span class="btn-icon btn-text-left w-100">
-              <i class="fas fa-th-large icon-left"></i>
-              <span class="btn-action">Change the Base Map</span>
-              <span id="btn-basemap-label" class="btn-label">Dark Gray</span>
-            </span>
-          </button>
+  <span class="brand-maplist-holder">
+    <span class="navbar-brand nav-brand-maplayerlist w-100" >Map Layers</span>
+    <!-- <button class="navbar-toggler bnt-MapLayersListToggle" type="button" data-toggle="collapse" data-target="#mapListTogglea" aria-controls="mapListTogglea" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-layer-group"></i></span>
+  </button> -->
+</span>
+<div class="collapse navbar-collapse" id="mapListToggle">
+  <div ref="ToggleLayers" id="ToggleLayerList" class="layer-toggles h-100 w-100">
+    <button id="btn-basemap" title="Change Base Map" aria-label="Clear Map" type="button" class="btn-light btn-basemap">
+      <span class="btn-icon btn-text-left w-100">
+        <i class="fas fa-th-large icon-left"></i>
+        <span class="btn-action">Change the Base Map</span>
+        <span id="btn-basemap-label" class="btn-label">Dark Gray</span>
+      </span>
+    </button>
 
-          <div id="basemaplist" class="list-group list-group-dark list-basemap closed">
-            <span title="Close Base Map List" aria-label="Close Base Map List" id="basemap_list_close" class="float-right text-right w-100 basemap_list_close d-none">
-              <span class="choose-base-map">Change the Base Map</span>
-              <i title="Close Base Map List" aria-label="Close Base Map List" class="fas fa-times"></i>
-            </span>
-            <button title="Base Map Dark Gray" aria-label="Base Map Dark Gray" id="basemap-DarkGray" type="button" class="list-group-item list-group-item-action">
-              <img src="../images/DGCanvasBase.png" alt="Base Map Dark Gray" class="basemap-img" />
-              <span class="list-label-name">Dark Gray</span>
-            </button>
-            <button title="Base Map Imagery" aria-label="Base Map Imagery" id="basemap-Imagery" type="button" class="list-group-item list-group-item-action">
-              <img src="../images/imagery.jpg" alt="Base Map Imagery" class="basemap-img" />
-              <span class="list-label-name">Imagery</span>
-            </button>
-            <button title="Base Map Topographic" aria-label="Base Map Topographic" id="basemap-Topographic" type="button" class="list-group-item list-group-item-action">
-              <img src="../images/topo_map_2.jpg" alt="Base Map Topographic" class="basemap-img" />
-              <span class="list-label-name">Topographic</span>
-            </button>
-            <button title="Base Map Streets" aria-label="Base Map Dark Streets" id="basemap-Streets" type="button" class="list-group-item list-group-item-action">
-              <img src="../images/world_street_map.jpg" alt="Base Map Streets" class="basemap-img" />
-              <span class="list-label-name">Streets</span>
-            </button>
-          </div>
+    <div id="basemaplist" class="list-group list-group-dark list-basemap closed">
+      <span title="Close Base Map List" aria-label="Close Base Map List" id="basemap_list_close" class="float-right text-right w-100 basemap_list_close d-none">
+        <span class="choose-base-map">Change the Base Map</span>
+        <i title="Close Base Map List" aria-label="Close Base Map List" class="fas fa-times"></i>
+      </span>
+      <button title="Base Map Dark Gray" aria-label="Base Map Dark Gray" id="basemap-DarkGray" type="button" class="list-group-item list-group-item-action">
+        <img src="../images/DGCanvasBase.png" alt="Base Map Dark Gray" class="basemap-img" />
+        <span class="list-label-name">Dark Gray</span>
+      </button>
+      <button title="Base Map Imagery" aria-label="Base Map Imagery" id="basemap-Imagery" type="button" class="list-group-item list-group-item-action">
+        <img src="../images/imagery.jpg" alt="Base Map Imagery" class="basemap-img" />
+        <span class="list-label-name">Imagery</span>
+      </button>
+      <button title="Base Map Topographic" aria-label="Base Map Topographic" id="basemap-Topographic" type="button" class="list-group-item list-group-item-action">
+        <img src="../images/topo_map_2.jpg" alt="Base Map Topographic" class="basemap-img" />
+        <span class="list-label-name">Topographic</span>
+      </button>
+      <button title="Base Map Streets" aria-label="Base Map Dark Streets" id="basemap-Streets" type="button" class="list-group-item list-group-item-action">
+        <img src="../images/world_street_map.jpg" alt="Base Map Streets" class="basemap-img" />
+        <span class="list-label-name">Streets</span>
+      </button>
+    </div>
 
-          <!-- <button id="btn-zoomregion" title="Change region" aria-label="Clear Map" type="button" class="btn-light btn-basemap zoom-region">
-          <span class="btn-icon btn-text-left w-100">
-          <i class="fas fa-clone icon-left"></i>
-          <span class="btn-action">Select a Region</span>
-          <span id="btn-zoomregion-label" class="btn-label">Southeast U.S.</span>
-        </span>
-      </button> -->
+    <!-- <button id="btn-zoomregion" title="Change region" aria-label="Clear Map" type="button" class="btn-light btn-basemap zoom-region">
+    <span class="btn-icon btn-text-left w-100">
+    <i class="fas fa-clone icon-left"></i>
+    <span class="btn-action">Select a Region</span>
+    <span id="btn-zoomregion-label" class="btn-label">Southeast U.S.</span>
+  </span>
+</button> -->
 
-      <!-- <div id="zoomregionlist" class="list-group list-group-dark list-zoomregion closed">
-      <span title="zoom to a region" aria-label="zoom region South East U.S" id="zoomregion_close" class="float-right text-right w-100 zoomregion_list_close d-none">
-      <span class="choose-base-map align-self-center">Southeast U.S</span>
-      <i title="Close Zoom Region List" aria-label="Close Zoom Region List" class="fas fa-times"></i>
-    </span>
-    <button title="Zoom to a region South East U.S" aria-label="Zoom to a region South East U.S" id="zoomregion-seus" type="button" class="list-group-item list-group-item-action">
-    <img src="../images/zoomregion-cus.png" alt="Zoom to a region South East U.S" class="zoomregion-img  align-self-center" />
-    <span class="list-label-name align-self-center">South East U.S</span>
-  </button>
+<!-- <div id="zoomregionlist" class="list-group list-group-dark list-zoomregion closed">
+<span title="zoom to a region" aria-label="zoom region South East U.S" id="zoomregion_close" class="float-right text-right w-100 zoomregion_list_close d-none">
+<span class="choose-base-map align-self-center">Southeast U.S</span>
+<i title="Close Zoom Region List" aria-label="Close Zoom Region List" class="fas fa-times"></i>
+</span>
+<button title="Zoom to a region South East U.S" aria-label="Zoom to a region South East U.S" id="zoomregion-seus" type="button" class="list-group-item list-group-item-action">
+<img src="../images/zoomregion-cus.png" alt="Zoom to a region South East U.S" class="zoomregion-img  align-self-center" />
+<span class="list-label-name align-self-center">South East U.S</span>
+</button>
 </div> -->
 
 <span id="defaultLayerList" >
   <div class="LayerList-spacer" id="ExposureLayers-Header"></div>
 
   <div class="LayerList-Group" id="LayerList-Group-Header">
-    <div class="LayerInput-header" id="HubsLayers-Header">Latest Change</div>
+    <div class="LayerInput-header" id="HubsLayers-Header">Current Year to Date</div>
 
     <div ref="LayerInput" id="southeast_swir_threshold-layerToggle" class="custom-control custom-checkbox">
       <div class="layer-toggle-wrapper">
@@ -145,224 +143,275 @@
 
   <div class="LayerList-Group inputs-collapser" id="LayerList-Group-Header">
 
-    <div class="LayerInput-header inputs-collapser-header" id="AssetInputs-Header" data-toggle="collapse" data-target="#CollapseCommunityAssetIndexInputs" aria-expanded="false" aria-controls="CollapseCommunityAssetIndexInputs">
-      Community Asset Inputs
+    <div class="LayerInput-header inputs-collapser-header" id="AssetInputs-Header" data-toggle="collapse" data-target="#CollapseOneYearArchive" aria-expanded="false" aria-controls="CollapseOneYearArchive">
+      2019 - 2018
       <i class="fa fa-caret-up icon-right d-none" aria-hidden="false"></i>
       <i class="fa fa-caret-down icon-right d-none" aria-hidden="false"></i></div>
-      <div class="collapse" id="CollapseCommunityAssetIndexInputs">
+      <div class="collapse" id="CollapseOneYearArchive">
 
         <div class="inputs-layer-list">
-          <div ref="LayerInput" id="PopDensityTMS-layerToggle" class="custom-control custom-checkbox">
+
+          <div ref="LayerInput" id="southeast_swir_threshold_1yr-layerToggle" class="custom-control custom-checkbox">
             <div class="layer-toggle-wrapper">
-              <input title="Population Density Layer" aria-label="Toggle Population Density Layer" ref="PopDensityTMS-toggle" type="checkbox" class="custom-control-input" id="PopDensityTMS-toggle">
-              <label title="Population Density Layer" aria-label="Toggle Population Density Layer" ref="PopDensityTMS-label" class="custom-control-label" for="PopDensityTMS-toggle" id="PopDensityTMS-label">Population Density</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
+              <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_1yr-toggle" type="checkbox" class="custom-control-input" id="southeast_swir_threshold_1yr-toggle">
+              <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_1yr-label" class="custom-control-label" for="southeast_swir_threshold_1yr-toggle" id="southeast_swir_threshold_1yr-label">SWIR Differencing (Threshold Change)</label>
+              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
                 <i title="" aria-label="Show layer description" class="fas fa-info"></i>
               </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-populationdensity" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-populationdensity" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-populationdensity" class="fas fa-angle-up d-none"></i>
+              <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
               </span>
+
             </div>
             <div class="layer-legend-wrapper closed">
               <div class="layer-legend"></div>
             </div>
           </div>
 
-          <div ref="LayerInput" id="SocVulnTMS-layerToggle" class="custom-control custom-checkbox">
+          <!-- <div ref="LayerInput" id="southeast_swir_threshold_all_1yr-layerToggle" class="custom-control custom-checkbox">
             <div class="layer-toggle-wrapper">
-              <input title="Social Vulnerability Index Layer" aria-label="Toggle Social Vulnerability Index Layer" ref="SocVulnTMS-toggle" type="checkbox" class="custom-control-input" id="SocVulnTMS-toggle">
-              <label title="Social Vulnerability Index Layer" aria-label="Toggle Social Vulnerability Index Layer" ref="SocVulnTMS-label" class="custom-control-label" for="SocVulnTMS-toggle" id="SocVulnTMS-label">Social Vulnerability</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
+              <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_all_1yr-toggle" type="checkbox" class="custom-control-input" id="southeast_swir_threshold_all_1yr-toggle">
+              <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_all_1yr-label" class="custom-control-label" for="southeast_swir_threshold_all_1yr-toggle" id="southeast_swir_threshold_all_1yr-label">SWIR Differencing (All Change)</label>
+              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
                 <i title="" aria-label="Show layer description" class="fas fa-info"></i>
               </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-socialvulnerability" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-socialvulnerability" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-socialvulnerability" class="fas fa-angle-up d-none"></i>
+              <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
               </span>
+
             </div>
             <div class="layer-legend-wrapper closed">
               <div class="layer-legend"></div>
             </div>
           </div>
 
-          <div ref="LayerInput" id="CriticalFacilitiesTMS-layerToggle" class="custom-control custom-checkbox">
+
+          <div ref="LayerInput" id="southeast_ndvi_1yr-layerToggle" class="custom-control custom-checkbox">
             <div class="layer-toggle-wrapper">
-              <input title="Critical Facilities Index Layer" aria-label="Toggle Critical Facilities Index Layer" ref="CriticalFacilitiesTMS-toggle" type="checkbox" class="custom-control-input" id="CriticalFacilitiesTMS-toggle">
-              <label title="Critical Facilities Index Layer" aria-label="Toggle Critical Facilities Index Layer" ref="CriticalFacilitiesTMS-label" class="custom-control-label" for="CriticalFacilitiesTMS-toggle" id="CriticalFacilitiesTMS-label">Critical Facilities</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
+              <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndvi_1yr-toggle" type="checkbox" class="custom-control-input" id="southeast_ndvi_1yr-toggle">
+              <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndvi_1yr-label" class="custom-control-label" for="southeast_ndvi_1yr-toggle" id="southeast_ndvi_1yr-label">NDVI</label>
+              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
                 <i title="" aria-label="Show layer description" class="fas fa-info"></i>
               </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-criticalfacilities" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-criticalfacilities" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-criticalfacilities" class="fas fa-angle-up d-none"></i>
+              <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
               </span>
+
             </div>
             <div class="layer-legend-wrapper closed">
               <div class="layer-legend"></div>
             </div>
           </div>
 
-          <div ref="LayerInput" id="CriticalInfrastructureTMS-layerToggle" class="custom-control custom-checkbox">
+          <div ref="LayerInput" id="southeast_ndmi_1yr-layerToggle" class="custom-control custom-checkbox">
             <div class="layer-toggle-wrapper">
-              <input title="Critical Infrastructure Index Layer" aria-label="Toggle Critical Infrastructure Index Layer" ref="CriticalInfrastructureTMS-toggle" type="checkbox" class="custom-control-input" id="CriticalInfrastructureTMS-toggle">
-              <label title="Critical Infrastructure Index Layer" aria-label="Toggle Critical Infrastructure Index Layer" ref="CriticalInfrastructureTMS-label" class="custom-control-label" for="CriticalInfrastructureTMS-toggle" id="CriticalInfrastructureTMS-label">Critical Infrastructure</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
+              <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndmi_1yr-toggle" type="checkbox" class="custom-control-input" id="southeast_ndmi_1yr-toggle">
+              <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndmi_1yr-label" class="custom-control-label" for="southeast_ndmi_1yr-toggle" id="southeast_ndmi_1yr-label">NDMI</label>
+              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
                 <i title="" aria-label="Show layer description" class="fas fa-info"></i>
               </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-criticalinfrastructure" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-criticalinfrastructure" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-criticalinfrastructure" class="fas fa-angle-up d-none"></i>
+              <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
               </span>
+
             </div>
             <div class="layer-legend-wrapper closed">
               <div class="layer-legend"></div>
             </div>
-          </div>
+          </div> -->
+
         </div>
       </div>
     </div>
 
     <div class="LayerList-spacer" id="ThreatsInputs-Header"></div>
 
-
-
-
     <div class="LayerList-Group inputs-collapser" id="LayerList-Group-Header">
 
-      <div class="LayerInput-header inputs-collapser-header" id="ThreatsInputs-Header" data-toggle="collapse" data-target="#CollapseCommunityThreatIndexInputs" aria-expanded="false" aria-controls="CollapseCommunityThreatIndexInputs">
-        Threat Inputs
+      <div class="LayerInput-header inputs-collapser-header" id="AssetInputs-Header" data-toggle="collapse" data-target="#CollapseTwoYearArchive" aria-expanded="false" aria-controls="CollapseTwoYearArchive">
+        2018 - 2017
         <i class="fa fa-caret-up icon-right d-none" aria-hidden="false"></i>
-        <i class="fa fa-caret-down icon-right d-none" aria-hidden="false"></i>
-      </div>
-      <div class="collapse" id="CollapseCommunityThreatIndexInputs">
+        <i class="fa fa-caret-down icon-right d-none" aria-hidden="false"></i></div>
+        <div class="collapse" id="CollapseTwoYearArchive">
 
-        <div class="inputs-layer-list">
-          <div ref="LayerInput" id="DrainageTMS-layerToggle" class="custom-control custom-checkbox">
-            <div class="layer-toggle-wrapper">
-              <input title="Impermeable Soils Density Layer" aria-label="Toggle Impermeable Soils Layer" ref="DrainageTMS-toggle" type="checkbox" class="custom-control-input" id="DrainageTMS-toggle">
-              <label title="Impermeable Soils Density Layer" aria-label="Toggle Impermeable Soils Layer" ref="DrainageTMS-label" class="custom-control-label" for="DrainageTMS-toggle" id="DrainageTMS-label">Impermeable Soils</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-              </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-drainage" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-drainage" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-drainage" class="fas fa-angle-up d-none"></i>
-              </span>
+          <div class="inputs-layer-list">
+
+            <div ref="LayerInput" id="southeast_swir_threshold_2yr-layerToggle" class="custom-control custom-checkbox">
+              <div class="layer-toggle-wrapper">
+                <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_2yr-toggle" type="checkbox" class="custom-control-input" id="southeast_swir_threshold_2yr-toggle">
+                <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_2yr-label" class="custom-control-label" for="southeast_swir_threshold_2yr-toggle" id="southeast_swir_threshold_2yr-label">SWIR Differencing (Threshold Change)</label>
+                <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                  <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                </span>
+                <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                </span>
+
+              </div>
+              <div class="layer-legend-wrapper closed">
+                <div class="layer-legend"></div>
+              </div>
             </div>
-            <div class="layer-legend-wrapper closed">
-              <div class="layer-legend"></div>
+
+            <!-- <div ref="LayerInput" id="southeast_swir_threshold_all_2yr-layerToggle" class="custom-control custom-checkbox">
+              <div class="layer-toggle-wrapper">
+                <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_all_2yr-toggle" type="checkbox" class="custom-control-input" id="southeast_swir_threshold_all_2yr-toggle">
+                <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_all_2yr-label" class="custom-control-label" for="southeast_swir_threshold_all_2yr-toggle" id="southeast_swir_threshold_all_2yr-label">SWIR Differencing (All Change)</label>
+                <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                  <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                </span>
+                <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                </span>
+
+              </div>
+              <div class="layer-legend-wrapper closed">
+                <div class="layer-legend"></div>
+              </div>
             </div>
+
+            <div ref="LayerInput" id="southeast_ndvi_2yr-layerToggle" class="custom-control custom-checkbox">
+              <div class="layer-toggle-wrapper">
+                <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndvi_2yr-toggle" type="checkbox" class="custom-control-input" id="southeast_ndvi_2yr-toggle">
+                <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndvi_2yr-label" class="custom-control-label" for="southeast_ndvi_2yr-toggle" id="southeast_ndvi_2yr-label">NDVI</label>
+                <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                  <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                </span>
+                <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                </span>
+
+              </div>
+              <div class="layer-legend-wrapper closed">
+                <div class="layer-legend"></div>
+              </div>
+            </div>
+
+            <div ref="LayerInput" id="southeast_ndmi_2yr-layerToggle" class="custom-control custom-checkbox">
+              <div class="layer-toggle-wrapper">
+                <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndmi_2yr-toggle" type="checkbox" class="custom-control-input" id="southeast_ndmi_2yr-toggle">
+                <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndmi_2yr-label" class="custom-control-label" for="southeast_ndmi_2yr-toggle" id="southeast_ndmi_2yr-label">NDMI</label>
+                <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                  <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                </span>
+                <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                  <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                </span>
+
+              </div>
+              <div class="layer-legend-wrapper closed">
+                <div class="layer-legend"></div>
+              </div>
+            </div> -->
+
           </div>
-
-          <div ref="LayerInput" id="ErosionTMS-layerToggle" class="custom-control custom-checkbox">
-            <div class="layer-toggle-wrapper">
-              <input title="Soil Erodibility Index Layer" aria-label="Toggle Soil Erodibility Index Layer" ref="ErosionTMS-toggle" type="checkbox" class="custom-control-input" id="ErosionTMS-toggle">
-              <label title="Soil Erodibility Index Layer" aria-label="Toggle Soil Erodibility Index Layer" ref="ErosionTMS-label" class="custom-control-label" for="ErosionTMS-toggle" id="ErosionTMS-label">Soil Erodibility</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-              </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-erosion" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-erosion" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-erosion" class="fas fa-angle-up d-none"></i>
-              </span>
-            </div>
-            <div class="layer-legend-wrapper closed">
-              <div class="layer-legend"></div>
-            </div>
-          </div>
-
-          <div ref="LayerInput" id="FloodProneAreasTMS-layerToggle" class="custom-control custom-checkbox">
-            <div class="layer-toggle-wrapper">
-              <input title="Flood-Prone Areas Index Layer" aria-label="Toggle Flood-Prone Areas Index Layer" ref="FloodProneAreasTMS-toggle" type="checkbox" class="custom-control-input" id="FloodProneAreasTMS-toggle">
-              <label title="Flood-Prone Areas Index Layer" aria-label="Toggle Flood-Prone Areas Index Layer" ref="FloodProneAreasTMS-label" class="custom-control-label" for="FloodProneAreasTMS-toggle" id="FloodProneAreasTMS-label">Flood-Prone Areas</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-              </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-floodproneareas" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-floodproneareas" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-floodproneareas" class="fas fa-angle-up d-none"></i>
-              </span>
-            </div>
-            <div class="layer-legend-wrapper closed">
-              <div class="layer-legend"></div>
-            </div>
-          </div>
-
-          <div ref="LayerInput" id="SLRTMS-layerToggle" class="custom-control custom-checkbox">
-            <div class="layer-toggle-wrapper">
-              <input title="Sea Level Rise Index Layer" aria-label="Toggle Sea Level Rise Index Layer" ref="SLRTMS-toggle" type="checkbox" class="custom-control-input" id="SLRTMS-toggle">
-              <label title="Sea Level Rise Index Layer" aria-label="Toggle Sea Level Rise Index Layer" ref="SLRTMS-label" class="custom-control-label" for="SLRTMS-toggle" id="SLRTMS-label">Sea Level Rise Facilities</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-              </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-sealevelrise" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-sealevelrise" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-sealevelrise" class="fas fa-angle-up d-none"></i>
-              </span>
-            </div>
-            <div class="layer-legend-wrapper closed">
-              <div class="layer-legend"></div>
-            </div>
-          </div>
-
-          <div ref="LayerInput" id="StormSurgeTMS-layerToggle" class="custom-control custom-checkbox">
-            <div class="layer-toggle-wrapper">
-              <input title="Storm Surge Index Layer" aria-label="Toggle Storm Surge Index Layer" ref="StormSurgeTMS-toggle" type="checkbox" class="custom-control-input" id="StormSurgeTMS-toggle">
-              <label title="Storm Surge Index Layer" aria-label="Toggle Storm Surge Index Layer" ref="StormSurgeTMS-label" class="custom-control-label" for="StormSurgeTMS-toggle" id="StormSurgeTMS-label">Storm Surge</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-              </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-stormsurge" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-stormsurge" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-stormsurge" class="fas fa-angle-up d-none"></i>
-              </span>
-            </div>
-            <div class="layer-legend-wrapper closed">
-              <div class="layer-legend"></div>
-            </div>
-          </div>
-
-          <div ref="LayerInput" id="GeoStressTMS-layerToggle" class="custom-control custom-checkbox">
-            <div class="layer-toggle-wrapper">
-              <input title="Geological Stressors Index Layer" aria-label="Toggle Geological Stressors Index Layer" ref="GeoStressTMS-toggle" type="checkbox" class="custom-control-input" id="GeoStressTMS-toggle">
-              <label title="Geological Stressors Index Layer" aria-label="Toggle Geological Stressors Index Layer" ref="GeoStressTMS-label" class="custom-control-label" for="GeoStressTMS-toggle" id="GeoStressTMS-label">Geological Stressors</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-              </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-geostressor" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-geostressor" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-geostressor" class="fas fa-angle-up d-none"></i>
-              </span>
-            </div>
-            <div class="layer-legend-wrapper closed">
-              <div class="layer-legend"></div>
-            </div>
-          </div>
-
-          <div ref="LayerInput" id="SlopeTMS-layerToggle" class="custom-control custom-checkbox">
-            <div class="layer-toggle-wrapper">
-              <input title="Slope Index Layer" aria-label="Toggle Slope Index Layer" ref="SlopeTMS-toggle" type="checkbox" class="custom-control-input" id="SlopeTMS-toggle">
-              <label title="Slope Index Layer" aria-label="Toggle Slope Index Layer" ref="SlopeTMS-label" class="custom-control-label" for="SlopeTMS-toggle" id="SlopeTMS-label">Areas of Low Slope</label>
-              <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-toggle="tooltip" data-placement="top">
-                <i title="" aria-label="Show layer description" class="fas fa-info"></i>
-              </span>
-              <span title="View Legend" aria-label="View Legend" id="legend-slope" class="float-right text-center layer-legend-toggler closed">
-                <i title="View Legend" aria-label="View Legend" id="legend-slope" class="fas fa-angle-down"></i>
-                <i title="View Legend" aria-label="View Legend" id="legend-slope" class="fas fa-angle-up d-none"></i>
-              </span>
-            </div>
-            <div class="layer-legend-wrapper closed">
-              <div class="layer-legend"></div>
-            </div>
-          </div> <!-- end slope inputs -->
         </div>
-      </div>  <!-- end group of threat inputs -->
-    </div>
-  </span>
+      </div>
 
-</div>
-<!-- </nav> -->
-</div>
-</nav>
+      <div class="LayerList-spacer" id="ThreatsInputs-Header"></div>
+
+      <div class="LayerList-Group inputs-collapser" id="LayerList-Group-Header">
+
+        <div class="LayerInput-header inputs-collapser-header" id="AssetInputs-Header" data-toggle="collapse" data-target="#CollapseThreeYearArchive" aria-expanded="false" aria-controls="CollapseThreeYearArchive">
+          2017 - 2016
+          <i class="fa fa-caret-up icon-right d-none" aria-hidden="false"></i>
+          <i class="fa fa-caret-down icon-right d-none" aria-hidden="false"></i></div>
+          <div class="collapse" id="CollapseThreeYearArchive">
+
+            <div class="inputs-layer-list">
+
+              <div ref="LayerInput" id="southeast_swir_threshold_3yr-layerToggle" class="custom-control custom-checkbox">
+                <div class="layer-toggle-wrapper">
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_3yr-toggle" type="checkbox" class="custom-control-input" id="southeast_swir_threshold_3yr-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_3yr-label" class="custom-control-label" for="southeast_swir_threshold_3yr-toggle" id="southeast_swir_threshold_3yr-label">SWIR Differencing (Threshold Change)</label>
+                  <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                    <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                  </span>
+                  <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                  </span>
+
+                </div>
+                <div class="layer-legend-wrapper closed">
+                  <div class="layer-legend"></div>
+                </div>
+              </div>
+
+              <!-- <div ref="LayerInput" id="southeast_swir_threshold_all_3yr-layerToggle" class="custom-control custom-checkbox">
+                <div class="layer-toggle-wrapper">
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_all_3yr-toggle" type="checkbox" class="custom-control-input" id="southeast_swir_threshold_all_3yr-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_swir_threshold_all_3yr-label" class="custom-control-label" for="southeast_swir_threshold_all_3yr-toggle" id="southeast_swir_threshold_all_3yr-label">SWIR Differencing (All Change)</label>
+                  <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                    <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                  </span>
+                  <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                  </span>
+
+                </div>
+                <div class="layer-legend-wrapper closed">
+                  <div class="layer-legend"></div>
+                </div>
+              </div>
+
+
+              <div ref="LayerInput" id="southeast_ndvi_3yr-layerToggle" class="custom-control custom-checkbox">
+                <div class="layer-toggle-wrapper">
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndvi_3yr-toggle" type="checkbox" class="custom-control-input" id="southeast_ndvi_3yr-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndvi_3yr-label" class="custom-control-label" for="southeast_ndvi_3yr-toggle" id="southeast_ndvi_3yr-label">NDVI</label>
+                  <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                    <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                  </span>
+                  <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                  </span>
+
+                </div>
+                <div class="layer-legend-wrapper closed">
+                  <div class="layer-legend"></div>
+                </div>
+              </div>
+
+              <div ref="LayerInput" id="southeast_ndmi_3yr-layerToggle" class="custom-control custom-checkbox">
+                <div class="layer-toggle-wrapper">
+                  <input title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndmi_3yr-toggle" type="checkbox" class="custom-control-input" id="southeast_ndmi_3yr-toggle">
+                  <label title="Toggle southeast-swir-currentMaskForForest" aria-label="Toggle southeast-swir-currentMaskForForest" ref="southeast_ndmi_3yr-label" class="custom-control-label" for="southeast_ndmi_3yr-toggle" id="southeast_ndmi_3yr-label">NDMI</label>
+                  <span title="" aria-label="Show layer description" class="float-right text-center layer-description-text" data-trigger="focus hover" data-toggle="popover" data-placement="bottom" role="button" tabindex="-1"  >
+                    <i title="" aria-label="Show layer description" class="fas fa-info"></i>
+                  </span>
+                  <span title="View Legend" aria-label="View Legend" id="legend-hubs" class="float-right text-center layer-legend-toggler closed">
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-down d-none"></i>
+                    <i title="View Legend" aria-label="View Legend" id="legend-hubs" class="fas fa-angle-up d-none"></i>
+                  </span>
+
+                </div>
+                <div class="layer-legend-wrapper closed">
+                  <div class="layer-legend"></div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="LayerList-spacer" id="ThreatsInputs-Header"></div>
+
+
+      </span>
+
+    </div>
+    <!-- </nav> -->
+  </div>
+  <!-- </nav> -->
 </div>
