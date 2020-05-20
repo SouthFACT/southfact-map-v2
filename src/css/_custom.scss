@@ -2140,6 +2140,14 @@ p.not-found {
     }
   }
 } //end media screen 414
+
+@media screen and (max-width: 640px) {
+   .navbar-brand {
+    display: inline-block;
+    font-size: 1rem !important;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .maplayers_list {
     top: 70px !important;
@@ -2547,7 +2555,7 @@ p.not-found {
         }
 
         background-color: $body-color;
-        color: $body-bg;
+        color: $map-botton-font-color;
         text-align: left!important;
     }
 
@@ -2645,23 +2653,25 @@ p.not-found {
 
 .popover {
   z-index: 4500;
-  max-width: 500px !important;
+  max-width: 400px !important;
+  // pointer-events: none;
+
   &:focus {
     outline: none;
   }
   .popover-header {
     background-color: $body-color !important;
-    color: $body-bg !important;
+    color: $map-botton-font-color !important;
   }
   .popover-body {
-
+    color: $map-botton-font-color !important;
   }
   @media screen and (max-width: 992px) {
-    max-width: 400px !important;
+    max-width: 300px !important;
   }
 
   @media screen and (max-width: 400px) {
-    max-width: 300px !important;
+    max-width: 200px !important;
   }
 }
 

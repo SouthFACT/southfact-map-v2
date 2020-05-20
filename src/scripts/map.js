@@ -487,23 +487,26 @@ export class Map extends Component {
   // addds listener for when there is a region to be displayed.
   static addRegionNotDisplayedListner() {
     window.addEventListener('regionnotdisplayed', (e) => {
-      // add tool tip
-      document.getElementById('btn-zoomregion').setAttribute('title', '');
-      $(() => {
-        $('#btn-zoomregion').popover({
-          trigger: 'manual',
-          placement: 'bottom',
-          content: `The map boundaries include ${e.detail}. If you want to view data associated with ${e.detail} you will need to switch the region.`,
-          title: '',
-          template: '<div class="popover location-aware-messsage" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
-        });
-
-        // show the a loation aware message saying the region available but not activated
-        $('#btn-zoomregion').popover('show');
-        // dismiss on click anywhere or after 5 seconds
-        window.addEventListener('click', clicke => $('#btn-zoomregion').popover('dispose'));
-        setTimeout(() => { $('#btn-zoomregion').popover('dispose'); }, 5000);
-      });
+      // // add tool tip
+      // document.getElementById('btn-zoomregion').setAttribute('title', '');
+      // $(() => {
+      //   $('#btn-zoomregion').popover({
+      //     trigger: 'manual',
+      //     placement: 'bottom',
+      //     content: `The map boundaries include ${e.detail}.
+      // If you want to view data associated with ${e.detail} you will need to switch the region.`,
+      //     title: '',
+      //     template: '<div class="popover location-aware-messsage" role="tooltip">
+      // <div class="arrow"></div><h3 class="popover-header"></h3>
+      // <div class="popover-body"></div></div>'
+      //   });
+      //
+      //   // show the a loation aware message saying the region available but not activated
+      //   $('#btn-zoomregion').popover('show');
+      //   // dismiss on click anywhere or after 5 seconds
+      //   window.addEventListener('click', clicke => $('#btn-zoomregion').popover('dispose'));
+      //   setTimeout(() => { $('#btn-zoomregion').popover('dispose'); }, 5000);
+      // });
     });
   }
 

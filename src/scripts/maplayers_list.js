@@ -67,10 +67,14 @@ export class MapLayersList extends Component {
 
       if (activeNav === 'main-nav-map-searchNShubs') {
         defaultLayerList.classList.add('d-none');
-        btnZoomRegion.classList.add('d-none');
+        if (btnZoomRegion) {
+          btnZoomRegion.classList.add('d-none');
+        }
       } else {
         defaultLayerList.classList.remove('d-none');
-        btnZoomRegion.classList.remove('d-none');
+        if (btnZoomRegion) {
+          btnZoomRegion.classList.remove('d-none');
+        }
       }
     });
 
@@ -89,7 +93,10 @@ export class MapLayersList extends Component {
   // initalize new tooltips
   static addToolTipListners() {
     $(() => {
-      $('#maplayers_list [data-toggle="popover"]').popover();
+      $('#maplayers_list [data-toggle="popover"]').popover({
+        boundary: 'window',
+        html: true
+      });
     });
   }
 
@@ -343,10 +350,11 @@ export class MapLayersList extends Component {
     if (maplayersHolder) {
       if (mapLayerListState === 'open') {
         maplayersHolder.classList.add('h-100');
-        maplayersHolder.classList.remove('h-0');
+        // maplayersHolder.classList.remove('h-0');
       } else {
-        maplayersHolder.classList.remove('h-100');
-        maplayersHolder.classList.add('h-0');
+        maplayersHolder.classList.add('h-100');
+        // maplayersHolder.classList.remove('h-100');
+        // maplayersHolder.classList.add('h-0');
       }
     }
   }
