@@ -12,6 +12,7 @@ import bboxPolygon from '@turf/bbox-polygon';
 import { point } from '@turf/helpers';
 
 import { Component } from './components';
+import { DownloadButton } from './downloadbutton';
 import { mapConfig } from '../config/mapConfig';
 
 // SCSS
@@ -60,6 +61,9 @@ export class Map extends Component {
 
     // Initialize Leaflet map
     this.map = L.map(this.refs.mapContainer, mapConfig.mapOptions);
+
+    // adds download data button
+    this.downloadButton = new DownloadButton('', { mapComponent: this.map });
 
     // not sure why but something changed and I can no longer use maptions for inital zoom
     if (Object.keys(this.restoreStateStore).length === 0 &&

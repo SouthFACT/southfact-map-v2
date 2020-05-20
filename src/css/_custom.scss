@@ -757,52 +757,6 @@ a.about-nav.active::before {
   }
 }
 
-.download-group {
-  padding: 15px;
-
-  .fa-download {
-    margin-right: 6px;
-  }
-}
-
-.download-group.dg-no-padding {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.targetedwatershed-download .download-group, .targetedwatershed-vista-download .download-group {
-  padding: 0px;
-}
-
-.btn-download { //download page buttons
-  width: 100%;
-  height: 30px;
-  text-decoration: underline;
-}
-
-.data-download-description, .data-download-size {
-  margin-bottom: 10px;
-  padding-top: 10px;
-  margin-left: 15px;
-  font-weight: 300;
-}
-
-.download-source-break {
-  width: 90%;
-}
-
-.download-datagroup-break {
-  border-color: $body-list-border;
-  width: 60%;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
-  margin-left: 0;
-  text-align: left;
-}
-
 .exploreInfo-description-content {
   margin-bottom: 10px;
   padding-bottom: 5px;
@@ -1139,15 +1093,15 @@ background-color: $body-bg !important;
   cursor: pointer;
 }
 
-.btn-mapshareurl-holder, .btn-mapreset-holder {
+.btn-mapshareurl-holder, .btn-mapreset-holder, .btn-downloaddata {
   width: 60px;
   height: 50px;
   line-height: 10px;
   color: $map-botton-font-color !important;
 }
 
-.btn-mapshareurl, .btn-mapreset {
-  .btn-med-share-label, .btn-med-mapreset-label {
+.btn-mapshareurl, .btn-mapreset, .btn-downloaddata  {
+  .btn-med-share-label, .btn-med-mapreset-label, .btn-med-download-label {
     font-size: 10px;
     line-height: 10px !important;
     height: 10px;
@@ -1157,7 +1111,9 @@ background-color: $body-bg !important;
   }
 }
 
-.btn-mapshareurl-holder a, .btn-mapshareurl-holder a:hover, .btn-mapreset-holder a, .btn-mapreset-holder a:hover{
+.btn-mapshareurl-holder a, .btn-mapshareurl-holder a:hover,
+.btn-mapreset-holder a, .btn-mapreset-holder a:hover,
+.btn-downloaddata-holder a, .btn-downloaddata-holder a:hover {
   width: 100% !important;
   height: 100% !important;
   line-height: 50px !important;
@@ -1233,7 +1189,7 @@ background-color: $body-bg !important;
   height: 30px;
 }
 
-#btn-mapinfo-holder, #btn-mapshareurl-holder, #btn-mapreset-holder {
+#btn-mapinfo-holder, #btn-mapshareurl-holder, #btn-mapreset-holder, #btn-download-holder {
   border-left: 0px;
 }
 
@@ -2892,21 +2848,21 @@ p.not-found {
   margin-left: -1px;
 }
 
-.i-shareurl, .icon-reset {
+.i-shareurl, .icon-reset, .icon-download {
   cursor: pointer;
   margin-bottom: 15px;
   margin-left: -1px;
 }
 
-.btn-mapshareurl-holder, .btn-mapreset-holder {
+.btn-mapshareurl-holder, .btn-mapreset-holder, .btn-downloaddata-holder {
   width: 60px;
   height: 50px;
   line-height: 10px;
   color: $map-botton-font-color !important;
 }
 
-.btn-mapshareurl, .btn-mapreset {
-  .btn-med-share-label, .btn-med-mapreset-label {
+.btn-mapshareurl, .btn-mapreset, .btn-downloaddata {
+  .btn-med-share-label, .btn-med-mapreset-label, .btn-med-download-label {
     font-size: 10px;
     line-height: 10px !important;
     height: 10px;
@@ -2916,7 +2872,9 @@ p.not-found {
   }
 }
 
-.btn-mapshareurl-holder a, .btn-mapshareurl-holder a:hover, .btn-mapreset-holder a, .btn-mapreset-holder a:hover,{
+.btn-mapshareurl-holder a, .btn-mapshareurl-holder a:hover,
+.btn-mapreset-holder a, .btn-mapreset-holder a:hover,
+.btn-download-holder a, .btn-download-holder a:hover {
   width: 100% !important;
   height: 100% !important;
   line-height: 50px !important;
