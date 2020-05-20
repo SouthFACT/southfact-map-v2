@@ -126,7 +126,7 @@ a.nav-link {
   margin-right: 0px !important;
 }
 
-.nfwf-header {
+.southfact-header {
   @include box-shadow-mixin($box-shadow-default);
   padding-left: $padding15;
   padding-right: $padding15;
@@ -134,6 +134,11 @@ a.nav-link {
   max-height: 100px;
   min-height: 100px;
   height: 100px;
+  @media (max-width: 992px) {
+    max-height: 50px;
+    min-height: 50px;
+    height: 50px;
+  }
 
   #main-nav {
     margin-right: unset !important;
@@ -149,7 +154,7 @@ a.nav-link {
   }
 }
 
-.nfwf-title {
+.southfact-title {
   margin-left: 30px;
   margin-top: $margin15;
   margin-bottom: $margin15;
@@ -921,7 +926,7 @@ a.about-nav.active::before {
 //   // padding: $padding15;
 // }
 
-.nfwf-header {
+.southfact-header {
   @include box-shadow-mixin($box-shadow-default);
   padding-left: $padding15;
   padding-right: $padding15;
@@ -929,6 +934,11 @@ a.about-nav.active::before {
   max-height: 100px;
   min-height: 100px;
   height: 100px;
+  @media (max-width: 992px) {
+    max-height: 50px;
+    min-height: 50px;
+    height: 50px;
+  }
 
   #mainNavToggle {
     background-color: $body-main-bar-bg-color !important;
@@ -940,7 +950,7 @@ a.about-nav.active::before {
   }
 }
 
-.nfwf-title {
+.southfact-title {
   margin-left: 30px;
   margin-top: $margin15;
   margin-bottom: $margin15;
