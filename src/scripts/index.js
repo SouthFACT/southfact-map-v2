@@ -17,6 +17,7 @@ import { Map } from './map';
 import { MapLayersList } from './maplayers_list';
 import { NavBar } from './navBar';
 import { MapInfo } from './mapinfo';
+import { PointsOfInterest } from './pointsofinterest';
 import { ShareUrl } from './shareurl';
 import { SearchLocations } from './searchlocations';
 
@@ -41,6 +42,7 @@ dom.watch();
 let mapComponent;
 let maplayersComponent;
 let mapInfoComponent;
+let pointsOfInterestComponent;
 let searchLocationsComponent;
 let shareurl;
 
@@ -53,6 +55,8 @@ store.setStoreItem('maplayersComponent', maplayersComponent);
 store.removeStateItem('maplayersComponent');
 store.setStoreItem('shareurl', shareurl);
 store.removeStateItem('shareurl');
+store.setStoreItem('pointsOfInterestComponent', pointsOfInterestComponent);
+store.removeStateItem('pointsOfInterestComponent');
 
 let homeloc = window.location.origin;
 // handle gh pages dist folder.
@@ -110,6 +114,9 @@ function initMapComponent() { // add parameter for type of explore
       hasShareURL,
       theStartNav
     });
+
+    // add points of interest
+    pointsOfInterestComponent = new PointsOfInterest('', { mapComponent });
   }
 
   // restore only if first render

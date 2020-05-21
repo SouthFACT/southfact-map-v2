@@ -1121,7 +1121,7 @@ background-color: $body-bg !important;
   background-color: $body-color !important;
 }
 
-#btn-mapinfo-holder a{
+#btn-mapinfo-holder a, #btn-pointsofinterest-holder a {
   color: $map-botton-font-color !important;
 }
 
@@ -1189,7 +1189,9 @@ background-color: $body-bg !important;
   height: 30px;
 }
 
-#btn-mapinfo-holder, #btn-mapshareurl-holder, #btn-mapreset-holder, #btn-download-holder {
+#pointsofinterest-holder, #btn-mapinfo-holder, 
+#btn-mapshareurl-holder, #btn-mapreset-holder,
+#btn-download-holder {
   border-left: 0px;
 }
 
@@ -1603,6 +1605,11 @@ p.not-found {
    }
 
   .btn-mapinfo {
+    background-color:  $body-color !important;
+    color: $body-bg !important;
+  }
+
+  .btn-pointsofinterest {
     background-color:  $body-color !important;
     color: $body-bg !important;
   }

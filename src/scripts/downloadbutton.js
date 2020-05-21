@@ -12,7 +12,7 @@ window.Popper = require('popper.js');
 window.jQuery = window.$;
 
 /**
-* handles downloan of mapo data
+* handles download of map data
 */
 export class DownloadButton extends Component {
   constructor(placeholderId, props) {
