@@ -1130,14 +1130,18 @@ background-color: $body-bg !important;
   a {
     color: $map-botton-font-color !important;
   }
-  // &.leaflet-bar {
-  //   position: relative;
-  //   top: -30px;
-  //   left: 36px;
-  // }
   position: relative;
   top: -30px;
   left: 36px;
+}
+
+#btn-pointsofinterest-cancel-holder {
+  a {
+    color: $map-botton-font-color !important;
+  }
+  position: relative;
+  top: -60px;
+  left: 72px;
 }
 
 .btn-copy-share {

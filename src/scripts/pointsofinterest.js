@@ -42,6 +42,12 @@ export class PointsOfInterest extends Component {
         elem.classList.remove('d-none');
         elem.addEventListener('click', PointsOfInterest.exportCSV.bind(this));
       }
+
+      const cancelelem = document.getElementById('btn-pointsofinterest-cancel-holder');
+      if (cancelelem) {
+        cancelelem.classList.remove('d-none');
+        cancelelem.addEventListener('click', this.cancelPointsOfInterest.bind(this));
+      }
     });
 
     window.addEventListener('removed-pointofinterest', (e) => {
@@ -52,31 +58,55 @@ export class PointsOfInterest extends Component {
         this.map.off('click');
         this.mapComponent.mapCursorDefault();
       }
+
+      const cancelelem = document.getElementById('btn-pointsofinterest-cancel-holder');
+      if (cancelelem) {
+        cancelelem.classList.add('d-none');
+      }
     });
   }
 
+  cancelPointsOfInterest() {
+    this.map.off('click');
+    this.mapComponent.mapCursorDefault();
+    this.removeMapMarker();
+  }
+
   static pointHTML() {
-    const pointsofinterestBtn = L.DomUtil.create('div', 'btn-pointsofinterest-holder leaflet-bar');
-    pointsofinterestBtn.setAttribute('id', 'btn-pointsofinterest-holder');
-    pointsofinterestBtn.classList.add('btn-pointsofinterest-holder');
-    pointsofinterestBtn.innerHTML = '<a id="pointsofinterest" class="btn btn-light btn-pointsofinterest" title="Add points of interest to map" ' +
+    const elem = L.DomUtil.create('div', 'btn-pointsofinterest-holder leaflet-bar');
+    elem.setAttribute('id', 'btn-pointsofinterest-holder');
+    elem.classList.add('btn-pointsofinterest-holder');
+    elem.innerHTML = '<a id="pointsofinterest" class="btn btn-light btn-pointsofinterest" title="Add points of interest to map" ' +
                     'role="button" aria-label="Add points of interest to map" ' +
                     'data-toggle="tooltip" data-placement="right" data-original-title="Add points of interest to map"> ' +
                     '<i class="fas fa-map-marker-alt i-pointsofinterest"></a>';
-    return pointsofinterestBtn;
+    return elem;
   }
 
   static pointDownloadHTML() {
-    const pointsofinterestDownloadBtn = L.DomUtil.create('div', 'btn-pointsofinterest-download-holder leaflet-bar');
-    pointsofinterestDownloadBtn.setAttribute('id', 'btn-pointsofinterest-download-holder');
-    pointsofinterestDownloadBtn.classList.add('btn-pointsofinterest-download-holder');
-    pointsofinterestDownloadBtn.classList.add('d-none');
-    pointsofinterestDownloadBtn.innerHTML = '<a id="pointsofinterest-download" class="btn btn-light btn-pointsofinterest-download" title="Download points of interest" ' +
+    const elem = L.DomUtil.create('div', 'btn-pointsofinterest-download-holder leaflet-bar');
+    elem.setAttribute('id', 'btn-pointsofinterest-download-holder');
+    elem.classList.add('btn-pointsofinterest-download-holder');
+    elem.classList.add('d-none');
+    elem.innerHTML = '<a id="pointsofinterest-download" class="btn btn-light btn-pointsofinterest-download" title="Download points of interest" ' +
                     'role="button" aria-label="Download points of interest" ' +
                     'data-toggle="tooltip" data-placement="right" data-original-title="Download points of interest"> ' +
                     '<i class="fas fa-download i-pointsofinterest-download"></a>';
 
-    return pointsofinterestDownloadBtn;
+    return elem;
+  }
+
+  static pointCancelHTML() {
+    const elem = L.DomUtil.create('div', 'btn-pointsofinterest-cancel-holder leaflet-bar');
+    elem.setAttribute('id', 'btn-pointsofinterest-cancel-holder');
+    elem.classList.add('btn-pointsofinterest-cancel-holder');
+    elem.classList.add('d-none');
+    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel download points of interest" ' +
+                    'role="button" aria-label="Cancel download points of interest" ' +
+                    'data-toggle="tooltip" data-placement="right" data-original-title="Cancel download points of interest"> ' +
+                    '<i class="fas fa-times-circle i-pointsofinterest-download"></a>';
+
+    return elem;
   }
 
   static PointsOfInterestControlOnAddHandler() {
@@ -84,6 +114,8 @@ export class PointsOfInterest extends Component {
     const pointsofinterestBtn = PointsOfInterest.pointHTML();
     // download points button
     const pointsofinterestDownloadBtn = PointsOfInterest.pointDownloadHTML();
+    // cancel points button
+    const pointsofinterestCancelBtn = PointsOfInterest.pointCancelHTML();
 
     const pointsofinterestBtns = L.DomUtil.create('div', 'btn-pointsofinterest-all-holder');
     pointsofinterestBtns.setAttribute('id', 'btn-pointsofinterest-all-holder');
@@ -94,11 +126,13 @@ export class PointsOfInterest extends Component {
 
     pointsofinterestBtns.appendChild(pointsofinterestBtn);
     pointsofinterestBtns.appendChild(pointsofinterestDownloadBtn);
+    pointsofinterestBtns.appendChild(pointsofinterestCancelBtn);
 
     // initalize new tooltips
     $(() => {
       $('#btn-pointsofinterest-holder [data-toggle="tooltip"]').tooltip({ trigger: 'hover focus' });
       $('#btn-pointsofinterest-download-holder [data-toggle="tooltip"]').tooltip({ trigger: 'hover focus' });
+      $('#btn-pointsofinterest-cancel-holder [data-toggle="tooltip"]').tooltip({ trigger: 'hover focus' });
     });
     return pointsofinterestBtns;
   }
