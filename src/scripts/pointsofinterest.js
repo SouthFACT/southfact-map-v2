@@ -36,22 +36,27 @@ export class PointsOfInterest extends Component {
 
     this.addPointsOfInterestControl(this.map);
 
+    const elem = document.getElementById('btn-pointsofinterest-download-holder');
+    if (elem) {
+      elem.addEventListener('click', PointsOfInterest.exportCSV.bind(this));
+    }
+
+    const cancelelem = document.getElementById('btn-pointsofinterest-cancel-holder');
+    if (cancelelem) {
+      cancelelem.addEventListener('click', this.cancelPointsOfInterest.bind(this));
+    }
+
     window.addEventListener('added-pointofinterest', (e) => {
-      const elem = document.getElementById('btn-pointsofinterest-download-holder');
       if (elem) {
         elem.classList.remove('d-none');
-        elem.addEventListener('click', PointsOfInterest.exportCSV.bind(this));
       }
 
-      const cancelelem = document.getElementById('btn-pointsofinterest-cancel-holder');
       if (cancelelem) {
         cancelelem.classList.remove('d-none');
-        cancelelem.addEventListener('click', this.cancelPointsOfInterest.bind(this));
       }
     });
 
     window.addEventListener('removed-pointofinterest', (e) => {
-      const elem = document.getElementById('btn-pointsofinterest-download-holder');
       if (elem) {
         elem.classList.add('d-none');
         elem.removeEventListener('click', PointsOfInterest.exportCSV, true);
@@ -59,7 +64,6 @@ export class PointsOfInterest extends Component {
         this.mapComponent.mapCursorDefault();
       }
 
-      const cancelelem = document.getElementById('btn-pointsofinterest-cancel-holder');
       if (cancelelem) {
         cancelelem.classList.add('d-none');
       }
