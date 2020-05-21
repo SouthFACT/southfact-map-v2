@@ -144,17 +144,17 @@ export class MapInfo extends Component {
     }
 
     // make the map cursor cross hairs
-    this.mapComponent.mapCursorCrosshair();
+    // this.mapComponent.mapCursorCrosshair();
 
-    // remove from state
-    const activeNav = store.getStateItem('activeNav');
-    if (activeNav === 'main-nav-map-searchNShubs') {
-      // check the mapclick v
-      store.removeStateItem('mapinfons');
-    } else {
-      // check the mapclick v
-      store.removeStateItem('mapinfo');
-    }
+    // // remove from state
+    // const activeNav = store.getStateItem('activeNav');
+    // if (activeNav === 'main-nav-map-searchNShubs') {
+    //   // check the mapclick v
+    //   store.removeStateItem('mapinfons');
+    // } else {
+    //   // check the mapclick v
+    //   store.removeStateItem('mapinfo');
+    // }
   }
 
   // mapinfo (identify) control (button) on add function.
@@ -217,31 +217,31 @@ export class MapInfo extends Component {
   addMapClickIdentifyClickHandler() {
     // click
     this.map.on('click', (ev) => {
-      // remove old maker if it exists
-      // this.marker is defined at class creation
-      this.removeMapMarker();
+      // // remove old maker if it exists
+      // // this.marker is defined at class creation
+      // this.removeMapMarker();
+      //
+      // // save the map action to state store
+      // store.saveAction('click');
+      //
+      // // save the mapclick location to the state store
+      // const activeNav = store.getStateItem('activeNav');
+      // if (activeNav === 'main-nav-map-searchNShubs') {
+      //   // check the mapclick v
+      //   store.setStoreItem('mapClickns', ev.latlng);
+      // } else {
+      //   // check the mapclick v
+      //   store.setStoreItem('mapClick', ev.latlng);
+      // }
 
-      // save the map action to state store
-      store.saveAction('click');
+      // // ga event action, category, label
+      // googleAnalyticsEvent('click', 'map', 'mapinfo');
 
-      // save the mapclick location to the state store
-      const activeNav = store.getStateItem('activeNav');
-      if (activeNav === 'main-nav-map-searchNShubs') {
-        // check the mapclick v
-        store.setStoreItem('mapClickns', ev.latlng);
-      } else {
-        // check the mapclick v
-        store.setStoreItem('mapClick', ev.latlng);
-      }
-
-      // ga event action, category, label
-      googleAnalyticsEvent('click', 'map', 'mapinfo');
-
-      // if there was a point retrieve the information from the
-      // lambda api function
-      if (ev.containerPoint !== undefined) {
-        this.retreiveMapClick(false);
-      }
+      // // if there was a point retrieve the information from the
+      // // lambda api function
+      // if (ev.containerPoint !== undefined) {
+      //   this.retreiveMapClick(false);
+      // }
     });
   }
 

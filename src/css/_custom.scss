@@ -1121,8 +1121,23 @@ background-color: $body-bg !important;
   background-color: $body-color !important;
 }
 
-#btn-mapinfo-holder a, #btn-pointsofinterest-holder a {
+#btn-mapinfo-holder a,
+#btn-pointsofinterest-holder a {
   color: $map-botton-font-color !important;
+}
+
+#btn-pointsofinterest-download-holder {
+  a {
+    color: $map-botton-font-color !important;
+  }
+  // &.leaflet-bar {
+  //   position: relative;
+  //   top: -30px;
+  //   left: 36px;
+  // }
+  position: relative;
+  top: -30px;
+  left: 36px;
 }
 
 .btn-copy-share {
@@ -1189,7 +1204,7 @@ background-color: $body-bg !important;
   height: 30px;
 }
 
-#pointsofinterest-holder, #btn-mapinfo-holder, 
+#pointsofinterest-holder, #btn-mapinfo-holder,
 #btn-mapshareurl-holder, #btn-mapreset-holder,
 #btn-download-holder {
   border-left: 0px;
@@ -1613,6 +1628,12 @@ p.not-found {
     background-color:  $body-color !important;
     color: $body-bg !important;
   }
+
+  .btn-pointsofinterest-download {
+    background-color:  $body-color !important;
+    color: $body-bg !important;
+  }
+
 
   .main-navbar-toggle {
     padding: $padding;
@@ -3018,7 +3039,7 @@ p.not-found {
   font-size: 1.250em;
 }
 
-.map-info-point{
+.map-info-point {
   background-color: $body-bg;
   @include border-radius(10px, 10px);
   /* Prevent background color leak outs */
@@ -3027,6 +3048,30 @@ p.not-found {
   background-clip:         padding-box;
 
 }
+
+.pointsofinterest-marker {
+  background-color: $body-bg;
+  border: 1px solid $body-list-border;
+  width: 15px !important;
+  height: 15px !important;
+  @include border-radius(15px, 15px);
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
+  background-clip:         padding-box;
+}
+
+// .pointsofinterest-marker:after {
+//   content: "";
+//   position: absolute;
+//   border-left: 7.5px solid transparent;
+//   border-right: 7.5px solid transparent;
+//   border-bottom: 50px solid $body-list-border;
+//   top: -47px;
+//   left: -1px;
+//   width: 12px;
+//   height: 12px;
+// }
 
 .mapInfo {
   background-color: $body-bg;
