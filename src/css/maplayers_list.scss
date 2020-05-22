@@ -396,7 +396,7 @@ $map_right_margin: 10px;
   color: $body-color;
   @include border-radius(0.25rem, 0.25rem);
   overflow-x: hidden !important;
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
 }
 
 @media screen and (max-width: 992px) {

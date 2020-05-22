@@ -1,6 +1,6 @@
 .map-list {
   overflow-x: hidden !important;
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
 }
 
 .map-list-column {
@@ -100,8 +100,8 @@
 
   &::-webkit-scrollbar-thumb {
     max-height: 15px;
-    background-color: $gray-500;
-    @include border-radius(4px, 4px);
+    background-color: $gray-600;
+    @include border-radius(15px, 15px);
     &:vertical {
       height: 10px;
     }
@@ -113,7 +113,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid $newbg;
-    background-color: $newbg;
+    background-color: #e9ecef;
+    @include border-radius(15px, 15px);
   }
 
   &::-webkit-scrollbar-track-piece {
