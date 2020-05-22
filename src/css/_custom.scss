@@ -301,7 +301,8 @@ a.nav-link {
   @include box-shadow-mixin($box-shadow-small);
 
   &:hover {
-    @include hovcol($btn-color-secondary);
+    // @include hovcol($btn-color-secondary);
+    background-color: $btn-color-prinary;
   }
 }
 

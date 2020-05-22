@@ -500,11 +500,14 @@ $map_right_margin: 10px;
   &:hover {
     cursor: pointer;
     color: #fff;
-    @include hovcol($btn-color-secondary);
+    // @include hovcol($btn-color-secondary);
+    background-color: $btn-color-prinary;
   }
+
   &:focus {
     outline: none;
-    @include hovcol($btn-color-secondary);
+    // @include hovcol($btn-color-secondary);
+    background-color: $btn-color-prinary;
   }
 }
 
@@ -520,7 +523,9 @@ $map_right_margin: 10px;
 
   &:hover {
     color: #999595;
-    @include hovcol($btn-color-secondary);
+    // @include hovcol($btn-color-secondary);
+    background-color: $btn-color-prinary;
+
   }
 }
 
