@@ -110,7 +110,7 @@ export class MapLayersList extends Component {
     const eleLeft = document.querySelector('.fa-angle-left');
     const eleRight = document.querySelector('.fa-angle-right');
 
-    // toggle all the elements
+    // toggle all the elements TODO clean this up? handel it better?
     if (elem && elemMap && eleLeft && eleRight) {
       const navChangeEvent = new CustomEvent('toggle-layerlist');
       window.dispatchEvent(navChangeEvent);
