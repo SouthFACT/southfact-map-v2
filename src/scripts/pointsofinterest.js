@@ -105,9 +105,9 @@ export class PointsOfInterest extends Component {
     elem.setAttribute('id', 'btn-pointsofinterest-cancel-holder');
     elem.classList.add('btn-pointsofinterest-cancel-holder');
     elem.classList.add('d-none');
-    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel sketching points of interest" ' +
-                    'role="button" aria-label="Cancel sketching points of interest" ' +
-                    'data-toggle="tooltip" data-placement="right" data-original-title="Cancel sketching points of interest"> ' +
+    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Remove all points of interest" ' +
+                    'role="button" aria-label="Remove all points of interest" ' +
+                    'data-toggle="tooltip" data-placement="right" data-original-title="Remove all points of interest"> ' +
                     '<i class="fas fa-times-circle i-pointsofinterest-download"></a>';
 
     return elem;
@@ -195,7 +195,7 @@ export class PointsOfInterest extends Component {
     const mapClickPointsOfInterest = store.getStateItem('mapClickPointsOfInterest');
     // make sure there is data.
     if (checkValidObject(mapClickPointsOfInterest)) {
-      this.removeMapMarker();
+      // this.removeMapMarker();
       const csv = PointsOfInterest.convertDataToCSV(mapClickPointsOfInterest);
       const blob = new Blob([csv], { type: 'text/plain;charset=utf-8' });
       saveAs(blob, 'pointsofinterest.csv');
@@ -271,7 +271,7 @@ export class PointsOfInterest extends Component {
 
     // remove old maker if it exists
     // this.marker is defined at class creation
-    this.removeMapMarker(false);
+    // this.removeMapMarker(false);
 
     // click
     this.map.on('click', this.pointsOfInterestClickHandler.bind(this));
