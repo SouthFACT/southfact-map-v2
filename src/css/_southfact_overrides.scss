@@ -100,6 +100,8 @@
   }
 
   .hide-list .hide-show-layerlist {
+    padding-top: 15px;
+    width: 36px;
     top: calc(100% - 0px) !important;
     transform: rotate(90deg);
     /* Safari */
@@ -113,7 +115,9 @@
   }
 
   .show-list .hide-show-layerlist {
-    top: calc(100% - 8px) !important;
+    padding-top: 15px;
+    width: 36px;
+    top: calc(100% - -4px) !important;
     transform: rotate(-270deg);
     /* Safari */
     -webkit-transform: rotate(-270deg);
