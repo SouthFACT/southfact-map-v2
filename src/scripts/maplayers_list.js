@@ -60,6 +60,11 @@ export class MapLayersList extends Component {
     MapLayersList.resizeMapList();
     window.addEventListener('resize', MapLayersList.resizeMapList);
 
+    window.addEventListener('toggle-layerlist', (e) => {
+      // timeout for css transition to happen
+      setTimeout(() => { props.mapComponent.map.invalidateSize(); }, 775);
+    });
+
     window.addEventListener('aboutNavChange', (e) => {
       const activeNav = store.getStateItem('activeNav');
       const defaultLayerList = document.getElementById('defaultLayerList');
@@ -87,6 +92,45 @@ export class MapLayersList extends Component {
     // run at startup to capture region in current state
     MapLayersList.toggleRegionLayerList();
     MapLayersList.addPlatformListener();
+    MapLayersList.addtoggleLayerListListener();
+  }
+
+  // handles toggle layer list click
+  static addtoggleLayerListListener() {
+    const elem = document.getElementById('hide-show-layerlist');
+    if (elem) {
+      elem.addEventListener('click', MapLayersList.toggleLayerListClickHandler);
+    }
+  }
+
+  // toggle layer list click handler
+  static toggleLayerListClickHandler(e) {
+    const elem = document.querySelector('.map-list-column');
+    const elemMap = document.querySelector('.map-holder');
+    const eleLeft = document.querySelector('.fa-angle-left');
+    const eleRight = document.querySelector('.fa-angle-right');
+
+    // toggle all the elements
+    if (elem && elemMap && eleLeft && eleRight) {
+      const navChangeEvent = new CustomEvent('toggle-layerlist');
+      window.dispatchEvent(navChangeEvent);
+      const isMapLayerListVisible = elem.classList.contains('hide-list');
+      if (isMapLayerListVisible) {
+        elem.classList.remove('hide-list');
+        elemMap.classList.remove('hide-list');
+        elem.classList.add('show-list');
+        elemMap.classList.add('show-list');
+        eleLeft.classList.remove('d-none');
+        eleRight.classList.add('d-none');
+      } else {
+        elem.classList.add('hide-list');
+        elemMap.classList.add('hide-list');
+        elem.classList.remove('show-list');
+        elemMap.classList.remove('show-list');
+        eleLeft.classList.add('d-none');
+        eleRight.classList.remove('d-none');
+      }
+    }
   }
 
   // removes selected class from all statalite platform button click

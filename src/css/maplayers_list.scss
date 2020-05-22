@@ -389,6 +389,25 @@ $map_right_margin: 10px;
   padding-top: 10px;
 }
 
+.hide-show-layerlist {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: calc(100% - 8px);
+  z-index: 4000;
+  background: $btn-color-secondary;
+  width: 20px;
+  height: 36px;
+  font-size: 18px;
+  border: 1px solid $gray-600;
+  @include border-radius(4px, 4px);
+  justify-content: center;
+  &:hover, &:focus {
+    outline: none;
+    background-color: $btn-color-prinary;
+  }
+}
 
 .maplayers_list {
   background-color: $body-bg;
