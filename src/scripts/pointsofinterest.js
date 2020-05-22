@@ -108,7 +108,7 @@ export class PointsOfInterest extends Component {
     elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel and remove all points" ' +
                     'role="button" aria-label="Cancel and remove all points" ' +
                     'data-toggle="tooltip" data-placement="right" data-original-title="Cancel and remove all points"> ' +
-                    '<i class="fas fa-times-circle i-pointsofinterest-download"></a>';
+                    '<i class="fas fa-times-circle i-pointsofinterest-cancel"></a>';
 
     return elem;
   }
