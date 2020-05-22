@@ -82,7 +82,7 @@ export class PointsOfInterest extends Component {
     elem.classList.add('btn-pointsofinterest-holder');
     elem.innerHTML = '<a id="pointsofinterest" class="btn btn-light btn-pointsofinterest" title="Add points of interest to map" ' +
                     'role="button" aria-label="Add points of interest to map" ' +
-                    'data-toggle="tooltip" data-placement="right" data-original-title="Add points of interest to map"> ' +
+                    'data-toggle="tooltip" data-placement="bottom" data-original-title="Add points of interest to map"> ' +
                     '<i class="fas fa-map-marker-alt i-pointsofinterest"></a>';
     return elem;
   }
@@ -94,7 +94,7 @@ export class PointsOfInterest extends Component {
     elem.classList.add('d-none');
     elem.innerHTML = '<a id="pointsofinterest-download" class="btn btn-light btn-pointsofinterest-download" title="Download points of interest" ' +
                     'role="button" aria-label="Download points of interest" ' +
-                    'data-toggle="tooltip" data-placement="right" data-original-title="Download points of interest"> ' +
+                    'data-toggle="tooltip" data-placement="bottom" data-original-title="Download points of interest"> ' +
                     '<i class="fas fa-download i-pointsofinterest-download"></a>';
 
     return elem;
@@ -107,7 +107,7 @@ export class PointsOfInterest extends Component {
     elem.classList.add('d-none');
     elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel and remove all points" ' +
                     'role="button" aria-label="Cancel and remove all points" ' +
-                    'data-toggle="tooltip" data-placement="right" data-original-title="Cancel and remove all points"> ' +
+                    'data-toggle="tooltip" data-placement="bottom" data-original-title="Cancel and remove all points"> ' +
                     '<i class="fas fa-times-circle i-pointsofinterest-cancel"></a>';
 
     return elem;
@@ -175,6 +175,8 @@ export class PointsOfInterest extends Component {
   // point.
   removeMapMarker(trigger = true) {
     this.markersLayer.clearLayers();
+    // reset points of interest on new click
+    store.removeStateItem('mapClickPointsOfInterest');
     if (trigger) {
       const navChangeEvent = new CustomEvent('removed-pointofinterest');
       window.dispatchEvent(navChangeEvent);
@@ -257,24 +259,40 @@ export class PointsOfInterest extends Component {
   // would be better to handle this as a traditional callback
   addPointsOfInteresClickHandler() {
     // reset points of interest on new click
-    store.removeStateItem('mapClickPointsOfInterest');
+    // store.removeStateItem('mapClickPointsOfInterest');
 
     const elem = document.getElementById('btn-pointsofinterest-download-holder');
+    const isVisible = elem.classList.contains('d-none');
+
     if (elem) {
-      elem.classList.remove('d-none');
+      if (isVisible) {
+        elem.classList.remove('d-none');
+        // add map click
+        this.map.on('click', this.pointsOfInterestClickHandler.bind(this));
+        this.mapComponent.mapCursorCrosshair();
+      } else {
+        this.mapComponent.mapCursorDefault();
+        elem.classList.add('d-none');
+        // remove map click
+        this.map.off('click');
+      }
     }
 
     const cancelelem = document.getElementById('btn-pointsofinterest-cancel-holder');
     if (cancelelem) {
-      cancelelem.classList.remove('d-none');
+      if (isVisible) {
+        cancelelem.classList.remove('d-none');
+        this.mapComponent.mapCursorCrosshair();
+      } else {
+        this.mapComponent.mapCursorDefault();
+        cancelelem.classList.add('d-none');
+        this.map.off('click');
+      }
     }
 
     // remove old maker if it exists
     // this.marker is defined at class creation
     // this.removeMapMarker(false);
-
-    // click
-    this.map.on('click', this.pointsOfInterestClickHandler.bind(this));
   }
 
   // points of interest click handler
@@ -289,7 +307,7 @@ export class PointsOfInterest extends Component {
     }
 
     // make the map cursor cross hairs
-    this.mapComponent.mapCursorCrosshair();
+    // this.mapComponent.mapCursorCrosshair();
 
     // remove from state
     store.removeStateItem('pointsofinterest');
