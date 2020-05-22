@@ -1,12 +1,12 @@
 <div ref="maplayers_list" id="maplayers_list" class="h-100 maplayers_list py-2">
   <span class="brand-maplist-holder">
-    <span class="navbar-brand nav-brand-maplayerlist w-100" >Map Layers</span>
+    <span class="navbar-brand nav-brand-maplayerlist py-2 w-100" >Map Layers</span>
     <!-- <button class="navbar-toggler bnt-MapLayersListToggle" type="button" data-toggle="collapse" data-target="#mapListTogglea" aria-controls="mapListTogglea" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"><i class="fas fa-layer-group"></i></span>
   </button> -->
 </span>
 <!-- <div class="collapse navbar-collapse" id="mapListToggle"> -->
-<div class="navbar-collapse" id="mapListToggle">
+<div class="navbar-collapse pr-1" id="mapListToggle">
   <div ref="ToggleLayers" id="ToggleLayerList" class="layer-toggles h-100 w-100">
     <button id="btn-basemap" title="Change Base Map" aria-label="Clear Map" type="button" class="btn-light btn-basemap">
       <span class="btn-icon btn-text-left w-100">
@@ -60,13 +60,10 @@
 <div class="LayerList-spacer" id="platform-spacer-1"></div>
 
 <div id="platform-holder" >
-  <div class="LayerList-spacer" id="platform-spacer-2"></div>
 
   <div class="LayerList-Group platform-group" id="LayerList-Group-Header">
-    <div class="LayerInput-header platform" id="SatellitePlatform-Header">Satellite Platform</div>
+    <div class="LayerInput-header platform py-2" id="SatellitePlatform-Header">Satellite Platform</div>
   </div>
-
-  <div class="LayerList-spacer" id="platform-spacer-3"></div>
 
   <div class="btn-group w-100 platform" role="group" aria-label="Satellite Platform" title="Satellite Platform">
     <button type="button" class="btn btn-secondary btn-platform selected" id="btn-platform-landsat8">Landsat 8</button>
@@ -74,8 +71,6 @@
     <button type="button" class="btn btn-secondary btn-platform" id="btn-platform-combined">Combined</button>
     <!-- <button type="button" class="btn btn-secondary">Right</button> -->
   </div
-
-  <div class="LayerList-spacer" id="platform-spacer-4"></div>
 </div>
 
 <div class="LayerList-spacer" id="platform-spacer-5"></div>
@@ -84,7 +79,7 @@
   <div class="LayerList-spacer" id="ExposureLayers-Header"></div>
 
   <div class="LayerList-Group" id="LayerList-Group-Header">
-    <div class="LayerInput-header current-year" id="HubsLayers-Header">Current Year to Date</div>
+    <div class="LayerInput-header current-year py-2" id="HubsLayers-Header">Current Year to Date</div>
 
     <div ref="LayerInput" id="southeast_swir_threshold-layerToggle" class="custom-control custom-checkbox">
       <div class="layer-toggle-wrapper">
