@@ -105,9 +105,9 @@ export class PointsOfInterest extends Component {
     elem.setAttribute('id', 'btn-pointsofinterest-cancel-holder');
     elem.classList.add('btn-pointsofinterest-cancel-holder');
     elem.classList.add('d-none');
-    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel download points of interest" ' +
-                    'role="button" aria-label="Cancel download points of interest" ' +
-                    'data-toggle="tooltip" data-placement="right" data-original-title="Cancel download points of interest"> ' +
+    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel sketching points of interest" ' +
+                    'role="button" aria-label="Cancel sketching points of interest" ' +
+                    'data-toggle="tooltip" data-placement="right" data-original-title="Cancel sketching points of interest"> ' +
                     '<i class="fas fa-times-circle i-pointsofinterest-download"></a>';
 
     return elem;
@@ -258,6 +258,16 @@ export class PointsOfInterest extends Component {
   addPointsOfInteresClickHandler() {
     // reset points of interest on new click
     store.removeStateItem('mapClickPointsOfInterest');
+
+    const elem = document.getElementById('btn-pointsofinterest-download-holder');
+    if (elem) {
+      elem.classList.remove('d-none');
+    }
+
+    const cancelelem = document.getElementById('btn-pointsofinterest-cancel-holder');
+    if (cancelelem) {
+      cancelelem.classList.remove('d-none');
+    }
 
     // remove old maker if it exists
     // this.marker is defined at class creation
