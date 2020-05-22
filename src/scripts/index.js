@@ -100,6 +100,7 @@ function setworkingstates() {
 //
 // Closes over global import Map
 function initMapComponent() { // add parameter for type of explore
+  store.removeStateItem('mapClickPointsOfInterest');
   if (mapComponent === undefined) {
     mapComponent = initMap('map-holder');
     maplayersComponent = initMapLayerList(mapComponent, 'maplayers_list-holder');
