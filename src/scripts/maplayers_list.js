@@ -86,6 +86,29 @@ export class MapLayersList extends Component {
 
     // run at startup to capture region in current state
     MapLayersList.toggleRegionLayerList();
+    MapLayersList.addPlatformListener();
+  }
+
+  // removes selected class from all statalite platform button click
+  static platformRemoveSelectAll() {
+    const elems = document.querySelectorAll('.btn-platform');
+    elems.forEach((elem) => {
+      elem.classList.remove('selected');
+    });
+  }
+
+  // handles statalite platform button click
+  static platformClickHandler(e) {
+    MapLayersList.platformRemoveSelectAll();
+    e.target.classList.add('selected');
+  }
+
+  // handles statalite platform button click
+  static addPlatformListener() {
+    const elem = document.querySelector('.btn-group.platform');
+    if (elem) {
+      elem.addEventListener('click', MapLayersList.platformClickHandler);
+    }
   }
 
   // tooltip and popover require javascript side modification to enable them (new in Bootstrap 4)

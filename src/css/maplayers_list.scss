@@ -161,6 +161,31 @@ $map_right_margin: 10px;
   will-change: transform;
 }
 
+.LayerInput-header.platform, .LayerInput-header.current-year {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.btn-group.platform {
+  .btn {
+    max-height: 36px;
+  }
+
+  .btn-platform.selected {
+    background-color: $btn-color-prinary !important;
+  }
+
+  .btn-platform {
+    font-size: 12px !important
+  }
+
+  .btn:focus, .btn:hover {
+    outline: $gray-600  !important;
+    border: 1px solid $gray-600;
+    box-shadow: unset;
+  }
+}
+
 .list-zoomregion {
   width: 100% !important;
   max-height: 1000px;

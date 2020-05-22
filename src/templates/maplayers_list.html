@@ -57,12 +57,34 @@
 <span class="list-label-name align-self-center">South East U.S</span>
 </button>
 </div> -->
+<div class="LayerList-spacer" id="platform-spacer-1"></div>
+
+<div id="platform-holder" >
+  <div class="LayerList-spacer" id="platform-spacer-2"></div>
+
+  <div class="LayerList-Group platform-group" id="LayerList-Group-Header">
+    <div class="LayerInput-header platform" id="SatellitePlatform-Header">Satellite Platform</div>
+  </div>
+
+  <div class="LayerList-spacer" id="platform-spacer-3"></div>
+
+  <div class="btn-group w-100 platform" role="group" aria-label="Satellite Platform" title="Satellite Platform">
+    <button type="button" class="btn btn-secondary btn-platform selected" id="btn-platform-landsat8">Landsat 8</button>
+    <button type="button" class="btn btn-secondary btn-platform" id="btn-platform-Sentinel2">Sentinel 2</button>
+    <button type="button" class="btn btn-secondary btn-platform" id="btn-platform-combined">Combined</button>
+    <!-- <button type="button" class="btn btn-secondary">Right</button> -->
+  </div
+
+  <div class="LayerList-spacer" id="platform-spacer-4"></div>
+</div>
+
+<div class="LayerList-spacer" id="platform-spacer-5"></div>
 
 <span id="defaultLayerList" >
   <div class="LayerList-spacer" id="ExposureLayers-Header"></div>
 
   <div class="LayerList-Group" id="LayerList-Group-Header">
-    <div class="LayerInput-header" id="HubsLayers-Header">Current Year to Date</div>
+    <div class="LayerInput-header current-year" id="HubsLayers-Header">Current Year to Date</div>
 
     <div ref="LayerInput" id="southeast_swir_threshold-layerToggle" class="custom-control custom-checkbox">
       <div class="layer-toggle-wrapper">
