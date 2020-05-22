@@ -105,9 +105,9 @@ export class PointsOfInterest extends Component {
     elem.setAttribute('id', 'btn-pointsofinterest-cancel-holder');
     elem.classList.add('btn-pointsofinterest-cancel-holder');
     elem.classList.add('d-none');
-    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Remove all points of interest" ' +
-                    'role="button" aria-label="Remove all points of interest" ' +
-                    'data-toggle="tooltip" data-placement="right" data-original-title="Remove all points of interest"> ' +
+    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel and remove all points" ' +
+                    'role="button" aria-label="Cancel and remove all points" ' +
+                    'data-toggle="tooltip" data-placement="right" data-original-title="Cancel and remove all points"> ' +
                     '<i class="fas fa-times-circle i-pointsofinterest-download"></a>';
 
     return elem;
