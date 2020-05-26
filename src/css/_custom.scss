@@ -130,10 +130,11 @@ a.nav-link {
   @include box-shadow-mixin($box-shadow-default);
   padding-left: $padding15;
   padding-right: $padding15;
+  // padding-bottom: $padding15;
   background-color: $body-main-bar-bg-color !important;
-  max-height: 100px;
-  min-height: 100px;
-  height: 100px;
+  max-height: 68px;
+  min-height: 68px;
+  height: 68px;
   @media (max-width: 992px) {
     max-height: 50px;
     min-height: 50px;
@@ -161,14 +162,14 @@ a.nav-link {
 }
 
 #SouthFACT-Logo-Title {
-  width: 42px;
-  height: 64px;
+  width: 40px;
+  height: 60px;
+  // width: 32px;
+  // height: 48px;
 }
 
 #nav-holder {
   min-width: 50px;
-  // margin-bottom: 5px;
-  // margin-top: $margin;
   a {
     padding-top: 5px !important;
   }
@@ -881,35 +882,35 @@ a.about-nav.active::before {
 //   // padding: $padding15;
 // }
 
-.southfact-header {
-  @include box-shadow-mixin($box-shadow-default);
-  padding-left: $padding15;
-  padding-right: $padding15;
-  background-color: $body-main-bar-bg-color !important;
-  max-height: 100px;
-  min-height: 100px;
-  height: 100px;
-  @media (max-width: 992px) {
-    max-height: 50px;
-    min-height: 50px;
-    height: 50px;
-  }
-
-  #mainNavToggle {
-    background-color: $body-main-bar-bg-color !important;
-    font-size: 14px;
-  }
-
-  h2 {
-    margin-bottom: 5px;
-  }
-}
-
-.southfact-title {
-  margin-left: 30px;
-  margin-top: $margin15;
-  margin-bottom: $margin15;
-}
+// .southfact-header {
+//   @include box-shadow-mixin($box-shadow-default);
+//   padding-left: $padding15;
+//   padding-right: $padding15;
+//   background-color: $body-main-bar-bg-color !important;
+//   max-height: 100px;
+//   min-height: 100px;
+//   height: 100px;
+//   @media (max-width: 992px) {
+//     max-height: 50px;
+//     min-height: 50px;
+//     height: 50px;
+//   }
+//
+//   #mainNavToggle {
+//     background-color: $body-main-bar-bg-color !important;
+//     font-size: 14px;
+//   }
+//
+//   h2 {
+//     margin-bottom: 5px;
+//   }
+// }
+//
+// .southfact-title {
+//   margin-left: 30px;
+//   margin-top: $margin15;
+//   margin-bottom: $margin15;
+// }
 
 // #main-content {
 //   // margin-top: 10px !important;
@@ -1529,7 +1530,7 @@ p.not-found {
   }
 
   .main-title-area {
-    margin-top: 5px !important;
+    // margin-top: 5px !important;
   }
 
   #maintitle {

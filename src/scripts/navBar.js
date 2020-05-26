@@ -30,44 +30,46 @@ export class NavBar extends Component {
     // get the main nav element
     const navHeaderElement = document.getElementById('main-nav');
 
+    let cnt = 1;
     /**
      *  iterate each nav and add it to the ui
      */
-    let cnt = 1;
-    navConfig.navs.forEach((nav) => {
-      const navInnerHTML = navHeaderElement.innerHTML;
-      navHeaderElement.innerHTML = navInnerHTML + navBarsTemplate;
+    if (navHeaderElement) {
+      navConfig.navs.forEach((nav) => {
+        const navInnerHTML = navHeaderElement.innerHTML;
+        navHeaderElement.innerHTML = navInnerHTML + navBarsTemplate;
 
-      const navElement = document.getElementById('main-nav-page');
+        const navElement = document.getElementById('main-nav-page');
 
-      // first tab is always active
-      if (cnt === 1) {
-        navElement.className += ' active';
+        // first tab is always active
+        if (cnt === 1) {
+          navElement.className += ' active';
+        }
+
+        navElement.setAttribute('ref', nav.ref); // nav ref
+        navElement.setAttribute('href', nav.href); // nav href
+        navElement.setAttribute('id', nav.id); // nav id
+        navElement.setAttribute('aria-label', nav.text); // aria-label
+        navElement.setAttribute('title', nav.text); // title
+        navElement.textContent = nav.text; // nav text
+
+        cnt += 1;
+      });
+
+      const activeNav = store.getStateItem('activeNav');
+
+      if (activeNav) {
+        NavBar.deactivateAllNavs();
+        NavBar.toggleTabContent(activeNav);
+        const el = document.getElementById(activeNav);
+        if (el) {
+          el.className += ' active';
+        }
       }
 
-      navElement.setAttribute('ref', nav.ref); // nav ref
-      navElement.setAttribute('href', nav.href); // nav href
-      navElement.setAttribute('id', nav.id); // nav id
-      navElement.setAttribute('aria-label', nav.text); // aria-label
-      navElement.setAttribute('title', nav.text); // title
-      navElement.textContent = nav.text; // nav text
-
-      cnt += 1;
-    });
-
-    const activeNav = store.getStateItem('activeNav');
-
-    if (activeNav) {
-      NavBar.deactivateAllNavs();
-      NavBar.toggleTabContent(activeNav);
-      const el = document.getElementById(activeNav);
-      if (el) {
-        el.className += ' active';
-      }
+      // add click event for active toggle
+      this.addTabClick();
     }
-
-    // add click event for active toggle
-    this.addTabClick();
   }
 
   static setTab(activeNav) {
@@ -133,7 +135,9 @@ export class NavBar extends Component {
   static tabUpdate(id) {
     NavBar.deactivateAllNavs();
     const el = document.getElementById(id);
-    el.className = `${el.className} active`;
+    if (el) {
+      el.className = `${el.className} active`;
+    }
     store.setStoreItem('activeNav', id);
 
     NavBar.UpdateRouteURL(id);
@@ -142,7 +146,9 @@ export class NavBar extends Component {
   static deactivateAllNavs() {
     navConfig.navs.forEach((nav) => {
       const el = document.getElementById(nav.id);
-      el.className = el.className.replace(' active', '');
+      if (el) {
+        el.className = el.className.replace(' active', '');
+      }
     });
   }
 
