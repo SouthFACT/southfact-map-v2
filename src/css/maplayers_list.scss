@@ -181,7 +181,8 @@ $map_right_margin: 10px;
 
   .btn:focus, .btn:hover {
     outline: $gray-600  !important;
-    border: 1px solid $gray-600;
+    // border: 1px solid $gray-600;
+    border: 1px solid  $btn-color-secondary !important;
     box-shadow: unset;
   }
 }
@@ -224,17 +225,16 @@ $map_right_margin: 10px;
 .btn-basemap {
   cursor: pointer;
   background-color: $btn-color-prinary !important;
-  border-width: 1px !important;;
-  @include border-radius(4px, 4px);
   width: 100% !important;
   @include box-shadow-mixin($box-shadow-default !important);
+  @include border-radius(4px, 4px);
 
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
   -moz-background-clip:    padding;
   background-clip:         padding-box;
-  border-color: #6c757d !important;
-  border-style: solid;
+  // border-color: #6c757d !important;
+  border: 1px solid $btn-color-secondary !important;
 
   &.zoom-region {
     margin-top: 10px;
@@ -268,7 +268,8 @@ $map_right_margin: 10px;
 .inputs-collapser {
   cursor: pointer;
   background-color: $btn-color-prinary !important;
-  border-width: 1px !important;;
+  // border-width: 1px !important;;
+  border: 1px solid lighten($btn-color-secondary, 5) !important;
   @include border-radius(0.25rem, 0.25rem);
   width: 100% !important;
   @include box-shadow-mixin($box-shadow-default !important);
@@ -277,8 +278,6 @@ $map_right_margin: 10px;
   -webkit-background-clip: padding-box;
   -moz-background-clip:    padding;
   background-clip:         padding-box;
-  border-color: #6c757d; //#777777;
-  border-style: solid;
 
   .icon-right {
     float: right;
@@ -362,7 +361,7 @@ $map_right_margin: 10px;
   background-color: $btn-color-secondary;
   background:  $btn-color-secondary !important;
   color: $body-color !important;
-  border-color: $gray-700 !important;
+  border-color: lighten($btn-color-secondary, 5) !important;
   width: 100%;
 }
 
@@ -400,7 +399,7 @@ $map_right_margin: 10px;
   width: 20px;
   height: 36px;
   font-size: 18px;
-  border: 1px solid $gray-600;
+  border: 1px solid $btn-color-secondary;
   @include border-radius(4px, 4px);
   justify-content: center;
   &:hover, &:focus {
@@ -506,7 +505,7 @@ $map_right_margin: 10px;
   width: 20px;
   font-size: .90em;
   height: 25px !important;
-  border: 1px solid  $gray-600 !important;
+  border: 1px solid lighten($btn-color-secondary, 5) !important;
   color: $body-color !important;
   margin-right: 5px;
   background-color: $btn-color-secondary;
@@ -535,6 +534,7 @@ $map_right_margin: 10px;
   color: $body-color !important;
   cursor: pointer;
   background-color: $btn-color-secondary;
+  border: 1px solid  $btn-color-secondary !important;
 
   &.closed {
     color: #fff;
