@@ -347,13 +347,16 @@ $map_right_margin: 10px;
 }
 
 .list-group-item:hover {
-  @include hovcol($btn-color-secondary);
+  // @include hovcol($btn-color-secondary);
+  background-color: $btn-color-prinary !important;
+  border-color: $btn-color-secondary  !important;
   color: $body-color !important;
   cursor: pointer;
 }
 
 .list-group-item:focus {
-  border-color: $gray-600  !important;
+  background-color: $btn-color-prinary !important;
+  border-color: $btn-color-secondary  !important;
   outline: $gray-600  !important;
 }
 
