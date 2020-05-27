@@ -209,6 +209,10 @@
     background-color: rgba(53, 59, 65, 0) !important;
   }
 
+  .brand-maplist-holder {
+    position: unset;
+  }
+
   .hide-list .maplayers_list {
     height: 0 !important;
     max-height: 0 !important;
@@ -219,10 +223,6 @@
     .brand-maplist-holder {
       display: none !important;
     }
-  }
-
-  .brand-maplist-holder {
-    position: unset;
   }
 }
 

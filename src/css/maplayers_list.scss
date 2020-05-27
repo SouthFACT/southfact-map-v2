@@ -1,4 +1,4 @@
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 @import './_customVarriables.scss';
 
 $body-bg: $gray-800;
@@ -8,8 +8,8 @@ $dark-bg: #2A2E33;
 $btn-color-prinary: #9F5222; // $gray-100;
 $btn-color-secondary: #242409; // $gray-300;
 
-$box-shadow-default: 0 2.5px 5px rgba(0,0,0,0.19), 0 1.5px 1.5px rgba(0,0,0,0.23);
-$box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
+$box-shadow-default: 0 2.5px 5px rgba(0, 0, 0, 0.19), 0 1.5px 1.5px rgba(0, 0, 0, 0.23);
+$box-shadow-small: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1.25px 1.25px rgba(0, 0, 0, 0.23);
 
 @mixin box-shadow-mixin($shadow...) {
   -webkit-box-shadow: $shadow;
@@ -20,9 +20,10 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
 @mixin hovcol($color) {
   // @content;
   @if (lightness($color) > 50) {
-    background-color: mix($color,gray,25) !important;
-  } @else {
-    background-color: mix(white,$color,25) !important;
+    background-color: mix($color, gray, 25) !important;
+  }
+  @else {
+    background-color: mix(white, $color, 25) !important;
   }
 }
 
@@ -66,9 +67,11 @@ $map_right_margin: 10px;
   margin: 10px;
 }
 
-.map-information-popup a.leaflet-popup-close-button {
-  top: 15px !important;
-  z-index: 1021;
+.map-information-popup {
+  .leaflet-popup-close-button {
+    top: 15px !important;
+    z-index: 1021;
+  }
 }
 
 #map_info_list {
@@ -81,30 +84,6 @@ $map_right_margin: 10px;
   color: $body-color;
   font-size: 14px;
   padding: $layer_list_padding;
-}
-
-#maplayers_list_opened {
-  > .sticky-top.stickcustom {
-    h5 {
-      margin-left: 15px;
-      margin-right: 15px;
-      margin-top: 5px;
-      margin-bottom: 0 !important;
-      background-color: $body-bg-semiTransparent;
-    }
-  }
-}
-
-.sticky-top.stickcustom {
-  > #map_info_list_collapse {
-    h5 {
-      margin-left: 15px;
-      margin-right: 15px;
-      margin-top: 5px;
-      margin-bottom: 0 !important;
-      background-color: $body-bg-semiTransparent;
-    }
-  }
 }
 
 .icon-left {
@@ -135,7 +114,7 @@ $map_right_margin: 10px;
 }
 
 .btn-action:after {
-  content:"\000A";
+  content: '\000A';
   white-space: pre;
 }
 
@@ -173,12 +152,11 @@ $map_right_margin: 10px;
   }
 
   .btn-platform {
-    font-size: 14px !important
+    font-size: 14px !important;
   }
 
   .btn:focus, .btn:hover {
     outline: $gray-600 !important;
-    // border: 1px solid $gray-600;
     border: 1px solid  $btn-color-secondary !important;
     box-shadow: unset;
   }
@@ -245,19 +223,22 @@ $map_right_margin: 10px;
     padding: 10px;
   }
 
-  [aria-expanded="true"] {
-    svg.fa-caret-down {
-      display: none !important;
+  [aria-expanded='true'] {
+    .fa-caret-down {
+      svg {
+        display: none !important;
+      }
     }
-    svg.fa-caret-up {
-      display: inherit !important;
+    .fa-caret-up {
+      svg {
+        display: inherit !important;
+      }
     }
   }
 
   .inputs-collapser-header {
-    // background-color: $dark-bg !important;
     padding: 5px;
-    border-width: 1px !important;;
+    border-width: 1px !important;
     @include border-radius(0.25rem, 0.25rem);
   }
 }
@@ -265,7 +246,6 @@ $map_right_margin: 10px;
 .inputs-collapser {
   cursor: pointer;
   background-color: $btn-color-prinary !important;
-  // border-width: 1px !important;;
   border: 1px solid lighten($btn-color-secondary, 5) !important;
   @include border-radius(0.25rem, 0.25rem);
   width: 100% !important;
@@ -285,18 +265,22 @@ $map_right_margin: 10px;
     background-color: $btn-color-secondary;
   }
 
-  [aria-expanded="true"] {
-    svg.fa-caret-down {
-      display: none !important;
+  [aria-expanded='true'] {
+    .fa-caret-down {
+      svg {
+        display: none !important;
+      }
     }
-    svg.fa-caret-up {
-      display: inherit !important;
+    .fa-caret-up {
+      svg {
+        display: inherit !important;
+      }
     }
   }
 
   .inputs-collapser-header {
     padding: 5px;
-    border-width: 1px !important;;
+    border-width: 1px !important;
     @include border-radius(0.25rem, 0.25rem);
   }
 
@@ -326,6 +310,7 @@ $map_right_margin: 10px;
   height: 41px;
   @include border-radius(10%, 10%);
   margin-right: 10px;
+
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
@@ -337,14 +322,21 @@ $map_right_margin: 10px;
   height: 34px;
   @include border-radius(10%, 10%);
   margin-right: 10px;
+
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
 
+.list-group-dark, .list-group-item {
+  background: $btn-color-secondary !important;
+  color: $body-color !important;
+  border-color: lighten($btn-color-secondary, 5) !important;
+  width: 100%;
+}
+
 .list-group-item:hover {
-  // @include hovcol($btn-color-secondary);
   background-color: $btn-color-prinary !important;
   border-color: $btn-color-secondary !important;
   color: $body-color !important;
@@ -357,22 +349,14 @@ $map_right_margin: 10px;
   outline: $gray-600 !important;
 }
 
-.list-group-dark, .list-group-item {
-  background-color: $btn-color-secondary;
-  background: $btn-color-secondary !important;
-  color: $body-color !important;
-  border-color: lighten($btn-color-secondary, 5) !important;
-  width: 100%;
+.basemap_list_close {
+  font-size: 10px;
+  margin: 5px;
 }
 
 .basemap_list_close:hover {
   cursor: pointer;
   @include hovcol($btn-color-secondary);
-}
-
-.basemap_list_close {
-  font-size: 10px;
-  margin: 5px;
 }
 
 .list-group-dark {
@@ -410,11 +394,43 @@ $map_right_margin: 10px;
 
 .maplayers_list {
   background-color: $body-bg;
-  background: $body-bg-semiTransparent;
   color: $body-color;
   @include border-radius(0.25rem, 0.25rem);
   overflow-x: hidden !important;
   overflow-y: auto !important;
+
+  hr {
+    border-top: 1px solid rgba(233, 236, 241, 0.75);
+  }
+
+  label {
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  .zonal-long-table-row {
+    margin-top: 0;
+  }
+
+  .zonal-long-table-header-simple {
+    top: 0;
+  }
+
+  .zonal-long-table-row-header-simple {
+    height: 18px;
+  }
+
+  .zonal-long-table-item, .zonal-long-table-row-header-simple {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+
+  .driver-chart-backgroundColor-asset, .driver-chart-backgroundColor-threat {
+    &-zero, &-one, &-two {
+      color: #000;
+    }
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -440,41 +456,6 @@ $map_right_margin: 10px;
 .custom-control {
   padding-bottom: 2px;
   margin-top: 1.5px;
-}
-
-.maplayers_list hr {
-  border-top: 1px solid rgba(233, 236, 241, 0.75);
-}
-
-.maplayers_list label {
-  font-size: 12px;
-  padding: 3px;
-}
-
-.maplayers_list {
-  .zonal-long-table-row {
-    margin-top: 0;
-  }
-
-  div.zonal-long-table-header-simple {
-    top: 0;
-  }
-
-  .zonal-long-table-row-header-simple {
-    height: 18px;
-  }
-
-  .zonal-long-table-item, .zonal-long-table-row-header-simple {
-    transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  }
-
-  .driver-chart-backgroundColor-asset, .driver-chart-backgroundColor-threat {
-    &-zero, &-one, &-two {
-      color: #000;
-    }
-  }
 }
 
 .layer-legend-wrapper {
@@ -503,7 +484,7 @@ $map_right_margin: 10px;
 .layer-description-text {
   cursor: pointer;
   width: 20px;
-  font-size: .90em;
+  font-size: .9em;
   height: 25px !important;
   border: 1px solid lighten($btn-color-secondary, 5) !important;
   color: $body-color !important;
@@ -511,20 +492,15 @@ $map_right_margin: 10px;
   background-color: $btn-color-secondary;
   @include border-radius(4px, 4px);
   @include box-shadow-mixin($box-shadow-small);
-  svg {
-    // vertical-align: -0.10em;
-  }
 
   &:hover {
     cursor: pointer;
-    color: #fff;
-    // @include hovcol($btn-color-secondary);
+    color: #FFF;
     background-color: $btn-color-prinary;
   }
 
   &:focus {
     outline: none;
-    // @include hovcol($btn-color-secondary);
     background-color: $btn-color-prinary;
   }
 }
@@ -537,14 +513,12 @@ $map_right_margin: 10px;
   border: 1px solid  $btn-color-secondary !important;
 
   &.closed {
-    color: #fff;
+    color: #FFF;
   }
 
   &:hover {
     color: #999595;
-    // @include hovcol($btn-color-secondary);
     background-color: $btn-color-prinary;
-
   }
 }
 

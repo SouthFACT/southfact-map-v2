@@ -6,13 +6,13 @@ $graph-axis-color: #999;
 $body-bg: $gray-800;
 $body-color: $gray-200;
 
-$box-shadow-default: 0 2.5px 5px rgba(0,0,0,0.19), 0 1.5px 1.5px rgba(0,0,0,0.23);
-$box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
+$box-shadow-default: 0 2.5px 5px rgba(0, 0, 0, 0.19), 0 1.5px 1.5px rgba(0, 0, 0, 0.23);
+$box-shadow-small: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1.25px 1.25px rgba(0, 0, 0, 0.23);
 
 @mixin box-shadow-mixin($shadow...) {
   -webkit-box-shadow: $shadow;
-     -moz-box-shadow: $shadow;
-          box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
 }
 
 .chartjs-wrapper {
@@ -22,9 +22,9 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
 }
 
 #mapinfodata .chartjs-wrapper {
-    max-height: 150px;
-    height: 150px;
-    width: 100%;
+  max-height: 150px;
+  height: 150px;
+  width: 100%;
 }
 
 #zonal-long-name {
@@ -205,15 +205,15 @@ div.zonal-asset {
     }
   }
 
-    .zonal-header-wildlife, .zonal-header-fish-wildlife .zonal-header-item-label {
-      &:first-child {
-        margin-right: 10px;
-      }
-
-      &:last-child {
-        margin-left: 10px;
-      }
+  .zonal-header-wildlife, .zonal-header-fish-wildlife .zonal-header-item-label {
+    &:first-child {
+      margin-right: 10px;
     }
+
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
 }
 
 @media screen and (max-width: 1589px){
@@ -325,88 +325,6 @@ div.zonal-asset {
   }
 }
 
-@media screen and (max-width: 535px){
-  .zonal-item-fishwild {
-    margin-top: 0 !important;
-  }
-
-  .long-graphs-active {
-    display: none !important;
-  }
-
-  .zonal-item-exposure {
-    margin-top: 0 !important;
-  }
-  .zonal-header-exposure .zonal-header-item-label {
-    &:first-child {
-      margin-right: 0;
-    }
-
-    &:last-child {
-      margin-left: 0;
-    }
-  }
-
-    .zonal-header-fish-wildlife .zonal-header-item-label {
-      &:first-child {
-        margin-right: 0;
-      }
-
-      &:last-child {
-        margin-left: 0;
-      }
-    }
-
-  .zonal-item-fishwild {
-    .zonal-box {
-      width: 100%;
-    }
-  }
-  .zonal-header-fish-wildlife .zonal-header-item-label {
-    width: 100%
-  }
-
-  .zonal-item-exposure {
-    .zonal-box {
-      width: 100%;
-    }
-  }
-  .zonal-header-exposure .zonal-header-item-label {
-    width: 100%
-  }
-}
-
-#overview-label {
-    display: none;
-}
-
-.zonal-stats-wrapper:first-of-type {
-
-  #overview-label {
-      display: unset;
-  }
-
-}
-
-.zonal-hubs {
-    width: 90%;
-}
-
-.zonal-item-hub {
-  width: 30% !important;
-  margin-top: 15px;
-}
-
-.zonal-item-fishwild {
-  width: 30% !important;
-  margin-top: 15px;
-}
-
-.zonal-item-exposure {
-  width: 30% !important;
-  margin-top: 15px;
-}
-
 .zonal-label {
   // for text to wrap in button
   white-space: pre-wrap;      /* CSS3 */
@@ -414,14 +332,12 @@ div.zonal-asset {
   white-space: -pre-wrap;     /* Opera <7 */
   white-space: -o-pre-wrap;   /* Opera 7 */
   word-wrap: break-word;      /* IE */
-  // width: 60px !important;
   height: 40px;
   margin: 5px;
   font-size: .9rem;
   vertical-align: middle;
   .btn-icon:after {
-      content:'  ';
-      // white-space: pre;
+    content:'  ';
   }
 }
 
@@ -431,18 +347,18 @@ div.zonal-asset {
   padding: 0;
   svg {
     vertical-align: -.50em;
-   }
- }
-
-  .zonal-label-zoom {
-    color: $body-bg;
-    width: 25px !important;
-    height: 40px;
-    padding: 0;
-    svg {
-      vertical-align: -.50em;
-    }
   }
+}
+
+.zonal-label-zoom {
+  color: $body-bg;
+  width: 25px !important;
+  height: 40px;
+  padding: 0;
+  svg {
+    vertical-align: -.50em;
+  }
+}
 
 .zonal-long-wrapper {
   width: 100%;
@@ -497,7 +413,7 @@ div.zonal-asset {
   margin-right: 5px !important;
 
   &:hover {
-    background-color: #e6e6e6;
+    background-color: #E6E6E6;
   }
 
   &-graphs {
@@ -569,20 +485,11 @@ div.zonal-asset {
   vertical-align: top;
 }
 
-.zonal-long-table-asset .zonal-long-table-header-simple-low {
-    position: absolute;
-}
-
-.zonal-long-table-asset .zonal-long-table-header-simple-high {
-    position: absolute;
-}
-
-.zonal-long-table-threat .zonal-long-table-header-simple-low {
-    position: absolute;
-}
-
+.zonal-long-table-asset .zonal-long-table-header-simple-low,
+.zonal-long-table-asset .zonal-long-table-header-simple-high,
+.zonal-long-table-threat .zonal-long-table-header-simple-low,
 .zonal-long-table-threat .zonal-long-table-header-simple-high {
-    position: absolute;
+  position: absolute;
 }
 
 .zonal-long-table-header-threat {
@@ -592,17 +499,17 @@ div.zonal-asset {
 .zonal-long-table-header {
   position: relative;
 
-   &:after {
-     position: relative;
-     content: '';
-     width: 16px;
-     height: 16px;
-     line-height: 14px;
-     @include border-radius(50%, 50%);
-     top: 20px;
-     left: -15px;
-     padding: 3px;
-   }
+  &:after {
+    position: relative;
+    content: '';
+    width: 16px;
+    height: 16px;
+    line-height: 14px;
+    @include border-radius(50%, 50%);
+    top: 20px;
+    left: -15px;
+    padding: 3px;
+  }
 
   &-low:after {
     content: '1';
@@ -634,7 +541,7 @@ div.zonal-asset {
   }
 
   &-high {
-      right: 0;
+    right: 0;
   }
 }
 
@@ -668,7 +575,6 @@ div.zonal-asset {
 .zonal-long-graph {
   display: inline-block;
   width: 100%;
-  // padding-left: $graph-axis-width;
   font-size: $label-font-size;
 }
 
@@ -705,62 +611,61 @@ div.zonal-asset {
   $btn-color-secondary: $gray-800;
   $btn-color-prinary: $gray-700;
 
-    .zonal-stats-short-title-holder {
-      display: none;
-      h3 {
-        font-size: 1.2rem !important;
-      }
+  .zonal-stats-short-title-holder {
+    display: none;
+    h3 {
+      font-size: 1.2rem !important;
     }
+  }
 
-    .zonal-long-name {
+  .zonal-long-name {
+    font-size: 1rem !important;
+    padding: $padding $padding 0 $padding !important;
+  }
+
+  .zonal-long-button {
+    height: 30px !important;
+  }
+
+  .zonal-button-text {
+    display: none;
+  }
+
+  .zonal-stats-button-holder {
+    margin-top: 5px !important;
+  }
+
+  .zonal-stats-wrapper {
+    padding-top: 2.5px !important;
+  }
+
+  .zonal-label-remove {
+    .fa-trash-alt {
       font-size: 1rem !important;
-      padding: $padding $padding 0 $padding !important;
+      margin-top: .2rem !important;
     }
+  }
 
-    .zonal-long-button {
-      height: 30px !important;
+  .zonal-label {
+    font-size: .9rem;
+
+    .btn-icon {
+      font-size: 1rem !important;
     }
-
-    .zonal-button-text {
-      display: none;
+    .btn-icon:after {
+      content: '  ';
     }
+  }
 
-    .zonal-stats-button-holder {
-      margin-top: 5px !important;
-    }
+  #zonal-header {
+    margin-bottom: 0 !important;
+  }
 
-    .zonal-stats-wrapper {
-      padding-top: 2.5px !important;
-    }
-
-    .zonal-label-remove {
-      font-size: 0rem !important;
-      .fa-trash-alt{
-        font-size: 1rem !important;
-        margin-top: .2rem !important;
-      }
-    }
-
-    .zonal-label {
-      font-size: .9rem;
-
-      .btn-icon {
-        font-size: 1rem !important;
-      }
-      .btn-icon:after {
-          content: '  ';
-      }
-    }
-
-    #zonal-header {
-      margin-bottom: 0 !important;
-    }
-
-    .zonal-long-graph-wrapper {
-      margin-top: $margin !important;
-      margin-bottom: $margin !important;
-      padding-right: $padding !important;
-    }
+  .zonal-long-graph-wrapper {
+    margin-top: $margin !important;
+    margin-bottom: $margin !important;
+    padding-right: $padding !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -773,7 +678,7 @@ div.zonal-asset {
   }
 
   .zonal-label-remove {
-    .fa-trash-alt{
+    .fa-trash-alt {
       margin-top: .35rem !important;
     }
   }
@@ -808,7 +713,6 @@ div.zonal-asset {
 }
 
 .zonal-long-raw-values {
-
   ul {
     padding-left: 18px;
     margin-bottom: 0;
@@ -822,9 +726,9 @@ div.zonal-asset {
 
 .noselect {
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
