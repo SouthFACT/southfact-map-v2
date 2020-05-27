@@ -24,8 +24,6 @@ import { SearchLocations } from './searchlocations';
 // import html templates
 import NotFoundPage from '../templates/notfound.html';
 
-// scss
-import '../css/_print.scss';
 // initialize navbar
 const navBarComponent = new NavBar('nav-holder');
 const urlParams = new URLSearchParams(window.location.search);
