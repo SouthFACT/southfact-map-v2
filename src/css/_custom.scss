@@ -1,27 +1,26 @@
 // Your variable overrides
 $body-main-bar-bg-color: #101012;
-$body-bg: lighten(#101012,5) ;
-$body-list-border:    $gray-600;
+$body-bg: lighten(#101012, 5);
+$body-list-border: $gray-600;
 $body-color: $gray-200;
-$aboutbackground: #0f1110;
+$aboutbackground: #0F1110;
 
 $btn-color-prinary: #9F5222; // $gray-100;
 $btn-color-secondary: #242409; // $gray-300;
 $map-botton-font-color: #7F411B;
 
 $box-shadow-default: 0 2.5px 5px #000, 0 1.5px 1.5px #333;
-$box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
+$box-shadow-small: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1.25px 1.25px rgba(0, 0, 0, 0.23);
 @mixin box-shadow-mixin($shadow...) {
   -webkit-box-shadow: $shadow;
-     -moz-box-shadow: $shadow;
-          box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
 }
-
 
 $body-color-visited: $gray-400;
 $body-color-medium: $gray-600;
 
-$leaflet-draw-tooltip-top-bg:    $gray-100;
+$leaflet-draw-tooltip-top-bg: $gray-100;
 
 $margin: 10px;
 $padding: 10px;
@@ -29,54 +28,53 @@ $padding: 10px;
 $margin15: 15px;
 $padding15: 15px;
 
-$body-bg-semiTransparent:    rgba(53, 59, 65, .8); // $gray-800
-$body-bg-semiTransparent9:    rgba(53, 59, 65, .9); // $gray-800
-$body-bg-FullTransparent:    rgba(53, 59, 65, 0.0); // $gray-800
+$body-bg-semiTransparent: rgba(53, 59, 65, .8); // $gray-800
+$body-bg-semiTransparent9: rgba(53, 59, 65, .9); // $gray-800
+$body-bg-FullTransparent: rgba(53, 59, 65, 0); // $gray-800
 $newbg: #151417;
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600,700);
-$roboto:  Roboto, Helvetica, 'Helvetica Neue', Arial, sans-serif; // default should be everywhere
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600,700');
+$roboto: Roboto, Helvetica, 'Helvetica Neue', Arial, sans-serif; // default should be everywhere
 
-@mixin hovcol($color){
+@mixin hovcol($color) {
   // @content;
-@if(lightness($color) > 50){
-  background-color: mix($color,gray,25) !important;
-}@else {
-background-color: mix(white,$color,25) !important;
- }
-
-}
-
-@mixin size1000{
-@media screen and (max-width: 1000px) {
-@content;
+  @if (lightness($color) > 50) {
+    background-color: mix($color, gray, 25) !important;
+  } @else {
+    background-color: mix(white, $color, 25) !important;
   }
 }
 
-@mixin size992{
-@media screen and (max-width: 992px) {
-  @content;
+@mixin size1000 {
+  @media screen and (max-width: 1000px) {
+    @content;
   }
 }
 
-@mixin size768{
+@mixin size992 {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin size768 {
   @media screen and (max-width: 768px) {
-      @content;
+    @content;
   }
 }
 
 // general page styles
 html, body {
-    height: 100%;
-    font-family: $roboto;
+  height: 100%;
+  font-family: $roboto;
 }
 
 a:hover {
   text-decoration: none !important;
 }
 
-#main-content{
-  min-height: 0px;
+#main-content {
+  min-height: 0;
 }
 
 body {
@@ -90,7 +88,7 @@ hr {
 
 // nav bar styles
 .main-navbar-toggle {
-    z-index: 5000 !important;
+  z-index: 5000 !important;
 }
 
 a.nav-link.active {
@@ -110,7 +108,7 @@ a.nav-link {
   margin-right: $margin;
   padding-bottom: 5px;
   &:hover{
-  color: #ecedef !important; //new
+    color: #ecedef !important; //new
   }
 }
 
@@ -130,7 +128,6 @@ a.nav-link {
   @include box-shadow-mixin($box-shadow-default);
   padding-left: $padding15;
   padding-right: $padding15;
-  // padding-bottom: $padding15;
   background-color: $body-main-bar-bg-color !important;
   max-height: 68px;
   min-height: 68px;
@@ -149,23 +146,45 @@ a.nav-link {
   #mainNavToggle {
     background-color: $body-main-bar-bg-color !important;
   }
+}
 
-  h2 {
-    margin-bottom: 5px;
+// .southfact-title {
+//   margin-left: 30px;
+//   margin-top: $margin15;
+//   margin-bottom: $margin15;
+// }
+
+.site-logo-image {
+  width: 40px;
+  height: 60px;
+  @media screen and (max-width: 992px) {
+    width: 32px;
+    height: 48px;
+  }
+  @media screen and (max-width: 576px) {
+    width: 27px;
+    height: 40px;
   }
 }
 
-.southfact-title {
-  margin-left: 30px;
-  margin-top: $margin15;
-  margin-bottom: $margin15;
-}
-
-#SouthFACT-Logo-Title {
-  width: 40px;
-  height: 60px;
-  // width: 32px;
-  // height: 48px;
+.site-logo-title {
+  display: inline-block;
+  margin-bottom: 0px !important;
+  margin-top: 10px !important;
+  padding-left: 25px;
+  font-size: 22px  !important;
+  @media screen and (max-width: 992px) {
+    font-size: 20px  !important;
+    padding-left: 25px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 18px  !important;
+    padding-left: 15px;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 14px  !important;
+    padding-left: 5px;
+  }
 }
 
 #nav-holder {
@@ -183,7 +202,9 @@ a.nav-link {
   outline: inherit;
 }
 
-#reports-holder, #glossary-holder, #exposure-holder, #assets-holder, #threats-holder ,#aboutgen-holder {
+#reports-holder, #glossary-holder,
+#exposure-holder, #assets-holder,
+#threats-holder, #aboutgen-holder {
   margin-bottom: $margin*2;
 }
 
@@ -216,10 +237,10 @@ a.nav-link {
 }
 
 .buffer-label, .buffer-distance {
-    padding: 5px;
-    @media screen and (max-width: 400px) {
-      padding: 4px;
-    }
+  padding: 5px;
+  @media screen and (max-width: 400px) {
+    padding: 4px;
+  }
 }
 
 #buffer-layer-toggle {
@@ -242,7 +263,7 @@ a.nav-link {
   -webkit-transition: .2s;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     background: $body-color-medium;
     width: 10px;
@@ -255,19 +276,17 @@ a.nav-link {
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     box-shadow: 22.5px 0 0 $body-color-medium,
-                45px 0 0 $body-color-medium,
-                67.5px 0 0 $body-color-medium,
-                89px 0 0 $body-color-medium,
-                110.5px 0 0 $body-color-medium,
-                133px 0 0 $body-color-medium,
-                154.5px 0 0 $body-color-medium,
-                176px 0 0 $body-color-medium;
+      45px 0 0 $body-color-medium,
+      67.5px 0 0 $body-color-medium,
+      89px 0 0 $body-color-medium,
+      110.5px 0 0 $body-color-medium,
+      133px 0 0 $body-color-medium,
+      154.5px 0 0 $body-color-medium,
+      176px 0 0 $body-color-medium;
   }
-
-
 }
 
 .slider::-webkit-slider-thumb {
@@ -459,7 +478,7 @@ a.nav-link {
   color: $body-bg !important;
   background-color: $gray-300 !important;
   @media screen and (max-width: 420px) {
-    background-color:  $yellow !important;
+    background-color: $yellow !important;
   }
 }
 
@@ -803,8 +822,8 @@ a.about-nav.active::before {
 
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip:  padding-box;
   border-color: #6c757d; //#777777;
   border-style: solid;
   font-size: 1.25em;
@@ -820,7 +839,7 @@ a.about-nav.active::before {
   //   padding: 10px;
   // }
 
-  [aria-expanded="true"] {
+  [aria-expanded='true'] {
     svg.fa-caret-down {
       display: none !important;
     }
@@ -1023,13 +1042,13 @@ background-color: $body-bg !important;
 }
 
 .btn-icon:after {
-    content:"\000A";
+    content:'\000A';
     white-space: pre;
 }
 
 .btn-clear-area, .btn-download-all-zonal-stats {
   .btn-icon:after {
-      content:" ";
+      content:' ';
       white-space: pre;
   }
 }
@@ -1039,8 +1058,8 @@ background-color: $body-bg !important;
 }
 
 .bnt-MapLayersListToggle {
-  border-color:  $body-bg !important;
-  border-width:  1px 1px 1px 1px !important;
+  border-color: $body-bg !important;
+  border-width: 1px 1px 1px 1px !important;
   border-style: solid !important;
 }
 
@@ -1178,7 +1197,7 @@ background-color: $body-bg !important;
 }
 
 .btn-copy-share-text:before {
-  content:"\000A";
+  content:'\000A';
   white-space: pre;
 }
 
@@ -1257,7 +1276,7 @@ background-color: $body-bg !important;
  #explore-holder {
    overflow-x: hidden;
    overflow-y: scroll;
-   background-color:  $body-bg;
+   background-color: $body-bg;
    -webkit-print-color-adjust: exact;
  }
 
@@ -1408,8 +1427,8 @@ p.not-found {
     @include border-top-right-radius(4px);
     @include border-bottom-left-radius(0px);
     @include border-bottom-right-radius(0px);
-    border-color:  $body-list-border !important;
-    border-width:  1px 1px 1px 1px !important;
+    border-color: $body-list-border !important;
+    border-width: 1px 1px 1px 1px !important;
     border-style: solid !important;
     z-index: 4500 !important;
   }
@@ -1486,8 +1505,8 @@ p.not-found {
 
     #mapListToggle {
       background-color: $newbg !important;
-      border-color:  $body-list-border !important;
-      border-width:  0px 1px 1px 1px !important;
+      border-color: $body-list-border !important;
+      border-width: 0px 1px 1px 1px !important;
       border-style: solid !important;
       @include border-top-left-radius(0px);
       @include border-top-right-radius(0px);
@@ -1529,18 +1548,6 @@ p.not-found {
     margin-top: 15px !important;
   }
 
-  .main-title-area {
-    // margin-top: 5px !important;
-  }
-
-  #maintitle {
-    display: inline-block;
-    margin-bottom: 0px !important;
-    margin-top: 10px !important;
-    padding-left: 25px;
-    font-size: 22px  !important;;
-  }
-
   .navbar-expand-lg {
     padding-top: 0px;
   }
@@ -1556,10 +1563,6 @@ p.not-found {
     height: 100% !important;
   }
 
-  .navbar-brand-exlore-title, #SouthFACT-Logo-Title-brand {
-    display: none;
-  }
-
   .btn-details {
     max-height: 35px;
     margin-top: 15px !important;
@@ -1568,7 +1571,7 @@ p.not-found {
   }
 
   .btn-icon:after {
-    content:"\000A";
+    content:'\000A';
     white-space: pre;
   }
 }
@@ -1626,17 +1629,17 @@ p.not-found {
   }
 
   .btn-mapinfo {
-    background-color:  $body-color !important;
+    background-color: $body-color !important;
     color: $body-bg !important;
   }
 
   .btn-pointsofinterest {
-    background-color:  $body-color !important;
+    background-color: $body-color !important;
     color: $body-bg !important;
   }
 
   .btn-pointsofinterest-download {
-    background-color:  $body-color !important;
+    background-color: $body-color !important;
     color: $body-bg !important;
   }
 
@@ -1795,9 +1798,9 @@ p.not-found {
     height: 100% !important;
   }
 
-  #maintitle, #SouthFACT-Logo-Title {
-    display: none;
-  }
+  // #maintitle, #SouthFACT-Logo-Title {
+  //   display: none;
+  // }
 
   .navbar-brand {
     display: inline-block;
@@ -1879,11 +1882,6 @@ p.not-found {
 }
 
 @media screen and (max-width: 768px) {
-  #SouthFACT-Logo-Title {
-    width: 54px;
-    height: 78px;
-  }
-
   .zoomLinks-header {
     font-size: .842rem !important;
   }
@@ -1928,7 +1926,7 @@ p.not-found {
   }
 
   .leaflet-draw-actions a {
-    background-color:  $yellow !important;
+    background-color: $yellow !important;
   }
 
   .leaflet-draw.active {
@@ -2217,7 +2215,7 @@ p.not-found {
   }
 }
 
-[aria-expanded="true"] {
+[aria-expanded='true'] {
   svg.fa-caret-down {
     display: none !important;
   }
@@ -2245,7 +2243,7 @@ p.not-found {
   }
 }
 
-[aria-expanded="false"] {
+[aria-expanded='false'] {
   svg.fa-caret-down {
     display: inherit !important;
   }
@@ -2504,7 +2502,7 @@ p.not-found {
 }
 
 .sideheading {
-  background-color:  $body-bg;
+  background-color: $body-bg;
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
@@ -2512,7 +2510,7 @@ p.not-found {
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
-  background-color:  $body-bg;
+  background-color: $body-bg;
   @include border-radius(0.25rem, 0.25rem);
   // border: 1px solid $gray-700;
   border: 1px solid  $btn-color-secondary !important;
@@ -2521,7 +2519,7 @@ p.not-found {
 
 .custom-control-input:active ~ .custom-control-label::before {
   background-color: $body-color;
-  background:  $body-bg-semiTransparent;
+  background: $body-bg-semiTransparent;
   border: 0px solid $body-color;
   @include border-radius(0.25rem, 0.25rem);
 }
@@ -2565,14 +2563,14 @@ p.not-found {
     }
 
 
-    &.bs-tooltip-right .arrow::before, &.bs-tooltip-auto[x-placement^="right"] .arrow::before {
+    &.bs-tooltip-right .arrow::before, &.bs-tooltip-auto[x-placement^='right'] .arrow::before {
       right: 0 !important;
       border-width: 0.4rem 0.4rem 0.4rem 0 !important;
       border-right-color: $body-color !important;
       border-top-color: rgba(0,0,0,0) !important;
     }
 
-    &.bs-tooltip-bottom .arrow::before, &.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+    &.bs-tooltip-bottom .arrow::before, &.bs-tooltip-auto[x-placement^='bottom'] .arrow::before {
         border-bottom-color: $body-color;
     }
 }
@@ -2619,7 +2617,7 @@ p.not-found {
   }
 
   .btn-explore-info {
-    background-color:  $gray-300 !important;
+    background-color: $gray-300 !important;
     color: $body-bg !important;
     font-size: .6rem !important;
     width: 25px !important;
@@ -2792,9 +2790,9 @@ p.not-found {
   color: $gray-200;
   font-size: 1.5em;
   font-weight: 700;
-  background-color:  rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
   border-width: 0px;
-  box-shadow:  0 0px 0px rgba(0,0,0,0);
+  box-shadow: 0 0px 0px rgba(0,0,0,0);
 }
 
 .path-highlight {
@@ -2851,7 +2849,7 @@ p.not-found {
     &:hover{//get details
 
       @include hovcol(#54575b);
-      //background:  #adaeaf;
+      //background: #adaeaf;
     }
     @include size1000 { //new
 
@@ -2961,7 +2959,7 @@ p.not-found {
 }
 
 .btn-copy-share-text:before {
-  content:"\000A";
+  content:'\000A';
   white-space: pre;
 }
 
@@ -3037,8 +3035,8 @@ p.not-found {
 
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip:  padding-box;
 
 }
 
@@ -3051,8 +3049,8 @@ p.not-found {
   @include border-radius(10px, 10px);
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip:  padding-box;
 
 }
 
@@ -3064,12 +3062,12 @@ p.not-found {
   @include border-radius(15px, 15px);
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip:  padding-box;
 }
 
 // .pointsofinterest-marker:after {
-//   content: "";
+//   content: '';
 //   position: absolute;
 //   border-left: 7.5px solid transparent;
 //   border-right: 7.5px solid transparent;
@@ -3163,7 +3161,7 @@ p.not-found {
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
   background: $body-bg;
-  background:  $body-bg-semiTransparent9;
+  background: $body-bg-semiTransparent9;
   color: $body-color;
   @include border-radius(0px, 0px);
   min-width: 300px;
@@ -3250,7 +3248,7 @@ p.not-found {
   border: solid;
   border-color: $leaflet-draw-tooltip-top-bg transparent;
   border-width: 8px 8px 0 8px;
-  content:"";
+  content:'';
   display: block;
   left: 50%;
   top: 100%;

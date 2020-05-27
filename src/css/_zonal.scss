@@ -3,7 +3,7 @@ $label-font-size: 12px;
 $graph-axis-width: 40px;
 $graph-axis-color: #999;
 
-$body-bg:    $gray-800;
+$body-bg: $gray-800;
 $body-color: $gray-200;
 
 $box-shadow-default: 0 2.5px 5px rgba(0,0,0,0.19), 0 1.5px 1.5px rgba(0,0,0,0.23);
@@ -493,7 +493,7 @@ div.zonal-asset {
 .zonal-long-button {
   cursor: pointer;
   @include border-radius(2px, 2px);
-  background-color:  $body-color;
+  background-color: $body-color;
   color: $body-bg;
   font-size: 15px;
   margin-right: 5px !important;

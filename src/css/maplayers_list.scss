@@ -2,9 +2,9 @@
 @import './_customVarriables.scss';
 
 
-$body-bg:    $gray-800;
+$body-bg: $gray-800;
 $body-color: $gray-200;
-$body-bg-semiTransparent:    rgba(53, 59, 65, .9); // $gray-800
+$body-bg-semiTransparent: rgba(53, 59, 65, .9); // $gray-800
 $dark-bg: #2A2E33;
 $btn-color-prinary: #9F5222; // $gray-100;
 $btn-color-secondary: #242409; // $gray-300;
@@ -231,8 +231,8 @@ $map_right_margin: 10px;
 
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
   // border-color: #6c757d !important;
   border: 1px solid $btn-color-secondary !important;
 
@@ -276,8 +276,8 @@ $map_right_margin: 10px;
 
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 
   .icon-right {
     float: right;
@@ -331,8 +331,8 @@ $map_right_margin: 10px;
   margin-right: 10px;
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 
 .zoomregion-img {
@@ -342,8 +342,8 @@ $map_right_margin: 10px;
   margin-right: 10px;
   /* Prevent background color leak outs */
   -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 
 .list-group-item:hover {
@@ -362,7 +362,7 @@ $map_right_margin: 10px;
 
 .list-group-dark, .list-group-item {
   background-color: $btn-color-secondary;
-  background:  $btn-color-secondary !important;
+  background: $btn-color-secondary !important;
   color: $body-color !important;
   border-color: lighten($btn-color-secondary, 5) !important;
   width: 100%;
@@ -413,7 +413,7 @@ $map_right_margin: 10px;
 
 .maplayers_list {
   background-color: $body-bg;
-  background:  $body-bg-semiTransparent;
+  background: $body-bg-semiTransparent;
   color: $body-color;
   @include border-radius(0.25rem, 0.25rem);
   overflow-x: hidden !important;
