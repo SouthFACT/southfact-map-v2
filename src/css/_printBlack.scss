@@ -1,5 +1,5 @@
 $body-bg:    #343a40;
-$body-color: #e9ecef;
+$body-color: #E9ECEF;
 $map_layer_list_printheight:  11in;
 $map_holder_printheight:  10.5in;
 
@@ -9,7 +9,6 @@ $map_holder_printheight:  10.5in;
     margin: 1cm !important;
     width: 8.5in !important;
   }
-
 
   body {
     display: block !important;
@@ -28,11 +27,9 @@ $map_holder_printheight:  10.5in;
     page-break-inside: avoid  !important;
   }
 
-
   a[href^=http]:after {
     content:" < " attr(href) "> " !important;
   }
-
 
   .page-break	{
     display: block !important;
@@ -249,7 +246,7 @@ $map_holder_printheight:  10.5in;
     overflow: unset !important;
     width: 100% !important;
     height: 100% !important;
-    margin: 0px !important;
+    margin: 0 !important;
     border: unset !important;
     background-color: $body-bg !important;
     // color: $body-color !important;
@@ -294,7 +291,7 @@ $map_holder_printheight:  10.5in;
   }
 
   .LayerList-Group {
-    padding-top: 0px !important;
+    padding-top: 0 !important;
   }
 
   .LayerInput-header, .custom-control.custom-checkbox {
@@ -330,7 +327,7 @@ $map_holder_printheight:  10.5in;
   .custom-control-label::after, .custom-control-label::before,
   .bnt-MapLayersListToggle, .list-group-item-action,
   .zonal-long-button-wrapper.d-none, .zonal-stats-wrapper.d-none, .zonal-long-button,
-  #zonal-header-f, #zonal-header  {
+  #zonal-header-f, #zonal-header {
     display: none !important;
     float: none !important;
   }
@@ -346,13 +343,13 @@ $map_holder_printheight:  10.5in;
   .layer-legend-toggler, #legend-assets {
     display: none !important;
     float: none !important;
-    width: 0px !important;
-    height: 0px !important;
+    width: 0 !important;
+    height: 0 !important;
     svg {
       display: none !important;
       float: none !important;
-      width: 0px !important;
-      height: 0px !important;
+      width: 0 !important;
+      height: 0 !important;
     }
   }
 
@@ -387,10 +384,10 @@ $map_holder_printheight:  10.5in;
   .leaflet-control-attribution {
     color: #333 !important;
     text-shadow: none !important;
-    -webkit-text-stroke: 0px #333 !important;
+    -webkit-text-stroke: 0 #333 !important;
   }
 
-  .leaflet-tile  {
+  .leaflet-tile {
     mix-blend-mode: difference;
   }
 
@@ -491,7 +488,7 @@ $map_holder_printheight:  10.5in;
   }
   #explore-holder .selected-cell {
     position: relative !important;
-    border: 2.5px solid #ffc107 !important;
+    border: 2.5px solid #FFC107 !important;
     width: 100% !important;
     height: 100% !important;
     top: -5px !important;
@@ -543,7 +540,7 @@ $map_holder_printheight:  10.5in;
     .zonal-long-table-row {
       min-height: 30px !important;
       max-height: 30px !important;
-      margin-top: 0px !important;
+      margin-top: 0 !important;
     }
     .zonal-long-graph-label-text {
       // color: $body-color !important;
@@ -551,8 +548,8 @@ $map_holder_printheight:  10.5in;
       -webkit-text-stroke: 1px $body-color !important;
       text-shadow: 0 0 0 $body-color !important;
       position: relative !important;
-      top: 0px !important;
-      left: 0px !important;
+      top: 0 !important;
+      left: 0 !important;
     }
     .zonal-long-table-row-header-simple {
       position: relative !important;
@@ -710,7 +707,7 @@ $map_holder_printheight:  10.5in;
       max-height: 20px !important;
       height: 20px !important;
       text-align: left !important;
-      padding-left: 0px !important;
+      padding-left: 0 !important;
       font-size: .9rem !important;
     }
   }
@@ -927,44 +924,43 @@ $map_holder_printheight:  10.5in;
     }
   }
 
-  .order-1  {
+  .order-1 {
     order: 1;
   }
-  .order-2  {
+  .order-2 {
     order: 2;
   }
 
-  .order-sm-1  {
+  .order-sm-1 {
     order: 1;
   }
-  .order-sm-2  {
+  .order-sm-2 {
     order: 3;
   }
-  .order-sm-3  {
+  .order-sm-3 {
     order: 2;
   }
 
-  .order-md-1  {
+  .order-md-1 {
     order: 1;
   }
-  .order-md-2  {
+  .order-md-2 {
     order: 2;
   }
 
-  .order-lg-1  {
+  .order-lg-1 {
     order: 2;
   }
-  .order-lg-2  {
+  .order-lg-2 {
     order: 1;
   }
 
-  .order-xl-2  {
+  .order-xl-2 {
     order: 1;
   }
-  .order-xl-1  {
+  .order-xl-1 {
     order: 2;
   }
-
 
   .zonal-long-table-cell {
     color: #000 !important;
@@ -1008,9 +1004,9 @@ $map_holder_printheight:  10.5in;
     }
 
     &-highest {
-      color: #b2afaf !important;
-      text-shadow: 0 0 0 #b2afaf !important;
-      -webkit-text-stroke: #b2afaf !important;
+      color: #B2AFAF !important;
+      text-shadow: 0 0 0 #B2AFAF !important;
+      -webkit-text-stroke: #B2AFAF !important;
 
     }
 
@@ -1074,9 +1070,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-ten {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
       }
     }
 
@@ -1118,9 +1114,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1163,9 +1159,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1207,9 +1203,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1234,9 +1230,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1285,9 +1281,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-six {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1318,9 +1314,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-three {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1362,9 +1358,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1406,9 +1402,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1450,9 +1446,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1494,9 +1490,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1538,9 +1534,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1571,9 +1567,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-three {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1615,9 +1611,9 @@ $map_holder_printheight:  10.5in;
         text-shadow: 0 0 0 #000 !important;
       }
       &-five {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1684,9 +1680,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-ten {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }
@@ -1753,9 +1749,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-ten {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
 
@@ -1823,9 +1819,9 @@ $map_holder_printheight:  10.5in;
       }
 
       &-ten {
-        color: #b2afaf !important;
-        text-shadow: 0 0 0 #b2afaf !important;
-        -webkit-text-stroke: #b2afaf !important;
+        color: #B2AFAF !important;
+        text-shadow: 0 0 0 #B2AFAF !important;
+        -webkit-text-stroke: #B2AFAF !important;
 
       }
     }

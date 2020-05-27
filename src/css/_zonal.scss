@@ -32,7 +32,7 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
 }
 
 .zonal-long-buttons-holder {
-  margin-left: 0px !important;
+  margin-left: 0 !important;
 }
 
 .zonal-stats-button-holder {
@@ -42,7 +42,7 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
 
 .zonal-long-button-wrapper {
   background-color: $body-bg;
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
   margin-left: 5px !important;
 }
 
@@ -68,7 +68,7 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
 }
 
 .map_info_list .zonal-long-graph-wrapper {
-  padding: 0px !important;
+  padding: 0 !important;
   margin-bottom: 5px;
   padding-right: 5px;
 }
@@ -82,11 +82,11 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
     vertical-align: top;
   }
 
-  margin-bottom: 0px;
+  margin-bottom: 0;
   left: -100000px;
   top: -100000px;
   position: relative;
-  height: 0px;
+  height: 0;
   transition: left .5s ease-in-out;
   will-change: transform;
 
@@ -94,8 +94,8 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
     margin-bottom: 10px;
     height: 100%;
     display: flex;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     position: relative;
     transition: left .5s ease-in-out;
     will-change: transform;
@@ -106,13 +106,13 @@ $box-shadow-small: 0 2px 5px rgba(0,0,0,0.19), 0 1.25px 1.25px rgba(0,0,0,0.23);
   position: relative;
   width: 25px;
   height: 25px;
-  @include border-radius(0px, 0px);
+  @include border-radius(0px, 0);
 
   &:after {
     position: absolute;
     top: 1px;
     left: 1px;
-    content: "\2795";
+    content: '\2795';
   }
 }
 
@@ -131,7 +131,7 @@ div.zonal-asset {
 }
 
 #zonal-header {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   display: flex;
 }
 
@@ -218,11 +218,11 @@ div.zonal-asset {
 
 @media screen and (max-width: 1589px){
   .zonal-item-fishwild {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
   }
 
   .zonal-item-exposure {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
   }
 
   .zonal-item-fishwild {
@@ -246,10 +246,9 @@ div.zonal-asset {
 
 @media screen and (min-width: 993px) {
   .zonal-long-name {
-    padding: 15px 15px 0px 15px !important;
+    padding: 15px 15px 0 15px !important;
   }
 }
-
 
 @media screen and (max-width: 993px) { //768px
   .zonal-item-fishwild {
@@ -300,7 +299,7 @@ div.zonal-asset {
 }
 
 @media screen and (max-height: 900px) {
-  .zonal-long-button  {
+  .zonal-long-button {
     height: 50px !important;
   }
   .zonal-button-text{
@@ -308,9 +307,8 @@ div.zonal-asset {
   }
 }
 
-
 @media screen and (max-height: 800px) {
-  .zonal-long-button  {
+  .zonal-long-button {
     height: 50px !important;
   }
 
@@ -323,13 +321,13 @@ div.zonal-asset {
   }
 
   .zonal-long-name {
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
   }
 }
 
 @media screen and (max-width: 535px){
   .zonal-item-fishwild {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
   }
 
   .long-graphs-active {
@@ -337,25 +335,25 @@ div.zonal-asset {
   }
 
   .zonal-item-exposure {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
   }
   .zonal-header-exposure .zonal-header-item-label {
     &:first-child {
-      margin-right: 0px;
+      margin-right: 0;
     }
 
     &:last-child {
-      margin-left: 0px;
+      margin-left: 0;
     }
   }
 
     .zonal-header-fish-wildlife .zonal-header-item-label {
       &:first-child {
-        margin-right: 0px;
+        margin-right: 0;
       }
 
       &:last-child {
-        margin-left: 0px;
+        margin-left: 0;
       }
     }
 
@@ -422,7 +420,7 @@ div.zonal-asset {
   font-size: .9rem;
   vertical-align: middle;
   .btn-icon:after {
-      content:"  ";
+      content:'  ';
       // white-space: pre;
   }
 }
@@ -430,7 +428,7 @@ div.zonal-asset {
 .zonal-label-remove {
   width: 25px !important;
   height: 40px;
-  padding: 0px;
+  padding: 0;
   svg {
     vertical-align: -.50em;
    }
@@ -440,7 +438,7 @@ div.zonal-asset {
     color: $body-bg;
     width: 25px !important;
     height: 40px;
-    padding: 0px;
+    padding: 0;
     svg {
       vertical-align: -.50em;
     }
@@ -455,13 +453,13 @@ div.zonal-asset {
   transition: left .5s ease-in-out;
   background-color: #343a40;
   overflow: hidden;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   transition: all 0.4s ease;
   will-change: transform;
 
   &.active {
     position: relative;
-    left: 0px;
+    left: 0;
     // this is a hacky way of dealing with height.
      height: 100%;
      padding-bottom: 30px;
@@ -502,7 +500,6 @@ div.zonal-asset {
     background-color: #e6e6e6;
   }
 
-
   &-graphs {
     display: none;
   }
@@ -533,7 +530,6 @@ div.zonal-asset {
     display: none;
   }
 }
-
 
 .zonal-long-table-index {
   display: inline-block;
@@ -598,7 +594,7 @@ div.zonal-asset {
 
    &:after {
      position: relative;
-     content: "";
+     content: '';
      width: 16px;
      height: 16px;
      line-height: 14px;
@@ -609,15 +605,15 @@ div.zonal-asset {
    }
 
   &-low:after {
-    content: "1";
+    content: '1';
   }
 
   &-med:after {
-    content: "2";
+    content: '2';
   }
 
   &-high:after {
-    content: "3";
+    content: '3';
   }
 }
 
@@ -709,7 +705,6 @@ div.zonal-asset {
   $btn-color-secondary: $gray-800;
   $btn-color-prinary: $gray-700;
 
-
     .zonal-stats-short-title-holder {
       display: none;
       h3 {
@@ -719,7 +714,7 @@ div.zonal-asset {
 
     .zonal-long-name {
       font-size: 1rem !important;
-      padding: $padding $padding 0px $padding !important;
+      padding: $padding $padding 0 $padding !important;
     }
 
     .zonal-long-button {
@@ -733,7 +728,6 @@ div.zonal-asset {
     .zonal-stats-button-holder {
       margin-top: 5px !important;
     }
-
 
     .zonal-stats-wrapper {
       padding-top: 2.5px !important;
@@ -754,12 +748,12 @@ div.zonal-asset {
         font-size: 1rem !important;
       }
       .btn-icon:after {
-          content: "  ";
+          content: '  ';
       }
     }
 
     #zonal-header {
-      margin-bottom: 0px !important;
+      margin-bottom: 0 !important;
     }
 
     .zonal-long-graph-wrapper {
