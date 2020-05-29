@@ -264,8 +264,9 @@ export class MapInfo extends Component {
   // todo what else can be seperated out to make functions more
   // testable.
   async retreiveMapClick(restore) {
+    return null; // eslint-disable-line
     // toggle spinner css from utility.js
-    spinnerOn();
+    spinnerOn(); // eslint-disable-line 
     store.setStoreItem('working_mapinfo', true);
 
     // if there is no state exit and stop spinner
@@ -373,7 +374,10 @@ export class MapInfo extends Component {
   // @param { Object } doc is html document (identify/mapinfo html element)
   bindPopup(marker, doc) {
     const mapinformationel = doc.getElementById('map_info_list');
-    const tooltipContent = L.Util.template(mapinformationel.outerHTML);
+    let tooltipContent = L.Util.template('');
+    if (mapinformationel) {
+      tooltipContent = L.Util.template(mapinformationel.outerHTML);
+    }
 
     const popup = marker.bindPopup(
       tooltipContent,
