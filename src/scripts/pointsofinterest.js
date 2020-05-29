@@ -80,7 +80,7 @@ export class PointsOfInterest extends Component {
     const elem = L.DomUtil.create('div', 'btn-pointsofinterest-holder leaflet-bar');
     elem.setAttribute('id', 'btn-pointsofinterest-holder');
     elem.classList.add('btn-pointsofinterest-holder');
-    elem.innerHTML = '<a id="pointsofinterest" class="btn btn-light btn-pointsofinterest" title="Add points of interest to map" ' +
+    elem.innerHTML = '<a id="pointsofinterest" class="btn btn-light btn-leaflet-small btn-pointsofinterest" title="Add points of interest to map" ' +
                     'role="button" aria-label="Add points of interest to map" ' +
                     'data-toggle="tooltip" data-placement="bottom" data-original-title="Add points of interest to map"> ' +
                     '<i class="fas fa-map-marker-alt i-pointsofinterest"></a>';
@@ -92,7 +92,7 @@ export class PointsOfInterest extends Component {
     elem.setAttribute('id', 'btn-pointsofinterest-download-holder');
     elem.classList.add('btn-pointsofinterest-download-holder');
     elem.classList.add('d-none');
-    elem.innerHTML = '<a id="pointsofinterest-download" class="btn btn-light btn-pointsofinterest-download" title="Download points of interest" ' +
+    elem.innerHTML = '<a id="pointsofinterest-download" class="btn btn-light btn-leaflet-small btn-pointsofinterest-download" title="Download points of interest" ' +
                     'role="button" aria-label="Download points of interest" ' +
                     'data-toggle="tooltip" data-placement="bottom" data-original-title="Download points of interest"> ' +
                     '<i class="fas fa-download i-pointsofinterest-download"></a>';
@@ -105,7 +105,7 @@ export class PointsOfInterest extends Component {
     elem.setAttribute('id', 'btn-pointsofinterest-cancel-holder');
     elem.classList.add('btn-pointsofinterest-cancel-holder');
     elem.classList.add('d-none');
-    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-pointsofinterest-cancel" title="Cancel and remove all points" ' +
+    elem.innerHTML = '<a id="pointsofinterest-cancel" class="btn btn-light btn-leaflet-small btn-pointsofinterest-cancel" title="Cancel and remove all points" ' +
                     'role="button" aria-label="Cancel and remove all points" ' +
                     'data-toggle="tooltip" data-placement="bottom" data-original-title="Cancel and remove all points"> ' +
                     '<i class="fas fa-times-circle i-pointsofinterest-cancel"></a>';
