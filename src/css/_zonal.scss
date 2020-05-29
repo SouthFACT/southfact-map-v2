@@ -44,6 +44,7 @@ $box-shadow-small: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1.25px 1.25px rgba(0, 0, 0, 
   background-color: $body-bg;
   margin-bottom: 0 !important;
   margin-left: 5px !important;
+  // margin-bottom: 20px;
 }
 
 .zonal-long-graphs {
@@ -67,46 +68,29 @@ $box-shadow-small: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1.25px 1.25px rgba(0, 0, 0, 
   }
 }
 
+.zonal-long-graph-wrapper {
+  width: 320px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-right: 5px;
+
+  h6 {
+    text-align: center;
+    padding-left: $graph-axis-width;
+  }
+}
+
 .map_info_list .zonal-long-graph-wrapper {
   padding: 0 !important;
   margin-bottom: 5px;
   padding-right: 5px;
 }
 
-.zonal-short-wrapper {
-  margin-left: -5px;
-  cursor: pointer;
-
-  > div, > button {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  margin-bottom: 0;
-  left: -100000px;
-  top: -100000px;
-  position: relative;
-  height: 0;
-  transition: left .5s ease-in-out;
-  will-change: transform;
-
-  &.active {
-    margin-bottom: 10px;
-    height: 100%;
-    display: flex;
-    left: 0;
-    top: 0;
-    position: relative;
-    transition: left .5s ease-in-out;
-    will-change: transform;
-  }
-}
-
 .zonal-expand-button {
   position: relative;
   width: 25px;
   height: 25px;
-  @include border-radius(0px, 0);
+  @include border-radius(0, 0);
 
   &:after {
     position: absolute;
@@ -126,8 +110,10 @@ $box-shadow-small: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1.25px 1.25px rgba(0, 0, 0, 
   text-align: center;
 }
 
-div.zonal-asset {
-  margin-right: 0;
+div {
+  .zonal-asset {
+    margin-right: 0;
+  }
 }
 
 #zonal-header {
@@ -164,18 +150,10 @@ div.zonal-asset {
     width: 60px !important;
     text-align: left;
   }
+}
 
-  &.zonal-header-hub {
-    width: 30%;
-  }
-
-  &.zonal-header-fish-wildlife{
-    width: 30%;
-  }
-
-  &.zonal-header-exposure {
-    width: 30%;
-  }
+.zonal-header-item-label {
+  display: inline-block;
 }
 
 .zonal-header-item-top {
@@ -186,62 +164,6 @@ div.zonal-asset {
 .zonal-header-item-bottom {
   font-size: 13px;
   display: inline-block;
-  .zonal-header-item-label {
-  }
-}
-
-.zonal-header-item-label {
-  display: inline-block;
-}
-
-@media screen and (min-width: 1590px){
-  .zonal-header-exposure .zonal-header-item-label {
-    &:first-child {
-      margin-right: 10px;
-    }
-
-    &:last-child {
-      margin-left: 10px;
-    }
-  }
-
-  .zonal-header-wildlife, .zonal-header-fish-wildlife .zonal-header-item-label {
-    &:first-child {
-      margin-right: 10px;
-    }
-
-    &:last-child {
-      margin-left: 10px;
-    }
-  }
-}
-
-@media screen and (max-width: 1589px){
-  .zonal-item-fishwild {
-    margin-top: 0 !important;
-  }
-
-  .zonal-item-exposure {
-    margin-top: 0 !important;
-  }
-
-  .zonal-item-fishwild {
-    .zonal-box {
-      width: 100%;
-    }
-  }
-  .zonal-header-fish-wildlife .zonal-header-item-label {
-    width: 100%
-  }
-
-  .zonal-item-exposure {
-    .zonal-box {
-      width: 100%;
-    }
-  }
-  .zonal-header-exposure .zonal-header-item-label {
-    width: 100%;
-  }
 }
 
 @media screen and (min-width: 993px) {
@@ -250,59 +172,11 @@ div.zonal-asset {
   }
 }
 
-@media screen and (max-width: 993px) { //768px
-  .zonal-item-fishwild {
-    margin-top: 15px !important;
-  }
-
-  .zonal-item-exposure {
-    margin-top: 15px !important;
-  }
-
-  .zonal-header-exposure .zonal-header-item-label {
-    &:first-child {
-      margin-right: 10px;
-    }
-
-    &:last-child {
-      margin-left: 10px;
-    }
-  }
-
-  .zonal-header-fish-wildlife .zonal-header-item-label {
-    &:first-child {
-      margin-right: 10px;
-    }
-
-    &:last-child {
-      margin-left: 10px;
-    }
-  }
-
-  .zonal-item-fishwild {
-    .zonal-box {
-      width: 45%;
-    }
-  }
-  .zonal-header-fish-wildlife .zonal-header-item-label {
-    width: unset;
-  }
-
-  .zonal-item-exposure {
-    .zonal-box {
-      width: 45%;
-    }
-  }
-  .zonal-header-exposure .zonal-header-item-label {
-    width: unset;
-  }
-}
-
 @media screen and (max-height: 900px) {
   .zonal-long-button {
     height: 50px !important;
   }
-  .zonal-button-text{
+  .zonal-button-text {
     font-size: 14px !important;
   }
 }
@@ -312,7 +186,7 @@ div.zonal-asset {
     height: 50px !important;
   }
 
-  .zonal-button-text{
+  .zonal-button-text {
     font-size: 14px !important;
   }
 
@@ -337,7 +211,7 @@ div.zonal-asset {
   font-size: .9rem;
   vertical-align: middle;
   .btn-icon:after {
-    content:'  ';
+    content: '  ';
   }
 }
 
@@ -346,7 +220,7 @@ div.zonal-asset {
   height: 40px;
   padding: 0;
   svg {
-    vertical-align: -.50em;
+    vertical-align: -0.5em;
   }
 }
 
@@ -356,7 +230,7 @@ div.zonal-asset {
   height: 40px;
   padding: 0;
   svg {
-    vertical-align: -.50em;
+    vertical-align: -0.5em;
   }
 }
 
@@ -366,42 +240,21 @@ div.zonal-asset {
   position: absolute;
   top: 0;
   left: 125%;
-  transition: left .5s ease-in-out;
-  background-color: #343a40;
+  transition: all 0.4s ease;
+  background-color: #343A40;
   overflow: hidden;
   padding-bottom: 0;
-  transition: all 0.4s ease;
   will-change: transform;
 
   &.active {
     position: relative;
     left: 0;
     // this is a hacky way of dealing with height.
-     height: 100%;
-     padding-bottom: 30px;
-     transition: all 0.4s ease;
-     will-change: transform;
+    height: 100%;
+    padding-bottom: 30px;
+    transition: all 0.4s ease;
+    will-change: transform;
   }
-}
-
-.zonal-long-exposure-wrapper, .zonal-long-fish-wildlife-wrapper, .zonal-long-hub-wrapper {
-  h5, h6 {
-    margin-bottom: 0;
-  }
-}
-
-.zonal-long-hubs-wrapper,
-.zonal-long-ns_hubs-wrapper,
-.zonal-long-fishandwildlife-wrapper,
-.zonal-long-ns_fishandwildlife-wrapper,
-.zonal-long-exposure-wrapper,
-.zonal-long-ns_exposure-wrapper,
-.zonal-long-asset-wrapper,
-.zonal-long-ns_asset-wrapper,
-.zonal-long-threat-wrapper,
-.zonal-long-ns_threat-wrapper,
-.zonal-input-graph.zonal-long-fishandwildlife {
-  margin-top: 40px;
 }
 
 .zonal-long-button {
@@ -419,10 +272,6 @@ div.zonal-asset {
   &-graphs {
     display: none;
   }
-
-  &-wrapper {
-    margin-bottom: 20px;
-  }
 }
 
 .zonal-long-raw-values {
@@ -430,6 +279,10 @@ div.zonal-asset {
   color: $body-color;
   .table {
     color: $body-color;
+  }
+  ul {
+    padding-left: 18px;
+    margin-bottom: 0;
   }
 }
 
@@ -485,9 +338,21 @@ div.zonal-asset {
   vertical-align: top;
 }
 
+.zonal-long-table-header-simple {
+  bottom: 0;
+
+  &-low {
+    left: 0;
+  }
+
+  &-high {
+    right: 0;
+  }
+}
+
+.zonal-long-table-threat .zonal-long-table-header-simple-low,
 .zonal-long-table-asset .zonal-long-table-header-simple-low,
 .zonal-long-table-asset .zonal-long-table-header-simple-high,
-.zonal-long-table-threat .zonal-long-table-header-simple-low,
 .zonal-long-table-threat .zonal-long-table-header-simple-high {
   position: absolute;
 }
@@ -524,52 +389,12 @@ div.zonal-asset {
   }
 }
 
-.zonal-long-table-exposure .zonal-long-table-header-asset {
-  line-height: 40px;
-
-  &:after {
-    bottom: 10px;
-  }
-}
-
-.zonal-long-table-header-simple {
-  position: absolute;
-  bottom: 0;
-
-  &-low {
-    left: 0;
-  }
-
-  &-high {
-    right: 0;
-  }
-}
-
 .zonal-long-table-bar-wrapper {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 60px;
-
-  &-exposure {
-    left: 25%;
-    top: 25%;
-    width: 75%;
-    height: 75%;
-  }
-}
-
-.zonal-long-graph-wrapper {
-  width: 320px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding-right: 5px;
-
-  h6 {
-    text-align: center;
-    padding-left: $graph-axis-width;
-  }
 }
 
 .zonal-long-graph {
@@ -604,8 +429,7 @@ div.zonal-asset {
   }
 }
 
-@media screen and (max-width: 992px) { //768px
-
+@media screen and (max-width: 992px) {
   $margin: 5px;
   $padding: 5px;
   $btn-color-secondary: $gray-800;
@@ -709,13 +533,6 @@ div.zonal-asset {
 @media screen and (max-width: 320px) {
   .zonal-long-graph-bars {
     height: 45px !important;
-  }
-}
-
-.zonal-long-raw-values {
-  ul {
-    padding-left: 18px;
-    margin-bottom: 0;
   }
 }
 
