@@ -1,9 +1,9 @@
 // Your variable overrides
 $body-main-bar-bg-color: #101012;
-$body-bg: lighten(#101012, 5);
+$body-bg: #303030; // lighten(#101012, 5);
 $body-list-border: $gray-600;
 $body-color: $gray-200;
-$aboutbackground: #0F1110;
+$aboutbackground: #101012;
 
 $btn-color-prinary: #9F5222; // $gray-100;
 $btn-color-secondary: #242409; // $gray-300;
@@ -31,7 +31,7 @@ $padding15: 15px;
 $body-bg-semiTransparent: rgba(53, 59, 65, .8); // $gray-800
 $body-bg-semiTransparent9: rgba(53, 59, 65, .9); // $gray-800
 $body-bg-FullTransparent: rgba(53, 59, 65, 0); // $gray-800
-$newbg: #151417;
+$newbg: #303030;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600,700');
 $roboto: Roboto, Helvetica, 'Helvetica Neue', Arial, sans-serif; // default should be everywhere

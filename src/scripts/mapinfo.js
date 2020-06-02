@@ -217,31 +217,32 @@ export class MapInfo extends Component {
   addMapClickIdentifyClickHandler() {
     // click
     this.map.on('click', (ev) => {
-      // // remove old maker if it exists
-      // // this.marker is defined at class creation
-      // this.removeMapMarker();
-      //
-      // // save the map action to state store
-      // store.saveAction('click');
-      //
-      // // save the mapclick location to the state store
-      // const activeNav = store.getStateItem('activeNav');
-      // if (activeNav === 'main-nav-map-searchNShubs') {
-      //   // check the mapclick v
-      //   store.setStoreItem('mapClickns', ev.latlng);
-      // } else {
-      //   // check the mapclick v
-      //   store.setStoreItem('mapClick', ev.latlng);
-      // }
+      return null; // eslint-disable-line
+      // remove old maker if it exists
+      // this.marker is defined at class creation
+      this.removeMapMarker();  // eslint-disable-line 
 
-      // // ga event action, category, label
-      // googleAnalyticsEvent('click', 'map', 'mapinfo');
+      // save the map action to state store
+      store.saveAction('click');
 
-      // // if there was a point retrieve the information from the
-      // // lambda api function
-      // if (ev.containerPoint !== undefined) {
-      //   this.retreiveMapClick(false);
-      // }
+      // save the mapclick location to the state store
+      const activeNav = store.getStateItem('activeNav');
+      if (activeNav === 'main-nav-map-searchNShubs') {
+        // check the mapclick v
+        store.setStoreItem('mapClickns', ev.latlng);
+      } else {
+        // check the mapclick v
+        store.setStoreItem('mapClick', ev.latlng);
+      }
+
+      // ga event action, category, label
+      googleAnalyticsEvent('click', 'map', 'mapinfo');
+
+      // if there was a point retrieve the information from the
+      // lambda api function
+      if (ev.containerPoint !== undefined) {
+        this.retreiveMapClick(false);
+      }
     });
   }
 
@@ -266,7 +267,7 @@ export class MapInfo extends Component {
   async retreiveMapClick(restore) {
     return null; // eslint-disable-line
     // toggle spinner css from utility.js
-    spinnerOn(); // eslint-disable-line 
+    spinnerOn(); // eslint-disable-line
     store.setStoreItem('working_mapinfo', true);
 
     // if there is no state exit and stop spinner
