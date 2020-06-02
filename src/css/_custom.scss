@@ -416,6 +416,7 @@ hr {
   border-width: 0;
   height: 30px;
   @include border-radius(2px, 2px);
+  @include box-shadow-mixin($box-shadow-default);
 }
 
 .geocoder-control-input {
@@ -455,6 +456,11 @@ hr {
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {
   border-left: 0;
+  @include box-shadow-mixin($box-shadow-default);
+  .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    width: 30px !important;
+    height: 30px !important;
+  }
 }
 
 .geocoder-control.leaflet-control {
