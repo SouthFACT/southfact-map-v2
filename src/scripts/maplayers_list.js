@@ -40,7 +40,8 @@ export class MapLayersList extends Component {
     WMSLayers.forEach((layerProps) => { this.updateMapLayer(layerProps); });
     TMSLayers.forEach((layerProps) => { this.updateMapLayer(layerProps); });
     WMSLayers.forEach((layerProps) => { MapLayersList.addLegendHTML(layerProps); });
-
+    TMSLayers.forEach((layerProps) => { MapLayersList.addLegendHTML(layerProps); });
+    
     MapLayersList.ListHolderToggle();
     MapLayersList.ToggleLayerListToggle();
     MapLayersList.mapListToggleToggle();

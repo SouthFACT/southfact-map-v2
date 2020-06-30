@@ -339,6 +339,7 @@ div {
 }
 
 .zonal-long-table-header-simple {
+  position: absolute;
   bottom: 0;
 
   &-low {
@@ -349,6 +350,7 @@ div {
     right: 0;
   }
 }
+
 
 .zonal-long-table-threat .zonal-long-table-header-simple-low,
 .zonal-long-table-asset .zonal-long-table-header-simple-low,
