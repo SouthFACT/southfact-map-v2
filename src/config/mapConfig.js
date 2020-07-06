@@ -153,10 +153,10 @@ export var mapConfig = {
     {
       id: "southeast_ndmi_current",
       layer: "southeast_ndmi_current TMS",
-      label: "ndmi",
+      label: "NDMI",
       apikey: 'southeast_ndmi_current',
       hubsapikey: 'southeast_ndmi_current',
-      chartLabel: 'ndmi',
+      chartLabel: 'NDMI',
       chartLegendValues: 14,
       chartCSSColor: {
         0: '#E9ECEF',
