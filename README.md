@@ -2,7 +2,7 @@
 
 https://southfact.github.io/southfact-map-v2/dist/
 
-## First iteration of basic viewer
+## First iteration of basic viewer using node lts - 12.13.1 
 
 To install
 ```
