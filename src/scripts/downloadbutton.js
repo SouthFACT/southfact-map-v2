@@ -20,7 +20,7 @@ export class DownloadButton extends Component {
     const { mapComponent } = props;
     this.mapComponent = mapComponent;
 
-    DownloadButton.addDownloadButtonControl(this.mapComponent);
+    // DownloadButton.addDownloadButtonControl(this.mapComponent);
   }
 
 

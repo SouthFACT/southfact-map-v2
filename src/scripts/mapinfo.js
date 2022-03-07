@@ -64,7 +64,7 @@ export class MapInfo extends Component {
     this.map = mapComponent.map;
     this.mapComponent = mapComponent;
 
-    this.addMapInformationControl(this.map);
+    // this.addMapInformationControl(this.map);
 
     this.IdentifyAPI = new IdentifyAPI();
 
@@ -220,7 +220,7 @@ export class MapInfo extends Component {
       return null; // eslint-disable-line
       // remove old maker if it exists
       // this.marker is defined at class creation
-      this.removeMapMarker();  // eslint-disable-line 
+      this.removeMapMarker();  // eslint-disable-line
 
       // save the map action to state store
       store.saveAction('click');

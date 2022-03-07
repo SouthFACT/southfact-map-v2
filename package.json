@@ -46,6 +46,7 @@
     "chart.js": "^2.9.3",
     "esri-leaflet": "^2.5.0",
     "esri-leaflet-geocoder": "^2.3.3",
+    "esri-leaflet-vector": "^3.1.2",
     "file-saver": "^2.0.0",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2",
