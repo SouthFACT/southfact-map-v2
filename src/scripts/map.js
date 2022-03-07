@@ -1,6 +1,7 @@
 // dependencies
 import L from 'leaflet';
-import { basemapLayer } from 'esri-leaflet';
+// import { basemapLayer } from 'esri-leaflet';
+import * as Vector from 'esri-leaflet-vector';
 // may need feature layer latter if store the user generated shapefiles, drawon
 // user drawn shapes somehere else if so add this
 // import { basemapLayer, featureLayer } from 'esri-leaflet';
@@ -39,6 +40,9 @@ import {
 import mapTemplate from '../templates/map.html';
 
 const store = new Store({});
+
+// ESRI Vector base map apikey, should be limited by referer
+const EsriVectorMapApiKey = 'AAPKb0069ca2667a401bbcce9543198c30bcaMklq1hJf8ec0M1GgELVjUq8FEOkeQZewv0Qibxj0ooxz5cMFNVLNwaY33tjDi4u';
 
 /**
  * Leaflet Map Component
@@ -142,17 +146,8 @@ export class Map extends Component {
       this.map.removeLayer(this.basemap);
     }
 
-    if (this.basemapLabels) {
-      this.map.removeLayer(this.basemapLabels);
-    }
-
-    this.basemap = basemapLayer(basemapname);
-    this.basemapLabels = Map.addBaseMapLabels(basemapname);
+    this.basemap = Vector.vectorBasemapLayer(`ArcGIS:${basemapname}`, { apikey: EsriVectorMapApiKey });
     this.basemap.addTo(this.map);
-
-    if (this.basemapLabels) {
-      this.basemapLabels.addTo(this.map);
-    }
 
     store.setStoreItem('basemap', basemapname);
 
@@ -161,8 +156,7 @@ export class Map extends Component {
     if (labelElem) {
       labelElem.innerHTML = Map.makeHumanBaseMapName(basemapname);
     }
-    // add new event to check on base map has completed uploading
-    //  map will not initialize settings untill this has completed
+
     this.basemap.on('load', () => {
       this.map.fireEvent('basemaploaded');
       this.basemaploaded = true;
@@ -197,35 +191,11 @@ export class Map extends Component {
     return 'Dark Gray';
   }
 
-  static addBaseMapLabels(basemap) {
-    if (basemap === 'Oceans' ||
-        basemap === 'DarkGray' ||
-        basemap === 'Terrain') {
-      return basemapLayer(`${basemap}Labels`);
-    }
-    if (basemap.includes('Imagery')) {
-      return basemapLayer('ImageryLabels');
-    }
-    return '';
-  }
-
   // adds leaflet base map defined in mapConfig.js
   addBaseMap() {
-    /**
-     * Adds ESRI  map (may switch to vector map layer)
-     * var vectorTiles = vector.basemap(mapConfig.ESRIVectorBasemap.name);
-     * Not using vector tiles yet since there is some bugginess from ESRI
-     * mainly the map starts out not fully rendering
-     */
-
     const basemap = mapConfig.ESRIVectorBasemap.name;
-    this.basemap = basemapLayer(basemap);
-    this.basemapLabels = Map.addBaseMapLabels(basemap);
-
+    this.basemap = Vector.vectorBasemapLayer(`ArcGIS:${basemap}`, { apikey: EsriVectorMapApiKey });
     this.basemap.addTo(this.map);
-    if (this.basemapLabels) {
-      this.basemapLabels.addTo(this.map);
-    }
 
     store.setStoreItem('basemap', basemap);
 
