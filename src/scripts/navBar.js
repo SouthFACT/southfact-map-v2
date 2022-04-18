@@ -51,6 +51,7 @@ export class NavBar extends Component {
         navElement.setAttribute('id', nav.id); // nav id
         navElement.setAttribute('aria-label', nav.text); // aria-label
         navElement.setAttribute('title', nav.text); // title
+        navElement.setAttribute('target', nav.target); // title
         navElement.textContent = nav.text; // nav text
 
         cnt += 1;
