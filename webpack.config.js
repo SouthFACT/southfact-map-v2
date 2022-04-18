@@ -73,7 +73,12 @@ module.exports = {
         },
         {
           test: /\.scss$/,
-          use: [ 'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+          use:  [  'style-loader',
+          {
+            loader:  MiniCssExtractPlugin.loader,
+            options: { esModule: false}
+          },
+          'css-loader', 'postcss-loader', 'sass-loader']
         }
       ]
     },

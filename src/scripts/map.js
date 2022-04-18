@@ -233,7 +233,7 @@ export class Map extends Component {
         attribution: layer.attribution,
         tileSize: layer.tileSize,
         transparent: layer.transparent,
-        zIndex: layer.zIndex,
+        // zIndex: 10, // layer.zIndex,
         maxNativeZoom: layer.maxNativeZoom
       });
 
