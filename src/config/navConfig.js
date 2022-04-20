@@ -29,7 +29,7 @@ export var navConfig = {
       ref: "main-nav-learn",
       text: "Learn",
       id: "main-nav-learn",
-      href: "https://www.southfact.com/about",
+      href: "https://www.southfact.com/about/index.html ",
       target: "_self"
     },
     {
@@ -37,7 +37,7 @@ export var navConfig = {
       ref: "main-nav-downloads",
       text: "Downloads",
       id: "main-nav-downloads",
-      href: "https://www.southfact.com/downloads",
+      href: "https://www.southfact.com/downloads/index.html ",
       target: "_self"
     },
     {
@@ -45,7 +45,7 @@ export var navConfig = {
       ref: "main-nav-contact",
       text: "Contact",
       id: "main-nav-contact",
-      href: "https://www.southfact.com/contact",
+      href: "https://www.southfact.com/contact/index.html ",
       target: "_self"
     }
   ]
