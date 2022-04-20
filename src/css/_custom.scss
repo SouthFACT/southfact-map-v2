@@ -87,6 +87,15 @@ hr {
   border-top: 1px solid rgba(233, 236, 241, 0.75);
 }
 
+// disclaimer-box
+#disclaimer-box {
+  background-color: rgb(25, 18, 7);
+  padding: 6px 16px;
+  color: rgb(255, 226, 183);
+  border-width: 0px;
+  font-size: 14px;
+}
+
 // nav bar styles
 .main-navbar-toggle {
   z-index: 5000 !important;

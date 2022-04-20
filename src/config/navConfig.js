@@ -5,7 +5,7 @@ export var navConfig = {
       ref: "main-nav-home",
       text: "Home",
       id: "main-nav-home",
-      href: "https://southfact.github.io/southfact-gatsby-site/",
+      href: "https://www.southfact.com/",
       target: "_self"
     },
     {
@@ -29,7 +29,7 @@ export var navConfig = {
       ref: "main-nav-learn",
       text: "Learn",
       id: "main-nav-learn",
-      href: "https://southfact.github.io/southfact-gatsby-site/about",
+      href: "https://www.southfact.com/about",
       target: "_self"
     },
     {
@@ -37,7 +37,7 @@ export var navConfig = {
       ref: "main-nav-downloads",
       text: "Downloads",
       id: "main-nav-downloads",
-      href: "https://southfact.github.io/southfact-gatsby-site/downloads",
+      href: "https://www.southfact.com/downloads",
       target: "_self"
     },
     {
@@ -45,7 +45,7 @@ export var navConfig = {
       ref: "main-nav-contact",
       text: "Contact",
       id: "main-nav-contact",
-      href: "https://southfact.github.io/southfact-gatsby-site/contact",
+      href: "https://www.southfact.com/contact",
       target: "_self"
     }
   ]
