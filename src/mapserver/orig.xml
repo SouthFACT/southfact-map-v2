@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapcache>
+  <source name="SouthFACTTestMap" type="wms">
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>SouthFACTTestMap</LAYERS>
+        <TRANSPARENT>TRUE</TRANSPARENT>
+      </params>
+    </getmap>
+
+    <http>
+      <url>mapserver.southfact.com/mapserv.fcgi?map=/var/www/mapserver.southfact.com/mapserver-maps/southfact.map</url>
+    </http>
+  </source>
+
+  <tileset name="SouthFACTTestMap">
+    <metadata>
+      <title>SouthFACTTestMap</title>
+    </metadata>
+    <source>SouthFACTTestMap</source>
+    <cache>agolCompatible</cache>
+    <format>PNG</format>
+    <grid>GoogleMapsCompatible</grid>
+    <metatile>1 1</metatile>
+    <expires>3600</expires>
+   <auto_expire>86400</auto_expire>
+  </tileset>
+
+  <service type="wms" enabled="true">
+    <resample_mode>bilinear</resample_mode>
+  </service>
+
+  <cache name="agolCompatible" type="disk" layout="template">
+    <template>/mnt/efs/tilecache/{tileset}/{z}/{x}/{inv_y}.{ext}</template>
+    <symlink_blank/>
+  </cache>
+
+  <cache name="tmpl" type="disk" layout="template">
+    <template>/mnt/efs/tilecache/{tileset}/{z}/{x}/{y}.{ext}</template>
+    <symlink_blank/>
+  </cache>
+
+  <service type="wmts" enabled="true"/>
+  <service type="tms" enabled="true"/>
+  <service type="demo" enabled="true"/>
+
+  <log_level>debug</log_level>
+
+</mapcache>

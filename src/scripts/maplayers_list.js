@@ -85,15 +85,23 @@ export class MapLayersList extends Component {
     });
 
     // change region is state changes
-    window.addEventListener('regionChanged', (e) => {
-      MapLayersList.toggleRegionLayerList();
-      MapLayersList.toggleRegionsLayers(props.mapComponent);
+    window.addEventListener('platformChanged', (e) => {
+      MapLayersList.togglePlatformLayerList();
+      MapLayersList.togglePlatformLayers(props.mapComponent);
     });
 
-    // run at startup to capture region in current state
-    MapLayersList.toggleRegionLayerList();
+    // run at startup to capture platform in current state
     MapLayersList.addPlatformListener();
     MapLayersList.addtoggleLayerListListener();
+
+    // run at startup to capture platform in current state
+    const platform = store.getStateItem('platform');
+    const elem = document.getElementById(`btn-platform-${platform}`);
+    setTimeout(() => {
+      if (elem) {
+        elem.click();
+      }
+    }, 5);
   }
 
   // handles toggle layer list click
@@ -134,7 +142,7 @@ export class MapLayersList extends Component {
     }
   }
 
-  // removes selected class from all statalite platform button click
+  // removes selected class from all satellite platform button click
   static platformRemoveSelectAll() {
     const elems = document.querySelectorAll('.btn-platform');
     elems.forEach((elem) => {
@@ -142,13 +150,35 @@ export class MapLayersList extends Component {
     });
   }
 
-  // handles statalite platform button click
+  // handles satellite platform button click
   static platformClickHandler(e) {
     MapLayersList.platformRemoveSelectAll();
     e.target.classList.add('selected');
+    store.setStoreItem('platform', e.target.value);
+
+    const navChangeEvent = new CustomEvent('platformChanged');
+    window.dispatchEvent(navChangeEvent);
+
+    // get platform state
+    const defaultLayerList = document.getElementById('defaultLayerList');
+    const sentinel2tLayerList = document.getElementById('sentinel2defaultLayerList');
+
+    switch (e.target.value) {
+      case 'landsat8':
+        defaultLayerList.classList.remove('d-none');
+        sentinel2tLayerList.classList.add('d-none');
+        break;
+      case 'sentinel2':
+        defaultLayerList.classList.add('d-none');
+        sentinel2tLayerList.classList.remove('d-none');
+        break;
+      default:
+        defaultLayerList.classList.remove('d-none');
+        break;
+    }
   }
 
-  // handles statalite platform button click
+  // handles satellite platform button click
   static addPlatformListener() {
     const elem = document.querySelector('.btn-group.platform');
     if (elem) {
@@ -198,6 +228,38 @@ export class MapLayersList extends Component {
     // = `${window.innerHeight - offset}px`;
     // document.querySelector('#maplayers_list').style.maxHeight
     // = `${window.innerHeight - offset}px`;
+  }
+
+  static togglePlatformLayers(mapComponent) {
+    // get the region
+    const platform = store.getStateItem('platform');
+
+    // get the layer list from the config file
+    const { TMSLayers } = mapConfig;
+    const layers = store.getStateItem('mapLayerDisplayStatus');
+
+    TMSLayers.forEach((layerProps) => {
+      mapComponent.toggleVisLayerOff(layerProps.id);
+    });
+
+    // filter the layers based on current source
+    Object.keys(layers).forEach((layer) => {
+      const asource = TMSLayers.filter(TMSlayer => (
+        TMSlayer.id === layer && TMSlayer.platform === platform
+      ));
+
+      // layer is on and not part of the tabs data so it needs to be off
+      if (layers[layer] && asource.length === 0) {
+        mapComponent.toggleVisLayerOff(layer);
+      }
+
+      // layer is on IS part of the tabs data os it needs to be on
+      if (layers[layer] && asource.length > 0) {
+        mapComponent.toggleVisLayerOn(layer);
+      }
+    });
+
+    return null;
   }
 
   static toggleRegionsLayers(mapComponent) {
@@ -315,33 +377,35 @@ export class MapLayersList extends Component {
     }
   }
 
+
   // toggle layer list for regions some other region
-  static toggleRegionLayerList() {
+  static togglePlatformLayerList() {
     // get region state
-    const region = store.getStateItem('region');
-    const activeNav = store.getStateItem('activeNav');
+    const platform = store.getStateItem('platform');
+
+    // get platform state
     const defaultLayerList = document.getElementById('defaultLayerList');
-    // const puertoRicoLayerList = document.getElementById('puertoRicoLayerList');
+    const sentinel2tLayerList = document.getElementById('sentinel2defaultLayerList');
 
-    // make sure region list are not displaying when targetedwatershed Nature Server data
-    // nav is current location
-    if (activeNav === 'main-nav-map-searchNShubs') {
-      defaultLayerList.classList.add('d-none');
-      // puertoRicoLayerList.classList.add('d-none');
-      return null;
-    }
-
-    switch (region) {
-      case 'southeast':
+    switch (platform) {
+      case 'landsat8':
         defaultLayerList.classList.remove('d-none');
-        // puertoRicoLayerList.classList.add('d-none');
-        MapLayersList.updateZoomRegionLabel('Southeast U.S.');
+        sentinel2tLayerList.classList.add('d-none');
+        break;
+      case 'sentinel2':
+        defaultLayerList.classList.add('d-none');
+        sentinel2tLayerList.classList.remove('d-none');
         break;
       default:
-        MapLayersList.updateZoomRegionLabel('Southeast U.S.');
+        defaultLayerList.classList.remove('d-none');
         break;
     }
 
+    return null;
+  }
+
+  // toggle layer list for regions some other region
+  static toggleRegionLayerList() {
     return null;
   }
 

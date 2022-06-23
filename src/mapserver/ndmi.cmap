@@ -1,0 +1,75 @@
+CLASS
+	NAME "NDMI Percent Change"
+	EXPRESSION ""
+	COLOR 255 255 255
+END
+CLASS
+	NAME "> 120%"
+	EXPRESSION ([pixel] > 247)
+	COLOR 69 117 181
+END
+CLASS
+	NAME "101 to 120%"
+	EXPRESSION ([pixel] > 227 AND [pixel] <= 247)
+	COLOR 99 136 184
+END
+CLASS
+	NAME "81 to 100%"
+	EXPRESSION ([pixel] > 207 AND [pixel] <= 227)
+	COLOR 127 154 186
+END
+CLASS
+	NAME "61 to 80%"
+	EXPRESSION ([pixel] > 187 AND [pixel] <= 207)
+	COLOR 155 175 189
+END
+CLASS
+	NAME "41 to 60%"
+	EXPRESSION ([pixel] > 167 AND [pixel] <= 187)
+	COLOR 183 196 189
+END
+CLASS
+	NAME "21 to 40%"
+	EXPRESSION ([pixel] > 147 AND [pixel] <= 167)
+	COLOR 211 219 191
+END
+CLASS
+	NAME "1 to 20%"
+	EXPRESSION ([pixel] > 127 AND [pixel] <= 147)
+	COLOR 240 242 191
+END
+CLASS
+	NAME "-19 to 0%"
+	EXPRESSION ([pixel] > 107 AND [pixel] <= 127)
+	COLOR 255 240 179
+END
+CLASS
+	NAME "-39 to -20%"
+	EXPRESSION ([pixel] > 87 AND [pixel] <= 107)
+	COLOR 252 206 149
+END
+CLASS
+	NAME "-59 to -40%"
+	EXPRESSION ([pixel] > 67 AND [pixel] <= 87)
+	COLOR 250 175 125
+END
+CLASS
+	NAME "-79 to -60%"
+	EXPRESSION ([pixel] > 47 AND [pixel] <= 67)
+	COLOR 242 142 99
+END
+CLASS
+	NAME "-99 to -80%"
+	EXPRESSION ([pixel] > 27 AND [pixel] <= 47)
+	COLOR 235 111 77
+END
+CLASS
+	NAME "-119 to -100%"
+	EXPRESSION ([pixel] > 7 AND [pixel] <= 27)
+	COLOR 224 81 56
+END
+CLASS
+	NAME "< -120%"
+	EXPRESSION ([pixel] >= 1 AND [pixel] <= 7)
+	COLOR 214 47 39
+END
