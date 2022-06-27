@@ -62,9 +62,26 @@ module.exports = {
           test: /\.css$/,
           use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader']
         },
-        urlLoader = {
-            test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-            use: "url-loader?limit=100000"
+        // urlLoader = {
+        //     test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        //     use: [{
+        //         loader: 'url-loader',
+        //         options: {
+        //             limit: 100000, // Convert images < 8kb to base64 strings
+        //             name: 'images/[hash]-[name].[ext]'
+        //         }
+        //     }]
+        // },
+        {
+          test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot)$/i,
+          use: [
+           {
+             loader: 'file-loader',
+             options: {
+               esModule: false,
+             },
+           },
+          ],
         },
         {
           test: /\.js$/,
