@@ -1,4 +1,6 @@
 #!/bin/bash
+# run at 6 am each morning just in case tiles do not expire - seems like they are not
+# 0  6 * * * delete-tile-cache-cron.bsh
 rm -rf /mnt/efs/tilecache/current-ndvi-sentinel2
 rm -rf /mnt/efs/tilecache/current-swir-threshold-sentinel2
 rm -rf /mnt/efs/tilecache/current-swir-threshold-landsat8
