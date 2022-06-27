@@ -906,6 +906,11 @@ export function addDownloadGoogleEvents() {
 // this will help when we adding new statitems "breaks" the webpage
 export function addMissingStateItems() {
   // check for base map default is DarkGray
+  if (!checkValidObject(store.getStateItem('platform'))) {
+    store.setStoreItem('platform', 'landsat8');
+  }
+
+  // check for base map default is DarkGray
   if (!checkValidObject(store.getStateItem('basemap'))) {
     store.setStoreItem('basemap', 'DarkGray');
   }
@@ -929,69 +934,17 @@ export function addMissingStateItems() {
   // to long to list again
   if (!checkValidObject(store.getStateItem('mapLayerDisplayStatus'))) {
     store.setStoreItem('mapLayerDisplayStatus', {
-      CONUS_HubsTMS: true,
-      NS_HubsTMS: true,
-      CONUS_ExposureTMS: false,
-      NS_ExposureTMS: false,
-      CONUS_AssetsTMS: false,
-      NS_AssetsTMS: false,
-      CONUS_ThreatsTMS: false,
-      NS_ThreatsTMS: false,
-      CONUS_AquaticTMS: false,
-      CONUS_TerrestrialTMS: false,
-      NSFishAndWildlifeTMS: false,
-      CONUS_PopDensityTMS: false,
-      CONUS_SocVulnTMS: false,
-      CONUS_CriticalFacilitiesTMS: false,
-      CONUS_CriticalInfrastructureTMS: false,
-      CONUS_DraingeTMS: false,
-      CONUS_ErosionTMS: false,
-      CONUS_SLRTMS: false,
-      CONUS_StormSurgeTMS: false,
-      CONUS_GeoStressTMS: false,
-      CONUS_SlopeTMS: false,
-      CONUS_FloodProneAreasTMS: false,
-      CONUS_FishAndWildlifeTMS: false,
+      southeast_ndmi_current_landsat8: false,
+      southeast_ndvi_current_landsat8: false,
+      southeast_swir_current_all_landsat8: false,
+      southeast_swir_current_threshold_landsat8: true,
+      southeast_swir_current_threshold_1yr_landsat8: false,
 
-      PR_HubsTMS: false,
-      PR_ExposureTMS: false,
-      PR_AssetsTMS: false,
-      PR_ThreatsTMS: false,
-      PR_AquaticTMS: false,
-      PR_TerrestrialTMS: false,
-      PR_PopDensityTMS: false,
-      PR_SocVulnTMS: false,
-      PR_CriticalFacilitiesTMS: false,
-      PR_CriticalInfrastructureTMS: false,
-      PR_DraingeTMS: false,
-      PR_ErosionTMS: false,
-      PR_SLRTMS: false,
-      PR_StormSurgeTMS: false,
-      PR_GeoStressTMS: false,
-      PR_SlopeTMS: false,
-      PR_FloodProneAreasTMS: false,
-      PR_FishAndWildlifeTMS: false,
-      PR_LandslideIndexTiles: false,
-      PR_TsunamiIndexTiles: false,
-
-      USVI_HubsTMS: false,
-      USVI_ExposureTMS: false,
-      USVI_AssetsTMS: false,
-      USVI_ThreatsTMS: false,
-      USVI_AquaticTMS: false,
-      USVI_TerrestrialTMS: false,
-      USVI_PopDensityTMS: false,
-      USVI_SocVulnTMS: false,
-      USVI_CriticalFacilitiesTMS: false,
-      USVI_CriticalInfrastructureTMS: false,
-      USVI_DraingeTMS: false,
-      USVI_ErosionTMS: false,
-      USVI_SLRTMS: false,
-      USVI_StormSurgeTMS: false,
-      USVI_GeoStressTMS: false,
-      USVI_SlopeTMS: false,
-      USVI_FloodProneAreasTMS: false,
-      USVI_FishAndWildlifeTMS: false
+      southeast_ndmi_current_sentinel2: false,
+      southeast_ndvi_current_sentinel2: false,
+      southeast_swir_current_all_sentinel2: true,
+      southeast_swir_current_threshold_sentinel2: false,
+      southeast_swir_current_threshold_1yr_sentinel2: false
     });
   }
 

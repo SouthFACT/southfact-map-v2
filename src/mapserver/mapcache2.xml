@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapcache>
+
+  <source name="current-swir-all-sentinel2" type="wms">
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>current-swir-all-sentinel2</LAYERS>
+        <TRANSPARENT>TRUE</TRANSPARENT>
+      </params>
+    </getmap>
+
+    <http>
+      <url>mapserver.southfact.com/mapserv.fcgi?map=/var/www/mapserver.southfact.com/mapserver-maps/southfact.map</url>
+    </http>
+  </source>
+
+  <tileset name="current-swir-all-sentinel2">
+    <metadata>
+      <title>current-swir-all-sentinel2</title>
+    </metadata>
+    <source>current-swir-all-sentinel2</source>
+    <cache>agolCompatible</cache>
+    <format>PNG</format>
+    <grid>GoogleMapsCompatible</grid>
+    <metatile>1 1</metatile>
+    <expires>3600</expires>
+   <auto_expire>86400</auto_expire>
+  </tileset>
+
+  <source name="current-swir-threshold-sentinel2" type="wms">
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>current-swir-threshold-sentinel2</LAYERS>
+        <TRANSPARENT>TRUE</TRANSPARENT>
+      </params>
+    </getmap>
+
+    <http>
+      <url>mapserver.southfact.com/mapserv.fcgi?map=/var/www/mapserver.southfact.com/mapserver-maps/southfact.map</url>
+    </http>
+  </source>
+
+  <tileset name="current-swir-threshold-sentinel2">
+    <metadata>
+      <title>current-swir-threshold-sentinel2</title>
+    </metadata>
+    <source>current-swir-threshold-sentinel2</source>
+    <cache>agolCompatible</cache>
+    <format>PNG</format>
+    <grid>GoogleMapsCompatible</grid>
+    <metatile>1 1</metatile>
+    <expires>3600</expires>
+   <auto_expire>86400</auto_expire>
+  </tileset>
+
+  <source name="current-ndmi-sentinel2" type="wms">
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>current-ndmi-sentinel2</LAYERS>
+        <TRANSPARENT>TRUE</TRANSPARENT>
+      </params>
+    </getmap>
+
+    <http>
+      <url>mapserver.southfact.com/mapserv.fcgi?map=/var/www/mapserver.southfact.com/mapserver-maps/southfact.map</url>
+    </http>
+  </source>
+
+  <tileset name="current-ndmi-sentinel2">
+    <metadata>
+      <title>current-ndmi-sentinel2</title>
+    </metadata>
+    <source>current-ndmi-sentinel2</source>
+    <cache>agolCompatible</cache>
+    <format>PNG</format>
+    <grid>GoogleMapsCompatible</grid>
+    <metatile>1 1</metatile>
+    <expires>3600</expires>
+   <auto_expire>86400</auto_expire>
+  </tileset>
+
+  <source name="current-ndvi-sentinel2" type="wms">
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>current-ndvi-sentinel2</LAYERS>
+        <TRANSPARENT>TRUE</TRANSPARENT>
+      </params>
+    </getmap>
+
+    <http>
+      <url>mapserver.southfact.com/mapserv.fcgi?map=/var/www/mapserver.southfact.com/mapserver-maps/southfact.map</url>
+    </http>
+  </source>
+
+  <tileset name="current-ndvi-sentinel2">
+    <metadata>
+      <title>current-ndvi-sentinel2</title>
+    </metadata>
+    <source>current-ndvi-sentinel2</source>
+    <cache>agolCompatible</cache>
+    <format>PNG</format>
+    <grid>GoogleMapsCompatible</grid>
+    <metatile>1 1</metatile>
+    <expires>3600</expires>
+   <auto_expire>86400</auto_expire>
+  </tileset>
+  
+  <service type="wms" enabled="true">
+    <resample_mode>bilinear</resample_mode>
+  </service>
+
+  <cache name="agolCompatible" type="disk" layout="template">
+    <template>/mnt/efs/tilecache/{tileset}/{z}/{x}/{inv_y}.{ext}</template>
+    <symlink_blank/>
+  </cache>
+
+  <cache name="tmpl" type="disk" layout="template">
+    <template>/mnt/efs/tilecache/{tileset}/{z}/{x}/{y}.{ext}</template>
+    <symlink_blank/>
+  </cache>
+
+  <service type="wmts" enabled="true"/>
+  <service type="tms" enabled="true"/>
+  <service type="demo" enabled="true"/>
+
+  <log_level>debug</log_level>
+
+</mapcache>
