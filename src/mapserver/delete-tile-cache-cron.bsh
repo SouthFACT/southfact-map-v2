@@ -1,0 +1,9 @@
+#!/bin/bash
+rm -rf /mnt/efs/tilecache/current-ndvi-sentinel2
+rm -rf /mnt/efs/tilecache/current-swir-threshold-sentinel2
+rm -rf /mnt/efs/tilecache/current-swir-threshold-landsat8
+rm -rf /mnt/efs/tilecache/current-ndmi-sentinel2
+rm -rf /mnt/efs/tilecache/current-swir-all-sentinel2
+rm -rf /mnt/efs/tilecache/current-swir-all-landsat8
+rm -rf /mnt/efs/tilecache/current-ndvi-landsat8
+rm -rf /mnt/efs/tilecache/current-ndmi-landsat8

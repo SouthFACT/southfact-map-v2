@@ -196,7 +196,7 @@ MAP
     NAME "current-ndmi-landsat8"
     STATUS ON
     TYPE RASTER
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndviLatestChangeL8CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndmiLatestChangeL8CONUS.tif"
     PROJECTION
       "init=epsg:5070"
     END
