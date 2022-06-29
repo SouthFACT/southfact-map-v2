@@ -1,0 +1,32 @@
+<VRTDataset rasterXSize="118121" rasterYSize="56102">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["NAD83 / Conus Albers",GEOGCS["NAD83",DATUM["North_American_Datum_1983",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],AUTHORITY["EPSG","6269"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4269"]],PROJECTION["Albers_Conic_Equal_Area"],PARAMETER["latitude_of_center",23],PARAMETER["longitude_of_center",-96],PARAMETER["standard_parallel_1",29.5],PARAMETER["standard_parallel_2",45.5],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","5070"]]</SRS>
+  <GeoTransform> -1.0913264855503477e+06,  3.8112173973898820e+01,  0.0000000000000000e+00,  2.0196459540329876e+06,  0.0000000000000000e+00, -3.8112173973898820e+01</GeoTransform>
+  <VRTRasterBand dataType="Byte" band="1">
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MAXIMUM">255</MDI>
+      <MDI key="STATISTICS_MEAN">233.68670120901</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">45.165275030409</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">100</MDI>
+    </Metadata>
+    <NoDataValue>256</NoDataValue>
+    <ColorInterp>Gray</ColorInterp>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">/vsicurl/http://data.southfact.com/LastYear/swirYearlyChange2021PRVIS2_2.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="8660" RasterYSize="4533" DataType="Byte" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="8659.60156748435" ySize="4532.74896909206" />
+      <DstRect xOff="108096.721927619" yOff="50854.9299420555" xSize="10024.2780723809" ySize="5247.07005794454" />
+      <NODATA>256</NODATA>
+    </ComplexSource>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="1">swirYearlyChange2021S2CONUS_2clipped.vrt</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="99886" RasterYSize="57736" DataType="Byte" BlockXSize="512" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="99886" ySize="57736" />
+      <DstRect xOff="0" yOff="0" xSize="84144.8511369932" ySize="48637.3177947404" />
+      <NODATA>255</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>

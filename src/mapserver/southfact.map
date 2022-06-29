@@ -73,8 +73,7 @@ MAP
     NAME "current-swir-all-sentinel2"
     STATUS ON
     TYPE RASTER
-    #DATA "/mnt/efs/MapServerTestData/NDMI-Latest-Change-Between-2022-and-2021L8CONUSMosaic2.tif"
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeS2CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeS2.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -91,8 +90,7 @@ MAP
     NAME "current-swir-threshold-sentinel2"
     STATUS ON
     TYPE RASTER
-    #DATA "/mnt/efs/MapServerTestData/NDMI-Latest-Change-Between-2022-and-2021L8CONUSMosaic2.tif"
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeS2CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeS2.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -109,8 +107,7 @@ MAP
     NAME "current-ndvi-sentinel2"
     STATUS ON
     TYPE RASTER
-    #DATA "/mnt/efs/MapServerTestData/NDMI-Latest-Change-Between-2022-and-2021L8CONUSMosaic2.tif"
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndviLatestChangeS2CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndviLatestChangeS2.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -127,8 +124,7 @@ MAP
     NAME "current-ndmi-sentinel2"
     STATUS ON
     TYPE RASTER
-    #DATA "/mnt/efs/MapServerTestData/NDMI-Latest-Change-Between-2022-and-2021L8CONUSMosaic2.tif"
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndviLatestChangeS2CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndmiLatestChangeS2.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -140,12 +136,30 @@ MAP
     END  # end METADATA
   END # end LAYER
 
+    # southfact last year swir threshold sentinel2
+    LAYER
+      NAME "last-year-swir-threshold-sentinel2"
+      STATUS ON
+      TYPE RASTER
+      DATA "/vsicurl/https://data.southfact.com/LastYear/swirLastYearS2.vrt"
+      PROJECTION
+        "init=epsg:5070"
+      END
+      INCLUDE "swir-threshold.cmap"
+      METADATA
+          "wms_title"             "last-year-swir-threshold-sentinel2"
+          "wms_abstract"          "last-year-swir-threshold-sentinel2"
+          "gml_include_items"     "value_0"
+      END  # end METADATA
+    END # end LAYER
+
+
   # southfact SWIR current to date landsat8
   LAYER
     NAME "current-swir-all-landsat8"
     STATUS ON
     TYPE RASTER
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeL8CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeL8.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -162,7 +176,7 @@ MAP
     NAME "current-swir-threshold-landsat8"
     STATUS ON
     TYPE RASTER
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeL8CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/swirLatestChangeL8.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -179,7 +193,7 @@ MAP
     NAME "current-ndvi-landsat8"
     STATUS ON
     TYPE RASTER
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndviLatestChangeL8CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndviLatestChangeL8.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -196,7 +210,7 @@ MAP
     NAME "current-ndmi-landsat8"
     STATUS ON
     TYPE RASTER
-    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndmiLatestChangeL8CONUS.tif"
+    DATA "/vsicurl/https://data.southfact.com/current-year-to-date/ndmiLatestChangeL8.vrt"
     PROJECTION
       "init=epsg:5070"
     END
@@ -204,6 +218,23 @@ MAP
     METADATA
         "wms_title"             "current-ndmi-landsat8"
         "wms_abstract"          "current-ndmi-landsat8"
+        "gml_include_items"     "value_0"
+    END  # end METADATA
+  END # end LAYER
+
+  # southfact last year swir threshold landsat8
+  LAYER
+    NAME "last-year-swir-threshold-landsat8"
+    STATUS ON
+    TYPE RASTER
+    DATA "/vsicurl/https://data.southfact.com/LastYear/swirLastYearL8.vrt"
+    PROJECTION
+      "init=epsg:5070"
+    END
+    INCLUDE "swir-threshold.cmap"
+    METADATA
+        "wms_title"             "last-year-swir-threshold-landsat8"
+        "wms_abstract"          "last-year-swir-threshold-landsat8"
         "gml_include_items"     "value_0"
     END  # end METADATA
   END # end LAYER
