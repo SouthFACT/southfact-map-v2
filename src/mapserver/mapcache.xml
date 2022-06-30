@@ -216,6 +216,60 @@
    <auto_expire>86400</auto_expire>
   </tileset>
 
+  <source name="last-year-swir-threshold-sentinel2" type="wms">
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>last-year-swir-threshold-sentinel2</LAYERS>
+        <TRANSPARENT>TRUE</TRANSPARENT>
+      </params>
+    </getmap>
+
+    <http>
+      <url>mapserver.southfact.com/mapserv.fcgi?map=/var/www/mapserver.southfact.com/mapserver-maps/southfact.map</url>
+    </http>
+  </source>
+
+  <tileset name="last-year-swir-threshold-sentinel2">
+    <metadata>
+      <title>last-year-swir-threshold-sentinel2</title>
+    </metadata>
+    <source>last-year-swir-threshold-sentinel2</source>
+    <cache>agolCompatible</cache>
+    <format>PNG</format>
+    <grid>GoogleMapsCompatible</grid>
+    <metatile>1 1</metatile>
+    <expires>3600</expires>
+   <auto_expire>86400</auto_expire>
+  </tileset>
+
+  <source name="last-year-swir-threshold-landsat8" type="wms">
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>last-year-swir-threshold-landsat8</LAYERS>
+        <TRANSPARENT>TRUE</TRANSPARENT>
+      </params>
+    </getmap>
+
+    <http>
+      <url>mapserver.southfact.com/mapserv.fcgi?map=/var/www/mapserver.southfact.com/mapserver-maps/southfact.map</url>
+    </http>
+  </source>
+
+  <tileset name="last-year-swir-threshold-landsat8">
+    <metadata>
+      <title>last-year-swir-threshold-landsat8</title>
+    </metadata>
+    <source>last-year-swir-threshold-landsat8</source>
+    <cache>agolCompatible</cache>
+    <format>PNG</format>
+    <grid>GoogleMapsCompatible</grid>
+    <metatile>1 1</metatile>
+    <expires>3600</expires>
+   <auto_expire>86400</auto_expire>
+  </tileset>
+
   <service type="wms" enabled="true">
     <resample_mode>bilinear</resample_mode>
   </service>

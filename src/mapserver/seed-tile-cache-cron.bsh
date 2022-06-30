@@ -1,0 +1,13 @@
+# run at 5 00 am each morning just in case tiles do not expire - seems like they are not
+# crontab -u www-data -e
+# 00  5 * * * seed-cache-cron.bsh
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-swir-threshold-sentinel2 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-swir-all-sentinel2 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-ndvi-sentinel2 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-ndmi-sentinel2 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t last-year-swir-threshold-sentinel2 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-swir-threshold-landsat8 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-swir-all-landsat8 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-ndvi-landsat8 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t current-ndmi-landsat8 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
+/usr/local/bin/mapcache_seed -c /var/www/mapserver.southfact.com/mapserver-maps/mapcache.xml -q -t last-year-swir-threshold-landsat8 -z 0,8 -d /var/www/mapserver.southfact.com/mapserver-maps/sf-extents.shp &
